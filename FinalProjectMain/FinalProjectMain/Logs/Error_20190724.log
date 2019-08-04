@@ -1,0 +1,7 @@
+2019-07-24 14:59:57.1143 FATAL    -Object reference not set to an instance of an object. 
+2019-07-24 15:00:21.3770 FATAL    -Object reference not set to an instance of an object. 
+2019-07-24 15:01:18.7837 FATAL    -Object reference not set to an instance of an object. 
+2019-07-24 15:01:37.9035 FATAL    -Object reference not set to an instance of an object. 
+2019-07-24 15:02:01.0239 FATAL    -Object reference not set to an instance of an object. 
+2019-07-24 15:02:50.5948 FATAL    -Object reference not set to an instance of an object. 
+2019-07-24 15:14:15.7849 FATAL    -LINQ to Entities does not recognize the method 'FinalProjectMain.Models.Entity.mainCarousel LastOrDefault[mainCarousel](System.Linq.IQueryable`1[FinalProjectMain.Models.Entity.mainCarousel])' method, and this method cannot be translated into a store expression. 

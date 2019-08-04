@@ -1,0 +1,20 @@
+﻿
+@{
+    var db = new FinalProjectMain.Models.ShoppingDbContext();
+    var findSubCategories = db.SubCategories.Where(w => w.DeletedDate == null && w.Category.CategoryName == "Qaşıq").ToList();
+}
+
+@foreach (var item in findSubCategories)
+{
+    <form action="@Url.Action("findProduct","category", new { idSub =item.Id})" method="post">
+
+        <button class="dropdown-item btn" type="submit" href="#">@item.SubCategoryName</button>
+    </form>
+
+}
+
+<form action="@Url.Action("findProduct","category", new { qashiq =2})" method="post">
+
+    <button class="dropdown-item btn" type="submit" href="#">Hamsı</button>
+</form>
+

@@ -1,0 +1,19 @@
+﻿@using FinalProjectMain.Models.Entity
+@model User
+@{
+    Layout = null;
+    var checkSession = Session[SessionKey.User];
+}
+
+@if (checkSession != null)
+{
+    <div class="dropdown">
+        <a class="btn btn-danger rounded-0 dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            @Model.UserName @Model.UserSurname
+        </a>
+
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="@Url.Action("LogOutUser","Home")">Çıxış</a>
+        </div>
+    </div>
+}

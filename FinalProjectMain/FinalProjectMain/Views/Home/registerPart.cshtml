@@ -1,0 +1,138 @@
+﻿
+@{
+    var genderDb = new FinalProjectMain.Models.ShoppingDbContext().Genders.ToList();
+
+}
+@using FinalProjectMain.Models.Entity
+@model User
+@section css
+    {
+    <link rel="stylesheet" href="~/Template/css/registerPart.css" />
+}
+
+
+<section class="registerPart mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-xl-12 col-lg-12 col-xs-12  text-center forTitle">
+                <span style="font-size: 30px" class="font-weight-bold">Yeni Hesab Yarat</span>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-9 col-xl-9 col-xs-9 title mt-3 shadow ">
+                <div class="mt-3">
+                    <p class="d-inline p-3">Artıq Hesabın Var?</p> <a class="text-decoration-none text-dark"
+                                                                      href="./LoginPart.html">Daxil ol</a>
+                </div>
+
+                <form action="@Url.Action("registerPartSubmit","Home")" method="post" class="p-3">
+                    <div class="form-group row mt-4">
+                        <label class="col-sm-4 col-form-label">Sosial başlıq</label>
+                        <div class="col-sm-8 d-flex">
+                            <select required name="GenderId" class="form-control-sm">
+                                @foreach (var item in genderDb)
+                                {
+                                    <option value="@item.Id">@item.GenderName</option>
+                                }
+
+                            </select>
+                            @Html.ValidationMessageFor(m => m.GenderId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group row mt-4">
+                        <label for="FirstName" class="col-sm-4 col-form-label">Ad</label>
+                        <div class="col-sm-8">
+                            <input type="text" placeholder="  Adınızı Daxil Edin.." required name="UserName" class="form-control"
+                                   id="FirstName">
+                            @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group row mt-4">
+                        <label for="LastName" class="col-sm-4 col-form-label">Soyad</label>
+                        <div class="col-sm-8">
+                            <input type="text" placeholder="  Soyadınızı Daxil Edin.." required name="UserSurname" class="form-control"
+                                   id="LastName">
+                            @Html.ValidationMessageFor(m => m.UserSurname, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group row mt-4">
+                        <label for="emailForRegister" class="col-sm-4 col-form-label">Email</label>
+                        <div class="col-sm-8">
+                            <input type="text" placeholder="  Email Daxil Edin.." required name="Email" class="form-control"
+                                   id="emailForRegister">
+                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                            <p class="text-danger">@TempData["userExists"]</p>
+                        </div>
+
+                    </div>
+                    <div class="form-group row mt-4">
+                        <label for="inputPassword" class="col-sm-4 col-form-label">Şifrə</label>
+                        <div class="col-sm-8">
+                            <div class="input-group-append">
+                                <input type="password" class="form-control" required min="5" maxlength="15" name="Password" id="inputPasswordForRegister"
+                                       placeholder=" Şifrənizi Daxil Edin..">
+                                <button type="button" class="btn btn-sm btn-dark rounded-0 showPass"
+                                        id="">
+                                    Göstər
+                                </button>
+                                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row mt-4">
+                        <label class="col-sm-4 col-form-label">Doğum Tarixi</label>
+                        <div class="col-sm-8">
+                            <input placeholder="  İl / Ay / Gün" @*data-provide="datepicker"*@ required name="BirthDate" class="form-control">
+                            @Html.ValidationMessageFor(m => m.BirthDate, "", new { @class = "text-danger" })
+                            <span class="form-control-comment text-muted">
+                                (Məs: 1970/05/31)
+                            </span>
+                        </div>
+
+                    </div>
+                    <div class="form-group row mt-4">
+                        <label class="col-sm-4 col-form-label"></label>
+                        <div class="col-sm-8">
+                            <input type="checkbox" value="true" name="Notification">
+                            <span class="form-control-comment text-muted">
+                                Melumatlardan sizə bildiriş gəsin?
+                            </span>
+                        </div>
+
+                    </div>
+                    <div class="col-12 d-flex justify-content-end w-100">
+                        <button type="submit" class="btn btn-md btn-dark d-flex-end">Qeydiyyatdan Keç</button>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="carouselForCompany mt-5">
+    <div class="container  mt-5">
+        <div class="row">
+            <div class="owl-carousel">
+                <div><img src="~/Template/img/Companies/1.jpg" alt=""></div>
+                <div><img src="~/Template/img/Companies/2.jpg" alt=""></div>
+                <div><img src="~/Template/img/Companies/3.jpg" alt=""></div>
+                <div><img src="~/Template/img/Companies/4.jpg" alt=""></div>
+                <div><img src="~/Template/img/Companies/5.jpg" alt=""></div>
+                <div><img src="~/Template/img/Companies/1.jpg" alt=""></div>
+                <div><img src="~/Template/img/Companies/3.jpg" alt=""></div>
+                <div><img src="~/Template/img/Companies/5.jpg" alt=""></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section scripts{
+
+    <script src="~/Template/js/register-js.js"></script>
+    @*<script src="~/Template/js/bootstrap-datepicker.js"></script>*@
+
+}

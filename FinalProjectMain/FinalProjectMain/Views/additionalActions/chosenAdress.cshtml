@@ -1,0 +1,110 @@
+﻿@model FinalProjectMain.Models.Entity.addAdressToAccount
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var db = new FinalProjectMain.Models.ShoppingDbContext();
+    var session = Session[SessionKey.User];
+    var findUser = db.user.Where(w => w.DeletedDate == null && w.isBlock == false && w.Email.ToString() == session.ToString()).FirstOrDefault();
+    var products = db.shopList.Where(w => w.DeletedDate == null && w.UserId == findUser.Id&&w.isSold==false).ToList();
+    decimal totalPrice = 0;
+}
+
+<section class="adress-part mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-xl-12 col-lg-12 col-xs-12  text-center header-title-col">
+                <span class="font-weight-bold h-title">Təstiq Et</span>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-xs-12 col-md-12 col-lg-12 col-xl-12 inputs-for-adress-col shadow">
+                <form class="mt-4 mb-4" action="" method="post">
+                    <div class="row p-2">
+                        <div class="col-md-12 col-lg-4 col-xl-4 col-sm-12 col-xs-12 col-12 m-2">
+                            <input type="hidden" name="adressId" value="@Model.Id" />
+                            <p>Ad: @Model.UserName</p>
+                            <p>Soyad: @Model.UserSecondName</p>
+                            <p>Şəhər: @Model.City</p>
+                            <p>Ünvan: @Model.Adress</p>
+                            <p>Ünvan-2: @Model.Adress2</p>
+                        </div>
+                    </div>
+                    <div class="row p-2">
+                        @foreach (var item in products)
+                        {
+                            <div class="card" style="width: 10rem;">
+                                <img class="card-img-top" src="~/Template/img/newImg/@item.Product.imgPath" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">@item.Product.Name</h5>
+                                    <p class="card-text">@item.Product.About</p>
+                                </div>
+                            </div>
+                            totalPrice += item.Product.Price;
+                        }
+                    </div>
+                    <div class="row d-flex justify-content-center mt-1">
+                        <h4 class="text-danger">@(totalPrice + totalPrice * 10 / 100) AZN</h4>
+                    </div>
+                    <button type="button" onclick="submitOrderButton()" class="btn btn-md btn-danger">Təstiqlə</button>
+
+                </form>
+            </div>
+        </div>
+        <div class="row mt-2 buttons-part-inadress">
+            <div class="col-xs-12">
+                <a href="@Url.Action("myAccount","Home")" class="btn btn-md btn-dark  back-account">
+                    <i class="fas fa-angle-left"></i> Hesabına
+                    Geri Dön
+                </a>
+                <a href="@Url.Action("Index","Home")" class="btn btn-md btn-dark  back-MainPage">
+                    <i class="fas fa-home"></i> Əsas
+                    Səhifə
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="carouselForCompany mt-5">
+    <div class="container  mt-5">
+        <div class="row">
+            <div class="owl-carousel">
+                <div><img src="~/Template/img/Companies/1.jpg" alt=""></div>
+                <div><img src="~/Template/img/Companies/2.jpg" alt=""></div>
+                <div><img src="~/Template/img/Companies/3.jpg" alt=""></div>
+                <div><img src="~/Template/img/Companies/4.jpg" alt=""></div>
+                <div><img src="~/Template/img/Companies/5.jpg" alt=""></div>
+                <div><img src="~/Template/img/Companies/1.jpg" alt=""></div>
+                <div><img src="~/Template/img/Companies/3.jpg" alt=""></div>
+                <div><img src="~/Template/img/Companies/5.jpg" alt=""></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section scripts{
+    
+    <script>
+        function submitOrderButton() {
+
+            $.ajax({
+
+                url: "@Url.Action("submitOrderButton","additionalActions")",
+                type: "POST",
+                success: function (response) {
+                    swal({
+                            title: "Təşəkkür Edirik!",
+                            icon: "success",
+                            button: "Bağla!",
+                          }).then(function() {
+                          window.location.href = "/Home/Index";
+                     });
+                },
+                error: function (response) {
+                    console.error(response)
+                }
+            })
+        }
+    </script>
+    
+    }

@@ -1,0 +1,45 @@
+2019-08-02 02:14:53.7250 FATAL    - 
+2019-08-02 02:15:02.3854 FATAL    - 
+2019-08-02 02:15:19.3025 FATAL    - 
+2019-08-02 02:15:28.1347 FATAL    - 
+2019-08-02 03:28:10.3235 FATAL    -Child actions are not allowed to perform redirect actions. 
+2019-08-02 03:28:36.1190 FATAL    -Child actions are not allowed to perform redirect actions. 
+2019-08-02 03:29:52.7739 FATAL    -Child actions are not allowed to perform redirect actions. 
+2019-08-02 03:30:15.4319 FATAL    -Child actions are not allowed to perform redirect actions. 
+2019-08-02 03:31:08.7745 FATAL    -Child actions are not allowed to perform redirect actions. 
+2019-08-02 03:31:26.5616 FATAL    -Child actions are not allowed to perform redirect actions. 
+2019-08-02 03:33:29.7606 FATAL    -Child actions are not allowed to perform redirect actions. 
+2019-08-02 03:34:41.9142 FATAL    -Child actions are not allowed to perform redirect actions. 
+2019-08-02 03:54:16.0665 FATAL    -Object reference not set to an instance of an object. 
+2019-08-02 04:12:54.7354 FATAL    -The parameters dictionary contains a null entry for parameter 'pageId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult pagePagination(Int32)' in 'FinalProjectMain.Controllers.HomeController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters 
+2019-08-02 04:15:33.0167 FATAL    -Value cannot be null.
+Parameter name: source 
+2019-08-02 04:56:37.5884 FATAL    -The model item passed into the dictionary is of type 'System.Collections.Generic.List`1[FinalProjectMain.Models.Entity.CategoryAndProduct]', but this dictionary requires a model item of type 'System.Collections.Generic.IEnumerable`1[FinalProjectMain.Models.Entity.Product]'. 
+2019-08-02 14:35:16.8075 FATAL    -The model item passed into the dictionary is of type 'System.Collections.Generic.List`1[FinalProjectMain.Models.Entity.CategoryAndProduct]', but this dictionary requires a model item of type 'System.Collections.Generic.IEnumerable`1[FinalProjectMain.Models.Entity.Product]'. 
+2019-08-02 14:49:20.4390 FATAL    -Value cannot be null.
+Parameter name: source 
+2019-08-02 14:50:30.6198 FATAL    -Value cannot be null.
+Parameter name: source 
+2019-08-02 15:07:37.3318 FATAL    -Value cannot be null.
+Parameter name: source 
+2019-08-02 15:18:20.5284 FATAL    -The model item passed into the dictionary is of type 'System.Collections.Generic.List`1[FinalProjectMain.Models.Entity.Product]', but this dictionary requires a model item of type 'System.Collections.Generic.IEnumerable`1[FinalProjectMain.Models.Entity.CategoryAndProduct]'. 
+2019-08-02 15:19:12.8075 FATAL    -Object reference not set to an instance of an object. 
+2019-08-02 15:19:17.2123 FATAL    -Object reference not set to an instance of an object. 
+2019-08-02 15:19:21.6446 FATAL    -Object reference not set to an instance of an object. 
+2019-08-02 15:19:31.1248 FATAL    -Object reference not set to an instance of an object. 
+2019-08-02 15:22:37.9937 FATAL    -Value cannot be null.
+Parameter name: source 
+2019-08-02 15:22:53.2516 FATAL    -Value cannot be null.
+Parameter name: source 
+2019-08-02 15:23:02.1444 FATAL    -The model item passed into the dictionary is of type 'System.Collections.Generic.List`1[FinalProjectMain.Models.Entity.Product]', but this dictionary requires a model item of type 'System.Collections.Generic.IEnumerable`1[FinalProjectMain.Models.Entity.CategoryAndProduct]'. 
+2019-08-02 15:32:25.7889 FATAL    -The model item passed into the dictionary is of type 'System.Collections.Generic.List`1[FinalProjectMain.Models.Entity.Product]', but this dictionary requires a model item of type 'System.Collections.Generic.IEnumerable`1[FinalProjectMain.Models.Entity.CategoryAndProduct]'. 
+2019-08-02 15:32:57.1372 FATAL    -The model item passed into the dictionary is of type 'System.Collections.Generic.List`1[FinalProjectMain.Models.Entity.Product]', but this dictionary requires a model item of type 'System.Collections.Generic.IEnumerable`1[FinalProjectMain.Models.Entity.CategoryAndProduct]'. 
+2019-08-02 15:43:18.7809 FATAL    -Object reference not set to an instance of an object. 
+2019-08-02 15:44:35.0787 FATAL    -Cannot invoke a non-delegate type 
+2019-08-02 16:30:38.7551 FATAL    -Insufficient stack to continue executing the program safely. This can happen from having too many functions on the call stack or function on the stack using too much stack space. 
+2019-08-02 16:31:29.8199 FATAL    -Insufficient stack to continue executing the program safely. This can happen from having too many functions on the call stack or function on the stack using too much stack space. 
+2019-08-02 17:26:29.7901 FATAL    -Object reference not set to an instance of an object. 
+2019-08-02 17:26:38.4000 FATAL    -Object reference not set to an instance of an object. 
+2019-08-02 17:26:43.7190 FATAL    -Object reference not set to an instance of an object. 
+2019-08-02 17:26:47.2382 FATAL    -Object reference not set to an instance of an object. 

@@ -1,0 +1,35 @@
+﻿@using FinalProjectMain.Models.Entity
+@model IEnumerable<Category>
+@{
+    Layout = null;
+    var db = new  FinalProjectMain.Models.ShoppingDbContext();
+}
+
+@foreach (var item in Model)
+{
+    if (item.withSubCtegory==true)
+    {
+        <li class="dropdown dropright dropdown-hover">
+            <a style="cursor:pointer"class="dropdown-item dropdown-toggle" onclick="clickCategoryToProdcutPage(@item.Id)"
+               data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"
+               >@item.CategoryName</a>
+            <ul class="dropdown-menu ml-0 rounded-0">
+                @foreach (var subItem in db.SubCategories.Where(w => w.CategoryId == item.Id).ToList())
+                {
+                    <li><a style="cursor:pointer"class="dropdown-item" onclick="clickSubCategoryToProdcutPage(@subItem.Id)" >@subItem.SubCategoryName</a></li>
+                }
+            </ul>
+        </li>
+    }
+    else
+    {
+        <li><a style="cursor:pointer"class="dropdown-item" onclick="clickCategoryToProdcutPage(@item.Id)" >@item.CategoryName</a></li>
+    }
+}
+@section scripts{
+    
+    <script>
+
+    </script>
+
+    }

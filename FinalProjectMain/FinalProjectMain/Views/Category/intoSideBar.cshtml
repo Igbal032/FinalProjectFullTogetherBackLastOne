@@ -1,0 +1,37 @@
+﻿@{
+    Layout = null;
+    var db = new FinalProjectMain.Models.ShoppingDbContext();
+}
+@model IEnumerable<FinalProjectMain.Models.Entity.Category>
+
+@foreach (var item in Model)
+{
+    if (item.withSubCtegory == true)
+    {
+        <li>
+            <a class="dropdown-item dropdown-toggle" data-toggle="collapse" data-target="#collapse_@item.Id"
+               aria-expanded="true" aria-controls="@item.Id+collapse" href="#">@item.CategoryName</a>
+        </li>
+        <div id="collapse_@item.Id" class="collapse " aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="text-end">
+                @foreach (var subCategory in db.SubCategories.Where(w => w.DeletedDate == null && w.CategoryId == item.Id).ToList())
+                {
+                    @*<a class="dropdown-item" href="#">@subCategory.SubCategoryName</a>*@
+                    <form action="@Url.Action("findProduct","category", new { idSub =subCategory.Id})" method="post">
+
+                        <li><button class="dropdown-item btn" type="submit" href="#">@subCategory.SubCategoryName</button></li>
+</form>
+                }
+            </div>
+        </div>
+    }
+    else
+    {
+        @*<li><a class="dropdown-item" href="#">@item.CategoryName</a></li>*@
+        <form action="@Url.Action("findProduct","category", new { categoryId =item.Id})" method="post">
+
+            <button class="dropdown-item btn" type="submit" href="#">@item.CategoryName</button>
+        </form>
+    }
+
+}

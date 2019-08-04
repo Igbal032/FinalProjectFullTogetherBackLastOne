@@ -1,0 +1,1429 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D9207C83-C71D-41DA-9495-E504FAE91F3B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FinalProjectMain</RootNamespace>
+    <AssemblyName>FinalProjectMain</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44354</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.6.6\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Template\alert.html" />
+    <Content Include="Areas\Admin\Template\badge.html" />
+    <Content Include="Areas\Admin\Template\button.html" />
+    <Content Include="Areas\Admin\Template\card.html" />
+    <Content Include="Areas\Admin\Template\chart.html" />
+    <Content Include="Areas\Admin\Template\css\font-face.css" />
+    <Content Include="Areas\Admin\Template\css\theme.css" />
+    <Content Include="Areas\Admin\Template\fontawesome.html" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-100.eot" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-100.svg" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-100.ttf" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-100.woff" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-100.woff2" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-100italic.eot" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-100italic.svg" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-100italic.ttf" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-100italic.woff" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-100italic.woff2" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-200.eot" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-200.svg" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-200.ttf" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-200.woff" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-200.woff2" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-200italic.eot" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-200italic.svg" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-200italic.ttf" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-200italic.woff" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-200italic.woff2" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-300.eot" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-300.svg" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-300.ttf" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-300.woff" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-300.woff2" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-300italic.eot" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-300italic.svg" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-300italic.ttf" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-300italic.woff" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-300italic.woff2" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-500.eot" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-500.svg" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-500.ttf" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-500.woff" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-500.woff2" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-500italic.eot" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-500italic.svg" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-500italic.ttf" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-500italic.woff" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-500italic.woff2" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-600.eot" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-600.svg" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-600.ttf" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-600.woff" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-600.woff2" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-600italic.eot" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-600italic.svg" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-600italic.ttf" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-600italic.woff" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-600italic.woff2" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-700.eot" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-700.svg" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-700.ttf" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-700.woff" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-700.woff2" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-700italic.eot" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-700italic.svg" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-700italic.ttf" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-700italic.woff" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-700italic.woff2" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-800.eot" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-800.svg" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-800.ttf" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-800.woff" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-800.woff2" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-800italic.eot" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-800italic.svg" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-800italic.ttf" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-800italic.woff" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-800italic.woff2" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-900.eot" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-900.svg" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-900.ttf" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-900.woff" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-900.woff2" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-900italic.eot" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-900italic.svg" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-900italic.ttf" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-900italic.woff" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-900italic.woff2" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-italic.eot" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-italic.svg" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-italic.ttf" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-italic.woff" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-italic.woff2" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-regular.eot" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-regular.svg" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-regular.ttf" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-regular.woff" />
+    <Content Include="Areas\Admin\Template\fonts\poppins\poppins-v5-latin-regular.woff2" />
+    <Content Include="Areas\Admin\Template\forget-pass.html" />
+    <Content Include="Areas\Admin\Template\form.html" />
+    <Content Include="Areas\Admin\Template\grid.html" />
+    <Content Include="Areas\Admin\Template\images\bg-title-01.jpg" />
+    <Content Include="Areas\Admin\Template\images\bg-title-02.jpg" />
+    <Content Include="Areas\Admin\Template\images\icon\avatar-01.jpg" />
+    <Content Include="Areas\Admin\Template\images\icon\avatar-02.jpg" />
+    <Content Include="Areas\Admin\Template\images\icon\avatar-03.jpg" />
+    <Content Include="Areas\Admin\Template\images\icon\avatar-04.jpg" />
+    <Content Include="Areas\Admin\Template\images\icon\avatar-05.jpg" />
+    <Content Include="Areas\Admin\Template\images\icon\avatar-06.jpg" />
+    <Content Include="Areas\Admin\Template\images\icon\avatar-big-01.jpg" />
+    <Content Include="Areas\Admin\Template\images\icon\logo-blue.png" />
+    <Content Include="Areas\Admin\Template\images\icon\logo-mini.png" />
+    <Content Include="Areas\Admin\Template\images\icon\logo-white.png" />
+    <Content Include="Areas\Admin\Template\images\icon\logo.png" />
+    <Content Include="Areas\Admin\Template\images\icon\Untitled-1.jpg" />
+    <Content Include="Areas\Admin\Template\images\user.png" />
+    <Content Include="Areas\Admin\Template\inbox.html" />
+    <Content Include="Areas\Admin\Template\index.html" />
+    <Content Include="Areas\Admin\Template\index2.html" />
+    <Content Include="Areas\Admin\Template\index3.html" />
+    <Content Include="Areas\Admin\Template\index4.html" />
+    <Content Include="Areas\Admin\Template\js\main.js" />
+    <Content Include="Areas\Admin\Template\login.html" />
+    <Content Include="Areas\Admin\Template\map.html" />
+    <Content Include="Areas\Admin\Template\modal.html" />
+    <Content Include="Areas\Admin\Template\progress-bar.html" />
+    <Content Include="Areas\Admin\Template\README.md" />
+    <Content Include="Areas\Admin\Template\register.html" />
+    <Content Include="Areas\Admin\Template\switch.html" />
+    <Content Include="Areas\Admin\Template\tab.html" />
+    <Content Include="Areas\Admin\Template\table.html" />
+    <Content Include="Areas\Admin\Template\typo.html" />
+    <Content Include="Areas\Admin\Template\vendor\animsition\animsition.min.css" />
+    <Content Include="Areas\Admin\Template\vendor\animsition\animsition.min.js" />
+    <Content Include="Areas\Admin\Template\vendor\bootstrap-4.1\bootstrap.min.css" />
+    <Content Include="Areas\Admin\Template\vendor\bootstrap-4.1\bootstrap.min.js" />
+    <Content Include="Areas\Admin\Template\vendor\bootstrap-4.1\popper.min.js" />
+    <Content Include="Areas\Admin\Template\vendor\bootstrap-progressbar\bootstrap-progressbar-3.3.4.min.css" />
+    <Content Include="Areas\Admin\Template\vendor\bootstrap-progressbar\bootstrap-progressbar.min.js" />
+    <Content Include="Areas\Admin\Template\vendor\chartjs\Chart.bundle.min.js" />
+    <Content Include="Areas\Admin\Template\vendor\circle-progress\circle-progress.js" />
+    <Content Include="Areas\Admin\Template\vendor\circle-progress\circle-progress.min.js" />
+    <Content Include="Areas\Admin\Template\vendor\countdown\countdowntime.js" />
+    <Content Include="Areas\Admin\Template\vendor\countdown\jquery.countdown.min.js" />
+    <Content Include="Areas\Admin\Template\vendor\countdown\moment-timezone-with-data.min.js" />
+    <Content Include="Areas\Admin\Template\vendor\countdown\moment-timezone.min.js" />
+    <Content Include="Areas\Admin\Template\vendor\countdown\moment.min.js" />
+    <Content Include="Areas\Admin\Template\vendor\counter-up\jquery.counterup.min.js" />
+    <Content Include="Areas\Admin\Template\vendor\counter-up\jquery.waypoints.min.js" />
+    <Content Include="Areas\Admin\Template\vendor\counter-up\waypoints.min.js" />
+    <Content Include="Areas\Admin\Template\vendor\css-hamburgers\hamburgers.css" />
+    <Content Include="Areas\Admin\Template\vendor\css-hamburgers\hamburgers.min.css" />
+    <Content Include="Areas\Admin\Template\vendor\font-awesome-4.7\css\font-awesome.css" />
+    <Content Include="Areas\Admin\Template\vendor\font-awesome-4.7\css\font-awesome.min.css" />
+    <Content Include="Areas\Admin\Template\vendor\font-awesome-4.7\fonts\fontawesome-webfont.eot" />
+    <Content Include="Areas\Admin\Template\vendor\font-awesome-4.7\fonts\fontawesome-webfont.svg" />
+    <Content Include="Areas\Admin\Template\vendor\font-awesome-4.7\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Areas\Admin\Template\vendor\font-awesome-4.7\fonts\fontawesome-webfont.woff" />
+    <Content Include="Areas\Admin\Template\vendor\font-awesome-4.7\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Areas\Admin\Template\vendor\font-awesome-4.7\fonts\FontAwesome.otf" />
+    <Content Include="Areas\Admin\Template\vendor\font-awesome-4.7\HELP-US-OUT.txt" />
+    <Content Include="Areas\Admin\Template\vendor\font-awesome-5\css\fontawesome-all.min.css" />
+    <Content Include="Areas\Admin\Template\vendor\font-awesome-5\webfonts\fa-brands-400.eot" />
+    <Content Include="Areas\Admin\Template\vendor\font-awesome-5\webfonts\fa-brands-400.svg" />
+    <Content Include="Areas\Admin\Template\vendor\font-awesome-5\webfonts\fa-brands-400.ttf" />
+    <Content Include="Areas\Admin\Template\vendor\font-awesome-5\webfonts\fa-brands-400.woff" />
+    <Content Include="Areas\Admin\Template\vendor\font-awesome-5\webfonts\fa-brands-400.woff2" />
+    <Content Include="Areas\Admin\Template\vendor\font-awesome-5\webfonts\fa-regular-400.eot" />
+    <Content Include="Areas\Admin\Template\vendor\font-awesome-5\webfonts\fa-regular-400.svg" />
+    <Content Include="Areas\Admin\Template\vendor\font-awesome-5\webfonts\fa-regular-400.ttf" />
+    <Content Include="Areas\Admin\Template\vendor\font-awesome-5\webfonts\fa-regular-400.woff" />
+    <Content Include="Areas\Admin\Template\vendor\font-awesome-5\webfonts\fa-regular-400.woff2" />
+    <Content Include="Areas\Admin\Template\vendor\font-awesome-5\webfonts\fa-solid-900.eot" />
+    <Content Include="Areas\Admin\Template\vendor\font-awesome-5\webfonts\fa-solid-900.svg" />
+    <Content Include="Areas\Admin\Template\vendor\font-awesome-5\webfonts\fa-solid-900.ttf" />
+    <Content Include="Areas\Admin\Template\vendor\font-awesome-5\webfonts\fa-solid-900.woff" />
+    <Content Include="Areas\Admin\Template\vendor\font-awesome-5\webfonts\fa-solid-900.woff2" />
+    <Content Include="Areas\Admin\Template\vendor\jquery-3.2.1.min.js" />
+    <Content Include="Areas\Admin\Template\vendor\jquery-ui.min.js" />
+    <Content Include="Areas\Admin\Template\vendor\lightbox2\dist\css\lightbox.css" />
+    <Content Include="Areas\Admin\Template\vendor\lightbox2\dist\images\close.png" />
+    <Content Include="Areas\Admin\Template\vendor\lightbox2\dist\images\loading.gif" />
+    <Content Include="Areas\Admin\Template\vendor\lightbox2\dist\images\next.png" />
+    <Content Include="Areas\Admin\Template\vendor\lightbox2\dist\images\prev.png" />
+    <Content Include="Areas\Admin\Template\vendor\lightbox2\dist\js\lightbox-plus-jquery.js" />
+    <Content Include="Areas\Admin\Template\vendor\lightbox2\dist\js\lightbox-plus-jquery.min.js" />
+    <Content Include="Areas\Admin\Template\vendor\lightbox2\dist\js\lightbox-plus-jquery.min.map" />
+    <Content Include="Areas\Admin\Template\vendor\lightbox2\dist\js\lightbox.js" />
+    <Content Include="Areas\Admin\Template\vendor\lightbox2\dist\js\lightbox.min.js" />
+    <Content Include="Areas\Admin\Template\vendor\lightbox2\dist\js\lightbox.min.map" />
+    <Content Include="Areas\Admin\Template\vendor\lightbox2\src\css\lightbox.css" />
+    <Content Include="Areas\Admin\Template\vendor\lightbox2\src\images\close.png" />
+    <Content Include="Areas\Admin\Template\vendor\lightbox2\src\images\loading.gif" />
+    <Content Include="Areas\Admin\Template\vendor\lightbox2\src\images\next.png" />
+    <Content Include="Areas\Admin\Template\vendor\lightbox2\src\images\prev.png" />
+    <Content Include="Areas\Admin\Template\vendor\lightbox2\src\js\lightbox.js" />
+    <Content Include="Areas\Admin\Template\vendor\mdi-font\css\material-design-iconic-font.css" />
+    <Content Include="Areas\Admin\Template\vendor\mdi-font\css\material-design-iconic-font.min.css" />
+    <Content Include="Areas\Admin\Template\vendor\mdi-font\fonts\Material-Design-Iconic-Font.eot" />
+    <Content Include="Areas\Admin\Template\vendor\mdi-font\fonts\Material-Design-Iconic-Font.svg" />
+    <Content Include="Areas\Admin\Template\vendor\mdi-font\fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="Areas\Admin\Template\vendor\mdi-font\fonts\Material-Design-Iconic-Font.woff" />
+    <Content Include="Areas\Admin\Template\vendor\mdi-font\fonts\Material-Design-Iconic-Font.woff2" />
+    <Content Include="Areas\Admin\Template\vendor\perfect-scrollbar\perfect-scrollbar.css" />
+    <Content Include="Areas\Admin\Template\vendor\perfect-scrollbar\perfect-scrollbar.js" />
+    <Content Include="Areas\Admin\Template\vendor\perfect-scrollbar\perfect-scrollbar.min.js" />
+    <Content Include="Areas\Admin\Template\vendor\progressbar\progressbar.js" />
+    <Content Include="Areas\Admin\Template\vendor\progressbar\progressbar.min.js" />
+    <Content Include="Areas\Admin\Template\vendor\select2\select2.min.css" />
+    <Content Include="Areas\Admin\Template\vendor\select2\select2.min.js" />
+    <Content Include="Areas\Admin\Template\vendor\slick\ajax-loader.gif" />
+    <Content Include="Areas\Admin\Template\vendor\slick\config.rb" />
+    <Content Include="Areas\Admin\Template\vendor\slick\fonts\slick.eot" />
+    <Content Include="Areas\Admin\Template\vendor\slick\fonts\slick.svg" />
+    <Content Include="Areas\Admin\Template\vendor\slick\fonts\slick.ttf" />
+    <Content Include="Areas\Admin\Template\vendor\slick\fonts\slick.woff" />
+    <Content Include="Areas\Admin\Template\vendor\slick\slick-theme.css" />
+    <Content Include="Areas\Admin\Template\vendor\slick\slick-theme.less" />
+    <Content Include="Areas\Admin\Template\vendor\slick\slick-theme.scss" />
+    <Content Include="Areas\Admin\Template\vendor\slick\slick.css" />
+    <Content Include="Areas\Admin\Template\vendor\slick\slick.js" />
+    <Content Include="Areas\Admin\Template\vendor\slick\slick.less" />
+    <Content Include="Areas\Admin\Template\vendor\slick\slick.min.js" />
+    <Content Include="Areas\Admin\Template\vendor\slick\slick.scss" />
+    <Content Include="Areas\Admin\Template\vendor\smk-accordion\accordion.css" />
+    <Content Include="Areas\Admin\Template\vendor\smk-accordion\accordion.js" />
+    <Content Include="Areas\Admin\Template\vendor\smk-accordion\accordion.min.js" />
+    <Content Include="Areas\Admin\Template\vendor\sweetalert\sweetalert.min.js" />
+    <Content Include="Areas\Admin\Template\vendor\vector-map\jquery.vmap.brazil.js" />
+    <Content Include="Areas\Admin\Template\vendor\vector-map\jquery.vmap.europe.js" />
+    <Content Include="Areas\Admin\Template\vendor\vector-map\jquery.vmap.france.js" />
+    <Content Include="Areas\Admin\Template\vendor\vector-map\jquery.vmap.germany.js" />
+    <Content Include="Areas\Admin\Template\vendor\vector-map\jquery.vmap.js" />
+    <Content Include="Areas\Admin\Template\vendor\vector-map\jquery.vmap.min.js" />
+    <Content Include="Areas\Admin\Template\vendor\vector-map\jquery.vmap.russia.js" />
+    <Content Include="Areas\Admin\Template\vendor\vector-map\jquery.vmap.sampledata.js" />
+    <Content Include="Areas\Admin\Template\vendor\vector-map\jquery.vmap.usa.js" />
+    <Content Include="Areas\Admin\Template\vendor\vector-map\jquery.vmap.world.js" />
+    <Content Include="Areas\Admin\Template\vendor\vector-map\jqvmap.min.css" />
+    <Content Include="Areas\Admin\Template\vendor\wow\animate.css" />
+    <Content Include="Areas\Admin\Template\vendor\wow\wow.min.js" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Template\add-AdressPart-my-Account.html" />
+    <Content Include="Template\ComparePart.html" />
+    <Content Include="Template\ContactUs.html" />
+    <Content Include="Template\css\animate.min.css" />
+    <Content Include="Template\css\bootstrap-datepicker.css" />
+    <Content Include="Template\css\imagehover.min.css" />
+    <Content Include="Template\css\jquery.bootstrap-touchspin.css" />
+    <Content Include="Template\css\jquery.bootstrap-touchspin.min.css" />
+    <Content Include="Template\css\owl.carousel.min.css" />
+    <Content Include="Template\css\owl.theme.default.min.css" />
+    <Content Include="Template\css\theSamePart.css" />
+    <Content Include="Template\css\waves.min.css" />
+    <Content Include="Template\Dishes Images\bakal %281%29.JPG" />
+    <Content Include="Template\Dishes Images\bakal %2810%29.JPG" />
+    <Content Include="Template\Dishes Images\bakal %2811%29.JPG" />
+    <Content Include="Template\Dishes Images\bakal %2812%29.JPG" />
+    <Content Include="Template\Dishes Images\bakal %2813%29.JPG" />
+    <Content Include="Template\Dishes Images\bakal %2814%29.JPG" />
+    <Content Include="Template\Dishes Images\bakal %2815%29.JPG" />
+    <Content Include="Template\Dishes Images\bakal %2816%29.JPG" />
+    <Content Include="Template\Dishes Images\bakal %2817%29.JPG" />
+    <Content Include="Template\Dishes Images\bakal %2818%29.JPG" />
+    <Content Include="Template\Dishes Images\bakal %2819%29.JPG" />
+    <Content Include="Template\Dishes Images\bakal %282%29.JPG" />
+    <Content Include="Template\Dishes Images\bakal %2820%29.JPG" />
+    <Content Include="Template\Dishes Images\bakal %2821%29.JPG" />
+    <Content Include="Template\Dishes Images\bakal %2822%29.JPG" />
+    <Content Include="Template\Dishes Images\bakal %2823%29.JPG" />
+    <Content Include="Template\Dishes Images\bakal %2824%29.JPG" />
+    <Content Include="Template\Dishes Images\bakal %2825%29.JPG" />
+    <Content Include="Template\Dishes Images\bakal %2826%29.JPG" />
+    <Content Include="Template\Dishes Images\bakal %2827%29.JPG" />
+    <Content Include="Template\Dishes Images\bakal %2828%29.JPG" />
+    <Content Include="Template\Dishes Images\bakal %2829%29.JPG" />
+    <Content Include="Template\Dishes Images\bakal %283%29.JPG" />
+    <Content Include="Template\Dishes Images\bakal %2830%29.JPG" />
+    <Content Include="Template\Dishes Images\bakal %2831%29.JPG" />
+    <Content Include="Template\Dishes Images\bakal %2832%29.JPG" />
+    <Content Include="Template\Dishes Images\bakal %2833%29.JPG" />
+    <Content Include="Template\Dishes Images\bakal %2834%29.JPG" />
+    <Content Include="Template\Dishes Images\bakal %2835%29.JPG" />
+    <Content Include="Template\Dishes Images\bakal %2836%29.JPG" />
+    <Content Include="Template\Dishes Images\bakal %2837%29.JPG" />
+    <Content Include="Template\Dishes Images\bakal %2838%29.JPG" />
+    <Content Include="Template\Dishes Images\bakal %2839%29.JPG" />
+    <Content Include="Template\Dishes Images\bakal %284%29.JPG" />
+    <Content Include="Template\Dishes Images\bakal %2840%29.JPG" />
+    <Content Include="Template\Dishes Images\bakal %2841%29.JPG" />
+    <Content Include="Template\Dishes Images\bakal %2842%29.JPG" />
+    <Content Include="Template\Dishes Images\bakal %2843%29.JPG" />
+    <Content Include="Template\Dishes Images\bakal %2844%29.JPG" />
+    <Content Include="Template\Dishes Images\bakal %2845%29.JPG" />
+    <Content Include="Template\Dishes Images\bakal %2846%29.JPG" />
+    <Content Include="Template\Dishes Images\bakal %2847%29.JPG" />
+    <Content Include="Template\Dishes Images\bakal %2848%29.JPG" />
+    <Content Include="Template\Dishes Images\bakal %2849%29.JPG" />
+    <Content Include="Template\Dishes Images\bakal %285%29.JPG" />
+    <Content Include="Template\Dishes Images\bakal %2850%29.JPG" />
+    <Content Include="Template\Dishes Images\bakal %2851%29.JPG" />
+    <Content Include="Template\Dishes Images\bakal %2852%29.JPG" />
+    <Content Include="Template\Dishes Images\bakal %2853%29.JPG" />
+    <Content Include="Template\Dishes Images\bakal %2854%29.JPG" />
+    <Content Include="Template\Dishes Images\bakal %2855%29.JPG" />
+    <Content Include="Template\Dishes Images\bakal %286%29.JPG" />
+    <Content Include="Template\Dishes Images\bakal %2860%29.JPG" />
+    <Content Include="Template\Dishes Images\bakal %287%29.JPG" />
+    <Content Include="Template\Dishes Images\bakal %288%29.JPG" />
+    <Content Include="Template\Dishes Images\bakal %289%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %281%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2810%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2811%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2812%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2813%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2814%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2815%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2816%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2817%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2818%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2819%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %282%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2820%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2821%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2822%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2823%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2824%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2825%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2826%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2827%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2828%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2829%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %283%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2830%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2831%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2832%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2833%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2834%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2835%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2836%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2837%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2838%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2839%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %284%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2840%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2841%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2842%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2843%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2844%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2845%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2846%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2847%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2848%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2849%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %285%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2850%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2851%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2852%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2853%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2854%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2855%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2856%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2857%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2858%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2859%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %286%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2860%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2861%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2862%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2863%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2864%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2865%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2866%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2867%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2868%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2869%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %287%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2870%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2871%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2872%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2873%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2874%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2875%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2876%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2877%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2878%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2879%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %288%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2880%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2881%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2882%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2883%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2884%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %2885%29.JPG" />
+    <Content Include="Template\Dishes Images\Guldan %289%29.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6256.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6260.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6261.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6262.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6263.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6266.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6278.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6279.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6280.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6281.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6282.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6284.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6286.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6287.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6288.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6289.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6290.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6291.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6292.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6293.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6294.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6295.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6296.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6298.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6299.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6300.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6301.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6302.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6304.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6305.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6306.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6307.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6309.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6310.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6311.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6312.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6313.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6314.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6315.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6316.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6317.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6318.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6319.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6320.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6321.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6323.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6324.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6325.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6326.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6327.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6328.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6329.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6330.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6331.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6332.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6333.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6334.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6335.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6336.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6337.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6338.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6339.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6340.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6341.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6342.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6343.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6344.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6345.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6346.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6347.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6348.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6349.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6350.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6351.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6352.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6353.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6354.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6355.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6356.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6357.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6358.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6359.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6360.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6361.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6362.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6471.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6472.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6473.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6474.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6480.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6481.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6483.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6484.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6485.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6486.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6487.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6488.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6489.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6490.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6491.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6492.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6493.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6494.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6495.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6496.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6497.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6498.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6499.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6500.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6501.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6502.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6503.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6504.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6505.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6506.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6507.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6508.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6509.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6510.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6511.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6512.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6513.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6514.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6515.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6516.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6517.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6518.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6519.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6520.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6521.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6522.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6523.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6524.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6525.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6526.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6527.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6528.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6529.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6530.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6531.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6532.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6533.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6534.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6535.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6536.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6537.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6538.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6539.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6540.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6541.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6542.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6543.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6544.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6545.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6546.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6547.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6548.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6551.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6552.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6553.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6554.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6555.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6556.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6557.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6558.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6559.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6560.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6561.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6562.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6563.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6564.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6565.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6566.JPG" />
+    <Content Include="Template\Dishes Images\IMG_6567.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6223.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6224.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6292.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6293.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6294.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6295.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6296.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6298.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6299.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6300.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6301.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6302.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6304.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6305.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6306.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6307.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6309.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6310.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6311.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6312.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6313.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6314.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6315.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6316.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6317.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6318.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6319.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6320.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6321.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6323.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6324.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6325.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6326.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6327.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6328.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6329.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6330.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6331.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6332.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6333.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6334.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6335.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6336.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6337.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6338.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6345.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6346.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6347.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6348.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6349.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6350.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6351.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6352.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6353.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6354.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6355.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6356.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6357.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6358.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6359.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6360.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6361.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6362.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6363.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6364.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6365.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6366.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6367.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6368.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6369.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6370.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6371.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6372.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6373.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6374.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6375.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6376.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6377.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6378.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6379.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6380.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6381.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6384.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6385.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6386.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6387.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6388.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6389.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6390.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6392.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6393.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6394.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6395.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6396.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6397.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6398.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6399.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6400.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6401.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6402.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6403.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6404.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6405.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6408.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6409.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6410.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6413.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6414.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6415.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6416.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6417.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6418.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6419.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6420.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6421.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6422.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6423.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6424.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6425.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6426.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6427.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6435.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6436.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6437.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6439.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6440.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6441.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6443.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6444.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6449.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6450.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6451.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6453.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6454.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6455.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6456.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6457.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6458.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6459.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6460.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6461.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6462.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6463.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6464.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6465.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6467.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6468.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6469.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6470.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6471.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6472.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6473.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6474.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6475.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6476.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6477.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6490.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6491.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6492.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6493.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6494.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6495.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6496.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6497.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6498.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6499.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6543.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6544.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6559.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6560.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6561.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6562.JPG" />
+    <Content Include="Template\Dishes Images\IMG_E6563.JPG" />
+    <Content Include="Template\Dishes Images\Serviz Red %281%29.JPG" />
+    <Content Include="Template\Dishes Images\Serviz Red %282%29.JPG" />
+    <Content Include="Template\Dishes Images\Serviz Red %283%29.JPG" />
+    <Content Include="Template\Dishes Images\Serviz Red %284%29.JPG" />
+    <Content Include="Template\Dishes Images\Serviz Red %285%29.JPG" />
+    <Content Include="Template\Dishes Images\Serviz Red %286%29.JPG" />
+    <Content Include="Template\Dishes Images\Suvuner %2810%29.JPG" />
+    <Content Include="Template\Dishes Images\Suvuner %2811%29.JPG" />
+    <Content Include="Template\Dishes Images\Suvuner %2812%29.JPG" />
+    <Content Include="Template\Dishes Images\Suvuner %2813%29.JPG" />
+    <Content Include="Template\Dishes Images\Suvuner %2814%29.JPG" />
+    <Content Include="Template\Dishes Images\Suvuner %2815%29.JPG" />
+    <Content Include="Template\Dishes Images\Suvuner %2816%29.JPG" />
+    <Content Include="Template\Dishes Images\Suvuner %2817%29.JPG" />
+    <Content Include="Template\Dishes Images\Suvuner %2818%29.JPG" />
+    <Content Include="Template\Dishes Images\Suvuner %2819%29.JPG" />
+    <Content Include="Template\Dishes Images\Suvuner %282%29.JPG" />
+    <Content Include="Template\Dishes Images\Suvuner %2820%29.JPG" />
+    <Content Include="Template\Dishes Images\Suvuner %2821%29.JPG" />
+    <Content Include="Template\Dishes Images\Suvuner %2822%29.JPG" />
+    <Content Include="Template\Dishes Images\Suvuner %2823%29.JPG" />
+    <Content Include="Template\Dishes Images\Suvuner %2824%29.JPG" />
+    <Content Include="Template\Dishes Images\Suvuner %2825%29.JPG" />
+    <Content Include="Template\Dishes Images\Suvuner %2826%29.JPG" />
+    <Content Include="Template\Dishes Images\Suvuner %2827%29.JPG" />
+    <Content Include="Template\Dishes Images\Suvuner %2828%29.JPG" />
+    <Content Include="Template\Dishes Images\Suvuner %2829%29.JPG" />
+    <Content Include="Template\Dishes Images\Suvuner %283%29.JPG" />
+    <Content Include="Template\Dishes Images\Suvuner %2830%29.JPG" />
+    <Content Include="Template\Dishes Images\Suvuner %2831%29.JPG" />
+    <Content Include="Template\Dishes Images\Suvuner %2832%29.JPG" />
+    <Content Include="Template\Dishes Images\Suvuner %2833%29.JPG" />
+    <Content Include="Template\Dishes Images\Suvuner %2834%29.JPG" />
+    <Content Include="Template\Dishes Images\Suvuner %2835%29.JPG" />
+    <Content Include="Template\Dishes Images\Suvuner %2836%29.JPG" />
+    <Content Include="Template\Dishes Images\Suvuner %2837%29.JPG" />
+    <Content Include="Template\Dishes Images\Suvuner %2838%29.JPG" />
+    <Content Include="Template\Dishes Images\Suvuner %2839%29.JPG" />
+    <Content Include="Template\Dishes Images\Suvuner %284%29.JPG" />
+    <Content Include="Template\Dishes Images\Suvuner %2840%29.JPG" />
+    <Content Include="Template\Dishes Images\Suvuner %2841%29.JPG" />
+    <Content Include="Template\Dishes Images\Suvuner %2842%29.JPG" />
+    <Content Include="Template\Dishes Images\Suvuner %2843%29.JPG" />
+    <Content Include="Template\Dishes Images\Suvuner %2844%29.JPG" />
+    <Content Include="Template\Dishes Images\Suvuner %2845%29.JPG" />
+    <Content Include="Template\Dishes Images\Suvuner %285%29.JPG" />
+    <Content Include="Template\Dishes Images\Suvuner %286%29.JPG" />
+    <Content Include="Template\Dishes Images\Suvuner %287%29.JPG" />
+    <Content Include="Template\Dishes Images\Suvuner %288%29.JPG" />
+    <Content Include="Template\Dishes Images\Suvuner %289%29.JPG" />
+    <Content Include="Template\img\250x250.gif" />
+    <Content Include="Template\img\250X250.png" />
+    <Content Include="Template\img\250xx250.png" />
+    <Content Include="Template\img\c1.jpg" />
+    <Content Include="Template\img\c2.jpg" />
+    <Content Include="Template\img\commentUser.jfif" />
+    <Content Include="Template\img\Companies\1.jpg" />
+    <Content Include="Template\img\Companies\2.jpg" />
+    <Content Include="Template\img\Companies\3.jpg" />
+    <Content Include="Template\img\Companies\4.jpg" />
+    <Content Include="Template\img\Companies\5.jpg" />
+    <Content Include="Template\img\Flag\az-flag.jpg" />
+    <Content Include="Template\img\Flag\en-flag.jpg" />
+    <Content Include="Template\img\Flag\English Flag.png" />
+    <Content Include="Template\img\h.jpg" />
+    <Content Include="Template\img\logo.png" />
+    <Content Include="Template\img\logo1.png" />
+    <Content Include="Template\img\logo2.png" />
+    <Content Include="Template\img\m-carousel1.jpg" />
+    <Content Include="Template\img\m-carousel2.jpg" />
+    <Content Include="Template\img\m-carousel3.jpg" />
+    <Content Include="Template\img\m1.jpg" />
+    <Content Include="Template\img\m2.jpg" />
+    <Content Include="Template\img\mainCarousel\bakal %281%29.JPG" />
+    <Content Include="Template\img\mainCarousel\bakal %2812%29.JPG" />
+    <Content Include="Template\img\mainCarousel\bakal %2820%29.JPG" />
+    <Content Include="Template\img\mainCarousel\bakal %2837%29.JPG" />
+    <Content Include="Template\img\mainCarousel\bakal %284%29.JPG" />
+    <Content Include="Template\img\mainCarousel\bakal %287%29.JPG" />
+    <Content Include="Template\img\mainCarousel\IMG_6262.JPG" />
+    <Content Include="Template\img\newImg\bakal %281%29.JPG" />
+    <Content Include="Template\img\newImg\bakal %2810%29.JPG" />
+    <Content Include="Template\img\newImg\bakal %2811%29.JPG" />
+    <Content Include="Template\img\newImg\bakal %2812%29.JPG" />
+    <Content Include="Template\img\newImg\bakal %2813%29.JPG" />
+    <Content Include="Template\img\newImg\bakal %2816%29.JPG" />
+    <Content Include="Template\img\newImg\bakal %2817%29 - Copy.JPG" />
+    <Content Include="Template\img\newImg\bakal %2817%29.JPG" />
+    <Content Include="Template\img\newImg\bakal %2818%29 - Copy.JPG" />
+    <Content Include="Template\img\newImg\bakal %2818%29.JPG" />
+    <Content Include="Template\img\newImg\bakal %2819%29.JPG" />
+    <Content Include="Template\img\newImg\bakal %282%29.JPG" />
+    <Content Include="Template\img\newImg\bakal %2822%29.JPG" />
+    <Content Include="Template\img\newImg\bakal %2823%29.JPG" />
+    <Content Include="Template\img\newImg\bakal %2824%29 - Copy.JPG" />
+    <Content Include="Template\img\newImg\bakal %2824%29.JPG" />
+    <Content Include="Template\img\newImg\bakal %2825%29.JPG" />
+    <Content Include="Template\img\newImg\bakal %2826%29 - Copy.JPG" />
+    <Content Include="Template\img\newImg\bakal %2826%29.JPG" />
+    <Content Include="Template\img\newImg\bakal %2827%29.JPG" />
+    <Content Include="Template\img\newImg\bakal %2828%29.JPG" />
+    <Content Include="Template\img\newImg\bakal %2829%29.JPG" />
+    <Content Include="Template\img\newImg\bakal %283%29.JPG" />
+    <Content Include="Template\img\newImg\bakal %2830%29.JPG" />
+    <Content Include="Template\img\newImg\bakal %2831%29.JPG" />
+    <Content Include="Template\img\newImg\bakal %2832%29.JPG" />
+    <Content Include="Template\img\newImg\bakal %2833%29.JPG" />
+    <Content Include="Template\img\newImg\bakal %2834%29.JPG" />
+    <Content Include="Template\img\newImg\bakal %2835%29.JPG" />
+    <Content Include="Template\img\newImg\bakal %284%29.JPG" />
+    <Content Include="Template\img\newImg\bakal %2840%29.JPG" />
+    <Content Include="Template\img\newImg\bakal %2841%29.JPG" />
+    <Content Include="Template\img\newImg\bakal %2842%29.JPG" />
+    <Content Include="Template\img\newImg\bakal %2843%29.JPG" />
+    <Content Include="Template\img\newImg\bakal %2844%29.JPG" />
+    <Content Include="Template\img\newImg\bakal %2845%29.JPG" />
+    <Content Include="Template\img\newImg\bakal %2846%29.JPG" />
+    <Content Include="Template\img\newImg\bakal %2848%29.JPG" />
+    <Content Include="Template\img\newImg\bakal %285%29.JPG" />
+    <Content Include="Template\img\newImg\bakal %2850%29.JPG" />
+    <Content Include="Template\img\newImg\bakal %2851%29.JPG" />
+    <Content Include="Template\img\newImg\bakal %2855%29.JPG" />
+    <Content Include="Template\img\newImg\bakal %286%29.JPG" />
+    <Content Include="Template\img\newImg\bakal %287%29.JPG" />
+    <Content Include="Template\img\newImg\bakal %288%29.JPG" />
+    <Content Include="Template\img\newImg\Guldan %2810%29.JPG" />
+    <Content Include="Template\img\newImg\Guldan %2811%29.JPG" />
+    <Content Include="Template\img\newImg\Guldan %2812%29.JPG" />
+    <Content Include="Template\img\newImg\Guldan %2813%29.JPG" />
+    <Content Include="Template\img\newImg\Guldan %2814%29.JPG" />
+    <Content Include="Template\img\newImg\Guldan %2815%29.JPG" />
+    <Content Include="Template\img\newImg\Guldan %2816%29.JPG" />
+    <Content Include="Template\img\newImg\Guldan %2817%29.JPG" />
+    <Content Include="Template\img\newImg\Guldan %2819%29.JPG" />
+    <Content Include="Template\img\newImg\Guldan %2820%29.JPG" />
+    <Content Include="Template\img\newImg\Guldan %2821%29.JPG" />
+    <Content Include="Template\img\newImg\Guldan %2825%29.JPG" />
+    <Content Include="Template\img\newImg\Guldan %2832%29.JPG" />
+    <Content Include="Template\img\newImg\Guldan %2833%29.JPG" />
+    <Content Include="Template\img\newImg\Guldan %2834%29.JPG" />
+    <Content Include="Template\img\newImg\Guldan %2835%29.JPG" />
+    <Content Include="Template\img\newImg\Guldan %2836%29.JPG" />
+    <Content Include="Template\img\newImg\Guldan %2837%29.JPG" />
+    <Content Include="Template\img\newImg\Guldan %2839%29.JPG" />
+    <Content Include="Template\img\newImg\Guldan %2840%29.JPG" />
+    <Content Include="Template\img\newImg\Guldan %2846%29.JPG" />
+    <Content Include="Template\img\newImg\Guldan %2851%29.JPG" />
+    <Content Include="Template\img\newImg\Guldan %2852%29.JPG" />
+    <Content Include="Template\img\newImg\Guldan %2857%29.JPG" />
+    <Content Include="Template\img\newImg\Guldan %2858%29.JPG" />
+    <Content Include="Template\img\newImg\Guldan %2859%29.JPG" />
+    <Content Include="Template\img\newImg\Guldan %2860%29.JPG" />
+    <Content Include="Template\img\newImg\Guldan %287%29.JPG" />
+    <Content Include="Template\img\newImg\Guldan %2873%29.JPG" />
+    <Content Include="Template\img\newImg\Guldan %288%29.JPG" />
+    <Content Include="Template\img\newImg\Guldan %289%29.JPG" />
+    <Content Include="Template\img\newImg\IMG_6260.JPG" />
+    <Content Include="Template\img\newImg\IMG_6261.JPG" />
+    <Content Include="Template\img\newImg\IMG_6262.JPG" />
+    <Content Include="Template\img\newImg\IMG_6263.JPG" />
+    <Content Include="Template\img\newImg\IMG_6266.JPG" />
+    <Content Include="Template\img\newImg\IMG_6278.JPG" />
+    <Content Include="Template\img\newImg\IMG_6279.JPG" />
+    <Content Include="Template\img\newImg\IMG_6280.JPG" />
+    <Content Include="Template\img\newImg\IMG_6281.JPG" />
+    <Content Include="Template\img\newImg\IMG_6282.JPG" />
+    <Content Include="Template\img\newImg\IMG_6284.JPG" />
+    <Content Include="Template\img\newImg\IMG_6286.JPG" />
+    <Content Include="Template\img\newImg\IMG_6287.JPG" />
+    <Content Include="Template\img\newImg\IMG_6288.JPG" />
+    <Content Include="Template\img\newImg\IMG_6289.JPG" />
+    <Content Include="Template\img\newImg\IMG_6290.JPG" />
+    <Content Include="Template\img\newImg\IMG_6292.JPG" />
+    <Content Include="Template\img\newImg\IMG_6293.JPG" />
+    <Content Include="Template\img\newImg\IMG_6294.JPG" />
+    <Content Include="Template\img\newImg\IMG_6295.JPG" />
+    <Content Include="Template\img\newImg\IMG_6296.JPG" />
+    <Content Include="Template\img\newImg\IMG_6298.JPG" />
+    <Content Include="Template\img\newImg\IMG_6299.JPG" />
+    <Content Include="Template\img\newImg\IMG_6300.JPG" />
+    <Content Include="Template\img\newImg\IMG_6301.JPG" />
+    <Content Include="Template\img\newImg\IMG_6302.JPG" />
+    <Content Include="Template\img\newImg\IMG_6312.JPG" />
+    <Content Include="Template\img\newImg\IMG_6313.JPG" />
+    <Content Include="Template\img\newImg\IMG_6314.JPG" />
+    <Content Include="Template\img\newImg\IMG_6315.JPG" />
+    <Content Include="Template\img\newImg\IMG_6316.JPG" />
+    <Content Include="Template\img\newImg\IMG_6317.JPG" />
+    <Content Include="Template\img\newImg\IMG_6318.JPG" />
+    <Content Include="Template\img\newImg\IMG_6319.JPG" />
+    <Content Include="Template\img\newImg\IMG_6320.JPG" />
+    <Content Include="Template\img\newImg\IMG_6321.JPG" />
+    <Content Include="Template\img\newImg\IMG_6323.JPG" />
+    <Content Include="Template\img\newImg\IMG_6324.JPG" />
+    <Content Include="Template\img\newImg\IMG_6325.JPG" />
+    <Content Include="Template\img\newImg\IMG_6326.JPG" />
+    <Content Include="Template\img\newImg\IMG_6327.JPG" />
+    <Content Include="Template\img\newImg\IMG_6328.JPG" />
+    <Content Include="Template\img\newImg\IMG_6329.JPG" />
+    <Content Include="Template\img\newImg\IMG_6330.JPG" />
+    <Content Include="Template\img\newImg\IMG_6331.JPG" />
+    <Content Include="Template\img\newImg\IMG_6332.JPG" />
+    <Content Include="Template\img\newImg\IMG_6333.JPG" />
+    <Content Include="Template\img\newImg\IMG_6334.JPG" />
+    <Content Include="Template\img\newImg\IMG_6335.JPG" />
+    <Content Include="Template\img\newImg\IMG_6336.JPG" />
+    <Content Include="Template\img\newImg\IMG_6337.JPG" />
+    <Content Include="Template\img\newImg\IMG_6338.JPG" />
+    <Content Include="Template\img\newImg\IMG_6339.JPG" />
+    <Content Include="Template\img\newImg\IMG_6340.JPG" />
+    <Content Include="Template\img\newImg\IMG_6341.JPG" />
+    <Content Include="Template\img\newImg\IMG_6345.JPG" />
+    <Content Include="Template\img\newImg\IMG_6346.JPG" />
+    <Content Include="Template\img\newImg\IMG_6347.JPG" />
+    <Content Include="Template\img\newImg\IMG_6348.JPG" />
+    <Content Include="Template\img\newImg\IMG_6354.JPG" />
+    <Content Include="Template\img\newImg\IMG_6355.JPG" />
+    <Content Include="Template\img\newImg\IMG_6356.JPG" />
+    <Content Include="Template\img\newImg\IMG_6357.JPG" />
+    <Content Include="Template\img\newImg\IMG_6358.JPG" />
+    <Content Include="Template\img\newImg\IMG_6359.JPG" />
+    <Content Include="Template\img\newImg\IMG_6361.JPG" />
+    <Content Include="Template\img\newImg\IMG_6362.JPG" />
+    <Content Include="Template\img\newImg\IMG_6480.JPG" />
+    <Content Include="Template\img\newImg\IMG_6481.JPG" />
+    <Content Include="Template\img\newImg\IMG_6483.JPG" />
+    <Content Include="Template\img\newImg\IMG_6484.JPG" />
+    <Content Include="Template\img\newImg\IMG_6485.JPG" />
+    <Content Include="Template\img\newImg\IMG_6486.JPG" />
+    <Content Include="Template\img\newImg\IMG_6490.JPG" />
+    <Content Include="Template\img\newImg\IMG_6491.JPG" />
+    <Content Include="Template\img\newImg\IMG_6492.JPG" />
+    <Content Include="Template\img\newImg\IMG_6493.JPG" />
+    <Content Include="Template\img\newImg\IMG_6494.JPG" />
+    <Content Include="Template\img\newImg\IMG_6495.JPG" />
+    <Content Include="Template\img\newImg\IMG_6496.JPG" />
+    <Content Include="Template\img\newImg\IMG_6497.JPG" />
+    <Content Include="Template\img\newImg\IMG_6498.JPG" />
+    <Content Include="Template\img\newImg\IMG_6499.JPG" />
+    <Content Include="Template\img\newImg\IMG_6500.JPG" />
+    <Content Include="Template\img\newImg\IMG_6501.JPG" />
+    <Content Include="Template\img\newImg\IMG_6502.JPG" />
+    <Content Include="Template\img\newImg\IMG_6503.JPG" />
+    <Content Include="Template\img\newImg\IMG_6541.JPG" />
+    <Content Include="Template\img\newImg\IMG_6542.JPG" />
+    <Content Include="Template\img\newImg\IMG_6545.JPG" />
+    <Content Include="Template\img\newImg\IMG_6546.JPG" />
+    <Content Include="Template\img\newImg\IMG_6547.JPG" />
+    <Content Include="Template\img\newImg\IMG_6548.JPG" />
+    <Content Include="Template\img\newImg\IMG_6551.JPG" />
+    <Content Include="Template\img\newImg\IMG_6559.JPG" />
+    <Content Include="Template\img\newImg\IMG_6560.JPG" />
+    <Content Include="Template\img\newImg\IMG_6561.JPG" />
+    <Content Include="Template\img\newImg\IMG_6562.JPG" />
+    <Content Include="Template\img\newImg\IMG_E6327.JPG" />
+    <Content Include="Template\img\newImg\IMG_E6333.JPG" />
+    <Content Include="Template\img\newImg\IMG_E6359.JPG" />
+    <Content Include="Template\img\newImg\IMG_E6361.JPG" />
+    <Content Include="Template\img\newImg\IMG_E6362.JPG" />
+    <Content Include="Template\img\newImg\IMG_E6387.JPG" />
+    <Content Include="Template\img\newImg\IMG_E6388.JPG" />
+    <Content Include="Template\img\newImg\IMG_E6389.JPG" />
+    <Content Include="Template\img\newImg\IMG_E6402.JPG" />
+    <Content Include="Template\img\newImg\IMG_E6403.JPG" />
+    <Content Include="Template\img\newImg\IMG_E6404.JPG" />
+    <Content Include="Template\img\newImg\IMG_E6405.JPG" />
+    <Content Include="Template\img\newImg\Serviz Red %281%29.JPG" />
+    <Content Include="Template\img\newImg\Serviz Red %282%29.JPG" />
+    <Content Include="Template\img\newImg\Serviz Red %283%29.JPG" />
+    <Content Include="Template\img\newImg\Serviz Red %284%29.JPG" />
+    <Content Include="Template\img\newImg\Serviz Red %285%29.JPG" />
+    <Content Include="Template\img\newImg\Serviz Red %286%29.JPG" />
+    <Content Include="Template\img\newImg\Suvuner %2822%29.JPG" />
+    <Content Include="Template\img\newImg\Suvuner %2824%29.JPG" />
+    <Content Include="Template\img\newImg\Suvuner %2825%29.JPG" />
+    <Content Include="Template\img\newImg\Suvuner %2826%29.JPG" />
+    <Content Include="Template\img\newImg\Suvuner %2833%29.JPG" />
+    <Content Include="Template\img\newImg\Suvuner %2834%29.JPG" />
+    <Content Include="Template\img\newImg\Suvuner %2839%29.JPG" />
+    <Content Include="Template\img\newImg\Suvuner %2841%29.JPG" />
+    <Content Include="Template\img\single.jpg" />
+    <Content Include="Template\img\svgIcon\cart-plus-solid.svg" />
+    <Content Include="Template\img\svgIcon\file.jpeg" />
+    <Content Include="Template\img\svgIcon\WhatsApp Image 2019-06-13 at 23.37.40.jpeg" />
+    <Content Include="Template\img\user.jpg" />
+    <Content Include="Template\img\userpng.png" />
+    <Content Include="Template\index.html" />
+    <Content Include="Template\infoPart-my-Account.html" />
+    <Content Include="Template\itemPage.html" />
+    <Content Include="Template\js\add-adress-js.js" />
+    <Content Include="Template\js\Ajax.js" />
+    <Content Include="Template\js\bootstrap-datepicker.js" />
+    <Content Include="Template\js\compare-js.js" />
+    <Content Include="Template\js\contact-js.js" />
+    <Content Include="Template\js\index.js" />
+    <Content Include="Template\js\info-myAccount-js.js" />
+    <Content Include="Template\js\item-js.js" />
+    <Content Include="Template\js\jquery.elevateZoom-3.0.8.min.js" />
+    <Content Include="Template\js\jquery.elevatezoom.js" />
+    <Content Include="Template\js\Login-js.js" />
+    <Content Include="Template\js\my-wishlist-js.js" />
+    <Content Include="Template\js\myAccount-js.js" />
+    <Content Include="Template\js\order-history-js.js" />
+    <Content Include="Template\js\owl.carousel.js" />
+    <Content Include="Template\js\owl.carousel.min.js" />
+    <Content Include="Template\js\products-js.js" />
+    <Content Include="Template\js\register-js.js" />
+    <Content Include="Template\js\shopping-adress-js.js" />
+    <Content Include="Template\js\theSameScripts.js" />
+    <Content Include="Template\js\viewCard-js.js" />
+    <Content Include="Template\js\waves.min.js" />
+    <Content Include="Template\LoginPart.html" />
+    <Content Include="Template\my-wishlist.html" />
+    <Content Include="Template\myAccount.html" />
+    <Content Include="Template\orderHistory.html" />
+    <Content Include="Template\productsPage.html" />
+    <Content Include="Template\RegisterPart.html" />
+    <Content Include="Template\shopping-adress.html" />
+    <Content Include="Template\ViewCard.html" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppCode\Content\SessionKey.cs" />
+    <Compile Include="AppCode\Extention\calculatorRating.cs" />
+    <Compile Include="AppCode\Extention\MailExtention.cs" />
+    <Compile Include="AppCode\Extention\UrlExtention.cs" />
+    <Compile Include="AppCode\Filters\shoppingExceptionFilterAttribute.cs" />
+    <Compile Include="AppCode\Filters\shoppingFilterAttribute.cs" />
+    <Compile Include="AppCode\Filters\shoppingFilterAttributeForUser.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CategoryColorCompanyController.cs" />
+    <Compile Include="Controllers\additionalActionsController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ContactUSController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LikeAndCommentController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907280751228_step6.cs" />
+    <Compile Include="Migrations\201907280751228_step6.Designer.cs">
+      <DependentUpon>201907280751228_step6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908011853133_step1.cs" />
+    <Compile Include="Migrations\201908011853133_step1.Designer.cs">
+      <DependentUpon>201908011853133_step1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908011853493_step2.cs" />
+    <Compile Include="Migrations\201908011853493_step2.Designer.cs">
+      <DependentUpon>201908011853493_step2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908011859021_step.cs" />
+    <Compile Include="Migrations\201908011859021_step.Designer.cs">
+      <DependentUpon>201908011859021_step.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908011904508_step78.cs" />
+    <Compile Include="Migrations\201908011904508_step78.Designer.cs">
+      <DependentUpon>201908011904508_step78.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908011911112_step79.cs" />
+    <Compile Include="Migrations\201908011911112_step79.Designer.cs">
+      <DependentUpon>201908011911112_step79.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908011912415_step80.cs" />
+    <Compile Include="Migrations\201908011912415_step80.Designer.cs">
+      <DependentUpon>201908011912415_step80.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Entity\addAdressToAccount.cs" />
+    <Compile Include="Models\Entity\additionalInformation.cs" />
+    <Compile Include="Models\Entity\answerComment.cs" />
+    <Compile Include="Models\Entity\BaseEntity.cs" />
+    <Compile Include="Models\Entity\Category.cs" />
+    <Compile Include="Models\Entity\CategoryAndProduct.cs" />
+    <Compile Include="Models\Entity\Rating.cs" />
+    <Compile Include="Models\Entity\Color.cs" />
+    <Compile Include="Models\Entity\Comment.cs" />
+    <Compile Include="Models\Entity\Compare.cs" />
+    <Compile Include="Models\Entity\ContactUS.cs" />
+    <Compile Include="Models\Entity\Countries.cs" />
+    <Compile Include="Models\Entity\ErrorHistory.cs" />
+    <Compile Include="Models\Entity\Gender.cs" />
+    <Compile Include="Models\Entity\imageProduct.cs" />
+    <Compile Include="Models\Entity\Like.cs" />
+    <Compile Include="Models\Entity\mainCarousel.cs" />
+    <Compile Include="Models\Entity\Manager.cs" />
+    <Compile Include="Models\Entity\ManagerStatus.cs" />
+    <Compile Include="Models\Entity\OrderHistory.cs" />
+    <Compile Include="Models\Entity\ProducerCompany.cs" />
+    <Compile Include="Models\Entity\Product.cs" />
+    <Compile Include="Models\Entity\saveProduct.cs" />
+    <Compile Include="Models\Entity\shopList.cs" />
+    <Compile Include="Models\Entity\shoppingAdresses.cs" />
+    <Compile Include="Models\Entity\Size.cs" />
+    <Compile Include="Models\Entity\SubCategory.cs" />
+    <Compile Include="Models\Entity\Subscribe.cs" />
+    <Compile Include="Models\Entity\User.cs" />
+    <Compile Include="Models\Entity\wishListProductAndUser.cs" />
+    <Compile Include="Models\ShoppingDbContext.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Shared\Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\ContactUS\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\CreateNewItem.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\CategorySelectInCreateItem.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\ProducerInCreateItem.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\ColorInCreateItem.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\newAddProduct.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\newAddProductForEach.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\addAdminPage.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\statusInCreateAdmin.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\employeeList.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\employeeListForeach.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\lookAtAllİmages.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\usersList.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\usersListForeach.cshtml" />
+    <Content Include="Areas\Admin\Views\ContactUS\listofmessage.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\messageIcon.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\notificationIcon.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\messageIconAndnotificationIcon.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\LoginPartForAdmin.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\accountPart.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\changePasswordAdmin.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\mainCarousel.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\MultiCategorySelectInCreateItem.cshtml" />
+    <Content Include="Views\Category\intoAllCategories.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\sharedItemss.cshtml" />
+    <Content Include="Areas\Admin\Views\CategoryColorCompany\deletePage.cshtml" />
+    <Content Include="Areas\Admin\Views\CategoryColorCompany\refleshPage.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\forgetPasswordPage.cshtml" />
+    <Content Include="NLog.config" />
+    <Content Include="Areas\Admin\Views\Shared\_SieBarAdmin.cshtml" />
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <Content Include="Template\css\theSamePart.css.map" />
+    <Content Include="Template\css\theSamePart.scss" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\_mainCarousel.cshtml" />
+    <Content Include="Views\Home\_newProductTabContent.cshtml" />
+    <Content Include="Views\Home\_productsTabsLeft.cshtml" />
+    <Content Include="Views\Home\_cardRightPart.cshtml" />
+    <Content Include="Views\Home\_twoNewProduct.cshtml" />
+    <Content Include="Views\Home\_threeNewProduct.cshtml" />
+    <Content Include="Views\Home\_otherPart.cshtml" />
+    <Content Include="Views\Home\_discountProduct.cshtml" />
+    <Content Include="Views\Home\contactUs.cshtml" />
+    <Content Include="Views\Home\addAdressToAccount.cshtml" />
+    <Content Include="Views\Home\myAccount.cshtml" />
+    <Content Include="Views\Home\infoPartMyAccount.cshtml" />
+    <Content Include="Views\Home\itemPage.cshtml" />
+    <Content Include="Views\Shared\_PartialViews\_itemAndProductsPageCategory.cshtml" />
+    <Content Include="Views\Home\productsPage.cshtml" />
+    <Content Include="Views\Home\shoppingAdress.cshtml" />
+    <Content Include="Views\Home\registerPart.cshtml" />
+    <Content Include="Views\Home\logIn.cshtml" />
+    <Content Include="Views\Home\itemPicturesOwlCarouseInItemPage.cshtml" />
+    <Content Include="Views\Home\IntoproductsPage.cshtml" />
+    <Content Include="Views\Home\relatedItemsCarousel.cshtml" />
+    <Content Include="Views\Home\activeUserIcon.cshtml" />
+    <Content Include="Views\Home\forgetPasswordPage.cshtml" />
+    <Content Include="Views\Home\lastProducts.cshtml" />
+    <Content Include="Views\Shared\_PartialViews\_newProductTabs.cshtml" />
+    <Content Include="Views\Shared\_PartialViews\_lastProducts.cshtml" />
+    <Content Include="Views\Shared\_PartialViews\_discountProductTab.cshtml" />
+    <Content Include="Views\Home\countryListInAddAdress.cshtml" />
+    <Content Include="Views\Search\searchInCategoryInTop.cshtml" />
+    <Content Include="Views\Search\sortingAccordion.cshtml" />
+    <Content Include="Views\Shared\_PartialViews\intoProductPageForCategory.cshtml" />
+    <Content Include="Views\Category\intoSideBar.cshtml" />
+    <Content Include="Views\LikeAndComment\CommentPage.cshtml" />
+    <Content Include="Views\Shared\_PartialViews\_searchPartial.cshtml" />
+    <Content Include="Views\additionalActions\comparePart.cshtml" />
+    <Content Include="Views\Shared\_PartialViews\_compareList.cshtml" />
+    <Content Include="Views\View.cshtml" />
+    <Content Include="Views\Home\ErrorPage.cshtml" />
+    <Content Include="Views\Shared\_PartialViews\_leftPartProductClick.cshtml" />
+    <Content Include="Views\Shared\_PartialViews\_shopList.cshtml" />
+    <Content Include="Views\additionalActions\myWishList.cshtml" />
+    <Content Include="Views\Shared\_PartialViews\_wishListForeach.cshtml" />
+    <Content Include="Views\additionalActions\viewCard.cshtml" />
+    <Content Include="Views\Shared\_PartialViews\_bokalSubCategory.cshtml" />
+    <Content Include="Views\Shared\_PartialViews\_ServizSubCategory.cshtml" />
+    <Content Include="Views\Shared\_PartialViews\_qashiqSubCategory.cshtml" />
+    <Content Include="Views\additionalActions\shopIcon.cshtml" />
+    <Content Include="Views\Shared\_PartialViews\_mainCarouselPictures.cshtml" />
+    <Content Include="Views\Home\orderHistory.cshtml" />
+    <Content Include="Views\additionalActions\openAdressPart.cshtml" />
+    <Content Include="Views\additionalActions\chosenAdress.cshtml" />
+    <Content Include="Views\Shared\_PartialViews\_shopListForIcon.cshtml" />
+    <Content Include="Views\additionalActions\shopIconInNavbar.cshtml" />
+    <Content Include="Views\Shared\_PartialViews\_intoProductPageForCategory.cshtml" />
+    <Content Include="Views\Category\allCategoriesInNavBar.cshtml" />
+    <Content Include="Views\Category\allCategoriesItemPage.cshtml" />
+    <Content Include="Views\Shared\_PartialViews\_intoShopIcon.cshtml" />
+    <Content Include="Views\Shared\_PartialViews\_singleProductToShopList.cshtml" />
+    <Content Include="Views\Home\pagePagination.cshtml" />
+    <Content Include="Views\Shared\_PartialViews\_shopListForNavIcon.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="ContactFiles\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201907280751228_step6.resx">
+      <DependentUpon>201907280751228_step6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908011853133_step1.resx">
+      <DependentUpon>201908011853133_step1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908011853493_step2.resx">
+      <DependentUpon>201908011853493_step2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908011859021_step.resx">
+      <DependentUpon>201908011859021_step.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908011904508_step78.resx">
+      <DependentUpon>201908011904508_step78.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908011911112_step79.resx">
+      <DependentUpon>201908011911112_step79.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908011912415_step80.resx">
+      <DependentUpon>201908011912415_step80.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58744</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44354/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

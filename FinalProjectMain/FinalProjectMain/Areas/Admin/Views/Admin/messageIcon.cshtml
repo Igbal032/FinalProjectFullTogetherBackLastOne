@@ -1,0 +1,46 @@
+﻿@using FinalProjectMain.Models.Entity
+@model IEnumerable<ContactUS>
+@{
+
+    Layout = null;
+
+}
+
+@if (Model != null)
+{
+    var messageCount = 0;
+    foreach (var item in Model)
+    {
+        messageCount++;
+    }
+    <div class="noti__item js-item-menu">
+        <i class="zmdi zmdi-comment-more"></i>
+        <span class="quantity">@messageCount</span>
+        <div class="mess-dropdown js-dropdown">
+            <div class="mess__title">
+                <p>Sizin @messageCount yeni mesajınız var</p>
+            </div>
+            @foreach (var message in Model)
+            {
+                <div class="mess__item">
+                    <input type="hidden" id="hiddenInputForMessageIcon" value="@message.Id" />
+                    <div class="image img-cir img-40">
+                        <img src="~/Areas/Admin/Template/images/user.png" alt="Michelle Moreno" />
+                    </div>
+                    <div class="content">
+                        <h6>@message.Email</h6>
+                        <p>@message.Message</p>
+                        <span class="time">@(DateTime.Now - message.CreatedDate)</span>
+                    </div>
+                </div>
+            }
+            <div class="mess__footer">
+                <a href="@Url.Action("Index","ContactUS")">View all messages</a>
+            </div>
+        </div>
+    </div>
+}
+@if (Model==null)
+{
+
+}

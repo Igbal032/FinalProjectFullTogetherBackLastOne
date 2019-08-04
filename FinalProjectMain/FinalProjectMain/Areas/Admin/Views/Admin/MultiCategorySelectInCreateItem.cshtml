@@ -1,0 +1,9 @@
+﻿@using FinalProjectMain.Models.Entity
+@model IEnumerable<SubCategory>
+
+@foreach (var item in Model)
+{
+    <option value="@item.Id">@item.SubCategoryName</option>
+}
+
+

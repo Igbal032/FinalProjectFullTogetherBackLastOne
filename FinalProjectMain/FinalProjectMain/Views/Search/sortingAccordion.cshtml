@@ -1,0 +1,138 @@
+﻿@using FinalProjectMain.Models.Entity
+@{ 
+    Layout = null;
+    var db = new FinalProjectMain.Models.ShoppingDbContext();
+    var colors = db.Color.Where(w => w.DeletedDate == null).OrderBy(w=>w.ColorName).ToList();
+}
+
+    <div id="accordion">
+        <div class="card">
+            <div class="card-header text-center bg-danger" id="headingTwo">
+                <h5 class="mb-0">
+                    <button class="btn btn-link text-decoration-none text-white font-weight-bold"
+                            data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
+                            aria-controls="collapseOne">
+                        QİYMƏT
+                    </button>
+                </h5>
+            </div>
+
+            <div id="collapseTwo" class="collapse show" aria-labelledby="headingOne"
+                 data-parent="#accordion">
+                <div class="card-body">
+                    <!-- body-part -->
+                    <div class="pretty p-default p-round p-thick">
+                        <input type="radio" name="price" value="1" class="bg-0">
+                        <div class="state p-danger-o">
+                            <label> <span>0 - 100 AZN</span> <br></label>
+                        </div>
+                    </div>
+                    <div class="pretty p-default p-round p-thick">
+                        <input type="radio" name="price" value="2" class="bg-0">
+                        <div class="state p-danger-o">
+                            <label> <span>100 - 200 AZN</span> <br></label>
+                        </div>
+                    </div>
+                    <div class="pretty p-default p-round p-thick">
+                        <input type="radio" name="price" value="3" class="bg-0">
+                        <div class="state p-danger-o">
+                            <label> <span>200 - 300 AZN</span> <br></label>
+                        </div>
+                    </div>
+                    <div class="pretty p-default p-round p-thick">
+                        <input type="radio" name="price" value="4" class="bg-0">
+                        <div class="state p-danger-o">
+                            <label> <span>300 - 400 AZN</span> <br></label>
+                        </div>
+                    </div>
+                    <div class="pretty p-default p-round p-thick">
+                        <input type="radio" name="price" value="5" class="bg-0">
+                        <div class="state p-danger-o">
+                            <label> <span>400 - 500 AZN</span> <br></label>
+                        </div>
+                    </div>
+                    <div class="pretty p-default p-round p-thick">
+                        <input type="radio" name="price" value="6" class="bg-0">
+                        <div class="state p-danger-o">
+                            <label> <span>500 - 600 AZN</span> <br></label>
+                        </div>
+                    </div>
+                    <div class="pretty p-default p-round p-thick">
+                        <input type="radio" name="price" value="7" class="bg-0">
+                        <div class="state p-danger-o">
+                            <label> <span>600-700 AZN</span> <br></label>
+                        </div>
+                    </div>
+                    <div class="pretty p-default p-round p-thick">
+                        <input type="radio" name="price" value="8" class="bg-0">
+                        <div class="state p-danger-o">
+                            <label> <span>700 - 800 AZN</span> <br></label>
+                        </div>
+                    </div>
+                    <div class="pretty p-default p-round p-thick">
+                        <input type="radio" name="price" value="9" class="bg-0">
+                        <div class="state p-danger-o">
+                            <label> <span>800 - 900 AZN</span> <br></label>
+                        </div>
+                    </div>
+                    <div class="pretty p-default p-round p-thick">
+                        <input type="radio" name="price" value="10" class="bg-0">
+                        <div class="state p-danger-o">
+                            <label> <span>900 - 1000 AZN</span> <br></label>
+                        </div>
+                    </div>
+                    <div class="pretty p-default p-round p-thick">
+                        <input type="radio" name="price" value="11" class="bg-0">
+                        <div class="state p-danger-o">
+                            <label> <span>1000 - 2000 AZN</span> <br></label>
+                        </div>
+                    </div>
+                    <div class="pretty p-default p-round p-thick">
+                        <input type="radio" name="price" value="12" class="bg-0">
+                        <div class="state p-danger-o">
+                            <label> <span>2000 + AZN</span> <br></label>
+                        </div>
+                    </div>
+                    <div class="pretty p-default p-round p-thick">
+                        <input type="radio" name="price" value="13" class="bg-0">
+                        <div class="state p-danger-o">
+                            <label> <span>Hamsı</span> <br></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header text-center bg-danger" id="headingTwo">
+                <h5 class="mb-0">
+                    <button class="btn btn-link text-decoration-none text-white font-weight-bold"
+                            data-toggle="collapse" data-target="#collapseThree" aria-expanded="true"
+                            aria-controls="collapseOne">
+                        RƏNG
+                    </button>
+                </h5>
+            </div>
+
+            <div id="collapseThree" class="collapse show" aria-labelledby="headingOne"
+                 data-parent="#accordion">
+                <div class="card-body">
+                    @foreach (var item in colors)
+                    {
+                        <div class="pretty p-default p-round p-thick">
+                            <input type="radio" value="@item.Id" name="color" class="bg-0">
+                            <div class="state p-danger-o">
+                                <label> <span>@item.ColorName</span> <br></label>
+                            </div>
+                        </div><br>
+                    }
+                    <div class="pretty p-default p-round p-thick">
+                        <input type="radio" value="0" name="color" class="bg-0">
+                        <div class="state p-danger-o">
+                            <label> <span>Hamsı</span> <br></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

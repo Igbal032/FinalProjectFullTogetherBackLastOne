@@ -1,0 +1,15 @@
+2019-07-28 02:20:48.4478 FATAL    -Object reference not set to an instance of an object. 
+2019-07-28 02:23:17.6243 FATAL    -The model item passed into the dictionary is of type 'FinalProjectMain.Models.Entity.mainCarousel', but this dictionary requires a model item of type 'System.Collections.Generic.IEnumerable`1[FinalProjectMain.Models.Entity.mainCarousel]'. 
+2019-07-28 02:33:03.3156 FATAL    - 
+2019-07-28 02:33:16.0917 FATAL    - 
+2019-07-28 02:33:29.8373 FATAL    - 
+2019-07-28 03:32:33.7846 FATAL    -LINQ to Entities does not recognize the method 'System.Object get_Item(System.String)' method, and this method cannot be translated into a store expression. 
+2019-07-28 04:48:33.5429 FATAL    -Unable to create a null constant value of type 'System.Object'. Only entity types, enumeration types or primitive types are supported in this context. 
+2019-07-28 12:29:23.9883 FATAL    - 
+2019-07-28 12:29:24.5338 FATAL    - 
+2019-07-28 12:29:28.2219 FATAL    - 
+2019-07-28 13:07:38.6628 FATAL    -Non-static method requires a target. 
+2019-07-28 13:31:34.5387 FATAL    -Unable to create a null constant value of type 'System.Object'. Only entity types, enumeration types or primitive types are supported in this context. 
+2019-07-28 19:34:06.9966 FATAL    -Object reference not set to an instance of an object. 
+2019-07-28 19:34:28.4578 FATAL    -Object reference not set to an instance of an object. 
+2019-07-28 19:36:42.5139 FATAL    -Object reference not set to an instance of an object. 

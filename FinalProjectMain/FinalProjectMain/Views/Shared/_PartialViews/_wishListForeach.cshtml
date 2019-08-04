@@ -1,0 +1,25 @@
+﻿@{
+    Layout = null;
+}
+@model IEnumerable<FinalProjectMain.Models.Entity.wishListProductAndUser>
+
+@foreach (var item in Model)
+{
+    <div class="row mt-3 ml-3">
+        <div class="col-md-12 col-xl-3 col-lg-3 col-xs-12">
+            <img class="w-100" src="~/Template/img/newImg/@item.Products.imgPath" alt="" />
+        </div>
+        <div class="col-md-12 col-xl-7 col-lg-7 col-xs-12">
+            <form action="@Url.Action("itemPage","Home")" method="get">
+                <input type="hidden" name="Id" value="@item.Id" />
+                <button type="submit" class="text-decoration-none btn btn-transparent"><span class="text-danger font-weight-bold">@item.Products.Name</span></button>
+            </form>
+            <p>@item.Products.About</p>
+            <h3>@item.Products.Price AZN</h3>
+        </div>
+        <div class="col-md-12 col-xs-12 col-xl-2 col-lg-2">
+            <a href="#" onclick="deleteWishList(@item.Id)" class="btn btn-sm btn-danger w-50">Sil</a>
+        </div>
+    </div>
+}
+

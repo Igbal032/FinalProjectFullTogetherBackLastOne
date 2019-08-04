@@ -1,0 +1,47 @@
+﻿
+@using FinalProjectMain.Models.Entity
+@model IEnumerable<Product>
+@{
+    Layout = null;
+    var db = new FinalProjectMain.Models.ShoppingDbContext();
+    var x = Session[SessionKey.Admin];
+    var checkAdmin = db.Manager.Where(w => w.ManagerStatus.StatusName=="SuperAdmin").FirstOrDefault();
+   
+}
+@if (Model != null && Session[SessionKey.Admin].ToString()==checkAdmin.Email.ToString())
+{
+    var notificationCount = 0;
+    foreach (var item in Model)
+    {
+        notificationCount++;
+    }
+    <div class="noti__item js-item-menu">
+        <i class="zmdi zmdi-notifications"></i>
+        <span class="quantity">@notificationCount</span>
+        <div class="mess-dropdown js-dropdown">
+            <div class="mess__title">
+                <p>Sizn @notificationCount bildirişiniz var</p>
+            </div>
+            @foreach (var product in Model)
+            {
+                <div class="notifi__item">
+                    <input type="hidden" id="hiddenInputForNotificationIcon" value="@product.Id" />
+                    <div class="bg-c1 img-cir img-40">
+                        <i class="zmdi zmdi-email-open"></i>
+                    </div>
+                    <div class="content">
+                        <p>Gözləmə listində yeni məhsul var</p>
+                        <span class="date">@product.CreatedDate</span>
+                    </div>
+                </div>
+            }
+            <div class="mess__footer">
+                <a href="@Url.Action("newAddProduct","AdGetOn")">Gözləmədə olan bütün məhsulları göstər</a>
+            </div>
+        </div>
+    </div>
+}
+@if (Model == null)
+{
+
+}

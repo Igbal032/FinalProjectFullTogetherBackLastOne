@@ -1,0 +1,189 @@
+﻿
+
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/Layout.cshtml";
+
+
+}
+
+@using FinalProjectMain.Models.Entity
+@model IEnumerable<Product>
+
+    <div class="container" style="margin-top:100px">
+        <a href="@Url.Action("CreateNewItem","Admin")" class="btn btn-md btn-danger rounded-0">Məhsul Yarat</a>
+
+        <div class="row" id="newWaitAdminConfirm">
+
+            @foreach (var item in Model)
+            {
+                <div class="col-md-6 col-sm-12 col-xl-4 col-lg-4">
+                    <div class="card" style="height:600px">
+                        <figure class="imghvr-shutter-in-out-diag-2">
+                            <img class="card-img-top" width="100%" src="~/Template/img/newImg/@item.imgPath"
+                                 alt="Card image cap">
+                            <figcaption style="word-break: break-all;">
+                                @item.About
+                            </figcaption>
+                        </figure>
+                        <div class="card-body text-center">
+                            <a href="#" onclick="itemPage(@item.Id)"><span>Adı: @item.Name</span></a>
+                            <h6>Qiymət: @item.Price AZN</h6>
+                            <p>Hakqında: @item.About</p>
+                            <p>Paylaşılıb: @item.isConfirm</p>
+                            <p>Sayı və ölçüsü: @item.SizeORCount</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="icon-part d-flex justify-content-around text-center col-xs-12">
+                                <p>Paylaşdı :</p>
+                            </div>
+                            <div class="col-xs-12 mt-1 mb-1 d-flex justify-content-around">
+                                @if (TempData["admin"]!=null)
+                                {
+                                    <button id="confirmButtonInWaitlist" onclick="confirmButtomInWaitlist(@item.Id)" class="btn btn-sm btn-success">Təstiqlə</button>
+
+                                }
+                                <button id="deleteButtomInWaitlist" onclick="deleteButtomInWaitlist(@item.Id)" class="btn btn-sm btn-danger">Sil</button>
+                                <form action="@Url.Action("LookAtAllİmages","Admin")" method="get">
+                                    <input id="hiddenID" name="id" type="hidden" value="@item.Id" />
+                                    <button id="lookAtImages" type="submit" class="btn btn-sm btn-warning">Şəkillər</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+<section class="modalSection">
+    <div class="modal" id="editItemInWaitList" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <input id="hiddenIDinModal" type="hidden" value="" />
+                    <h5 class="modal-title">Redakte Et</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body mt-3 mb-3">
+                    <form class="editModalForm">
+                        <input type="text" id="nameItemInWaitList" value="" class="form-control" placeholder="Adı" />
+                        <br />
+                        <textarea id="aboutItemInWaitList" value="" class="form-control" placeholder="HaqqInda"></textarea>
+                        <br />
+                        <input type="text" id="priceItemInWaitList" value="" class="form-control" placeholder="Price" />
+                        <br />
+                        <select class="form-control" name="CategoryValInModal" id="ColorValInModal">
+                            @Html.Action("CategorySelectInCreateItem", "Admin", new { areas = "admin" })
+                        </select>
+                        <br />
+                        <select class="form-control" name="ColorValInModal" id="ColorValInModal">
+                            @Html.Action("ColorInCreateItem", "Admin", new { areas = "admin" })
+                        </select>
+                        <br />
+                        <select class="form-control" name="ProducerValInModal" id="ProducerValInModal">
+                            @Html.Action("ProducerInCreateItem", "Admin", new { areas = "admin" })
+                        </select>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Bağla</button>
+                    <button type="button" id="submitEditNewProducerButton" onclick="ConfirmeditButtomInWaitlistModal($('#hiddenIDinModal').val())" class="btn btn-primary">Redakte Et</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section scripts{
+
+
+
+    <script>
+
+        // delete new ITEM IN WAITLIST
+              function deleteButtomInWaitlist(Idd) {
+                   $.ajax({
+
+                    url: "@Url.Action("deleteItemFromWaitList","Admin")",
+                    type: "POST",
+                    data: { id: Idd },
+                       success: function (response) {
+                    swal({
+                       text: "Məhsul Silindi!",
+                       icon: "success",
+                       button: "Bitdi!",
+                    });
+                           $("#newWaitAdminConfirm").html(response)
+                           console.log(response)
+
+                    },
+                    error: function (response) {
+
+                        console.error(response)
+                    }
+
+                })
+            }
+    // delete new ITEM IN WAITLIST
+
+       // CONFIRM new ITEM IN WAITLIST
+              function confirmButtomInWaitlist(Id) {
+             $.ajax({
+
+                    url: "@Url.Action("confirmItemFromWaitList","Admin")",
+                    type: "POST",
+                    data: { id: Id },
+                 success: function (response) {
+                             swal({
+                                  text:"Məhsul Paylaşıldı",
+                                  icon: 'success',
+                                  button: "Bağla!",
+                    });
+                       $("#newWaitAdminConfirm").html(response)
+
+
+                    },
+                    error: function (response) {
+
+                        console.error(response)
+                    }
+
+                })
+            }
+
+
+    </script>
+    <script>
+        $(function () {
+            $('.validation-summary-errors').each(function () {
+                $(this).addClass('alert');
+                $(this).addClass('alert-danger');
+            });
+            $('form').each(function () {
+                $(this).find('div.form-group').each(function () {
+                    if ($(this).find('span.field-validation-error').length > 0) {
+                        $(this).addClass('has-error');
+                        $(this).find('span.field-validation-error').
+                            removeClass('field-validation-error');
+                    }
+                });
+            });
+        });
+        var readURL = function (input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#news-image').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        var removePhoto = function () {
+            document.getElementById('mediaUrl').value = '';
+            document.getElementById('news-image').src = '';
+        }
+    </script>
+}

@@ -1,0 +1,66 @@
+﻿@model  IEnumerable<FinalProjectMain.Models.Entity.addAdressToAccount>
+@{
+    ViewBag.Title = "openAdressPart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="adress-part mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-xl-12 col-lg-12 col-xs-12  text-center header-title-col">
+                <span class="font-weight-bold h-title">Ünvanlar</span>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-xs-12 col-md-12 col-lg-12 col-xl-12 inputs-for-adress-col shadow">
+                <form class="mt-4 mb-4" action="@Url.Action("chosenAdress","additionalActions")" method="post">
+                    <div class="row">
+                        @foreach (var item in Model)
+                        {
+                            <div class="col-md-12 col-lg-4 col-xl-4 col-sm-12 col-xs-12 col-12 m-2">
+                                <input type="hidden" name="adressId" value="@item.Id" />
+                                <p>Ad: @item.UserName</p>
+                                <p>Soyad: @item.UserSecondName</p>
+                                <p>Şəhər: @item.City</p>
+                                <p>Ünvan: @item.Adress</p>
+                                <p>Ünvan-2: @item.Adress2</p>
+
+                                <button type="submit" class="btn btn-md btn-danger">Seç</button>
+                            </div>
+                        }
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row mt-2 buttons-part-inadress">
+            <div class="col-xs-12">
+                <a href="@Url.Action("myAccount","Home")" class="btn btn-md btn-dark  back-account">
+                    <i class="fas fa-angle-left"></i> Hesabına
+                    Geri Dön
+                </a>
+                <a href="@Url.Action("Index","Home")" class="btn btn-md btn-dark  back-MainPage">
+                    <i class="fas fa-home"></i> Əsas
+                    Səhifə
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="carouselForCompany mt-5">
+    <div class="container  mt-5">
+        <div class="row">
+            <div class="owl-carousel">
+                <div><img src="~/Template/img/Companies/1.jpg" alt=""></div>
+                <div><img src="~/Template/img/Companies/2.jpg" alt=""></div>
+                <div><img src="~/Template/img/Companies/3.jpg" alt=""></div>
+                <div><img src="~/Template/img/Companies/4.jpg" alt=""></div>
+                <div><img src="~/Template/img/Companies/5.jpg" alt=""></div>
+                <div><img src="~/Template/img/Companies/1.jpg" alt=""></div>
+                <div><img src="~/Template/img/Companies/3.jpg" alt=""></div>
+                <div><img src="~/Template/img/Companies/5.jpg" alt=""></div>
+            </div>
+        </div>
+    </div>
+</section>

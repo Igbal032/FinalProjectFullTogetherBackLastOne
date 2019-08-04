@@ -1,0 +1,21 @@
+﻿@model IEnumerable <FinalProjectMain.Models.Entity.mainCarousel>
+@{ 
+    Layout = null;
+    int count = 0;
+}
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="owl-carousel owl-theme w-100">
+                @foreach (var item in Model)
+                {
+                    count++;
+                <div class="item">
+                    <span class="animated fadeInUpBig delay-1s"style="position:absolute; left:30%; top:200px; color:red; font-size:70px;">@item.title</span>
+
+                    <img height="600px" style="object-fit: cover" src="~/Template/img/mainCarousel/@item.imgPath" alt="">
+                </div>
+                }
+            </div>
+        </div>
+    </div>

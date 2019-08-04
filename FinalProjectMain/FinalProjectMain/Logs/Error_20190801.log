@@ -1,0 +1,16 @@
+2019-08-01 21:46:33.5100 FATAL    -The parameters dictionary contains a null entry for parameter 'Id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult itemPage(Int32)' in 'FinalProjectMain.Controllers.HomeController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters 
+2019-08-01 21:46:51.4097 FATAL    -The parameters dictionary contains a null entry for parameter 'Id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult itemPage(Int32)' in 'FinalProjectMain.Controllers.HomeController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters 
+2019-08-01 21:47:52.6736 FATAL    -The parameters dictionary contains a null entry for parameter 'Id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult itemPage(Int32)' in 'FinalProjectMain.Controllers.HomeController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters 
+2019-08-01 22:12:09.4655 FATAL    - 
+2019-08-01 22:12:57.1098 FATAL    - 
+2019-08-01 22:39:23.5431 FATAL    -The parameters dictionary contains a null entry for parameter 'Id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult itemPage(Int32)' in 'FinalProjectMain.Controllers.HomeController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters 
+2019-08-01 22:40:56.8607 FATAL    -Object reference not set to an instance of an object. 
+2019-08-01 23:22:15.8458 FATAL    -Object reference not set to an instance of an object. 
+2019-08-01 23:30:48.8624 FATAL    -Object reference not set to an instance of an object. 
+2019-08-01 23:31:38.1023 FATAL    -Object reference not set to an instance of an object. 
+2019-08-01 23:32:06.8441 FATAL    -Object reference not set to an instance of an object. 
+2019-08-01 23:32:22.0139 FATAL    -Object reference not set to an instance of an object. 

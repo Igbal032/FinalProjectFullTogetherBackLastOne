@@ -1,0 +1,20 @@
+2019-07-31 03:08:54.3382 FATAL    - 
+2019-07-31 03:10:52.3588 FATAL    - 
+2019-07-31 03:35:32.3863 FATAL    - 
+2019-07-31 03:58:17.8621 FATAL    -The parameters dictionary contains a null entry for parameter 'Id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult itemPage(Int32)' in 'FinalProjectMain.Controllers.HomeController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters 
+2019-07-31 04:01:12.9086 FATAL    - 
+2019-07-31 04:13:42.4258 FATAL    -The INSERT statement conflicted with the FOREIGN KEY constraint "FK_dbo.Products_dbo.Managers_SharedId". The conflict occurred in database "FinalProjectShopping", table "dbo.Managers", column 'Id'.
+The statement has been terminated. 
+2019-07-31 04:29:34.2138 FATAL    -Attaching an entity of type 'FinalProjectMain.Models.Entity.Product' failed because another entity of the same type already has the same primary key value. This can happen when using the 'Attach' method or setting the state of an entity to 'Unchanged' or 'Modified' if any entities in the graph have conflicting key values. This may be because some entities are new and have not yet received database-generated key values. In this case use the 'Add' method or the 'Added' entity state to track the graph and then set the state of non-new entities to 'Unchanged' or 'Modified' as appropriate. 
+2019-07-31 04:30:29.3232 FATAL    -Attaching an entity of type 'FinalProjectMain.Models.Entity.Product' failed because another entity of the same type already has the same primary key value. This can happen when using the 'Attach' method or setting the state of an entity to 'Unchanged' or 'Modified' if any entities in the graph have conflicting key values. This may be because some entities are new and have not yet received database-generated key values. In this case use the 'Add' method or the 'Added' entity state to track the graph and then set the state of non-new entities to 'Unchanged' or 'Modified' as appropriate. 
+2019-07-31 04:32:05.0038 FATAL    -Attaching an entity of type 'FinalProjectMain.Models.Entity.Product' failed because another entity of the same type already has the same primary key value. This can happen when using the 'Attach' method or setting the state of an entity to 'Unchanged' or 'Modified' if any entities in the graph have conflicting key values. This may be because some entities are new and have not yet received database-generated key values. In this case use the 'Add' method or the 'Added' entity state to track the graph and then set the state of non-new entities to 'Unchanged' or 'Modified' as appropriate. 
+2019-07-31 08:47:50.6433 FATAL    -Non-static method requires a target. 
+2019-07-31 08:48:04.2352 FATAL    -Non-static method requires a target. 
+2019-07-31 08:48:20.2415 FATAL    -Non-static method requires a target. 
+2019-07-31 08:50:18.9624 FATAL    -Non-static method requires a target. 
+2019-07-31 09:09:53.9719 FATAL    - 
+2019-07-31 09:09:57.0515 FATAL    - 
+2019-07-31 09:12:49.0527 FATAL    - 
+2019-07-31 10:50:36.2942 FATAL    -The parameters dictionary contains a null entry for parameter 'Id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult itemPage(Int32)' in 'FinalProjectMain.Controllers.HomeController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters 

@@ -1,0 +1,64 @@
+﻿@using FinalProjectMain.Models.Entity
+@model Manager
+@{
+    Layout = null;
+}
+@if (Model==null)
+{
+    <div class="account-item clearfix js-item-menu">
+        <div class="image">
+            <img src="~/Areas/Admin/Template/images/user.png" />
+        </div>
+        <div class="account-dropdown js-dropdown">
+
+            <div class="account-dropdown__body">
+                <div class="account-dropdown__item">
+                    <a href="@Url.Action("LoginPartForAdmin","Admin")">
+                        <i class="zmdi zmdi-account"></i>Daxil Ol
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@if (Model!=null)
+{
+<div class="account-item clearfix js-item-menu">
+    <div class="image">
+        <img src="~/Areas/Admin/Template/images/user.png" />
+    </div>
+    <div class="content">
+        <a class="js-acc-btn" href="#">@Model.Name</a>
+    </div>
+    <div class="account-dropdown js-dropdown">
+        <div class="info clearfix">
+            <div class="image">
+                <a href="#">
+                    <img src="~/Areas/Admin/Template/images/user.png" />
+                </a>
+            </div>
+            <div class="content">
+                <h5 class="name">
+                    <a href="#">@Model.Name</a>
+                </h5>
+                <span class="email">@Model.Email</span>
+            </div>
+        </div>
+        <div class="account-dropdown__body">
+            <div class="account-dropdown__item">
+                <a href="@Url.Action("changePasswordAdmin","Admin")">
+                    <i class="zmdi zmdi-settings"></i>Şifrəni dəyiş
+                </a>
+            </div>
+        </div>
+        <div class="account-dropdown__footer">
+            <a href="@Url.Action("LogOutAdmin","Admin")">
+                <i class="zmdi zmdi-power"></i>Çixmaq
+            </a>
+        </div>
+    </div>
+</div>
+}
+
+
+

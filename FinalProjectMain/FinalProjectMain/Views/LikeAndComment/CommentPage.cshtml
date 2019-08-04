@@ -1,0 +1,111 @@
+﻿@{
+    Layout = null;
+    var db = new FinalProjectMain.Models.ShoppingDbContext();
+    var checkSession = Session[SessionKey.User];
+}
+@model IEnumerable<FinalProjectMain.Models.Entity.Comment>
+
+@if (Model != null)
+{
+    foreach (var item in Model)
+    {
+        <div class="row mt-1 " >
+            <div class="col-xs-12 col-md-2 col-lg-2 col-xl-2 user-img">
+                <img src="~/Template/img/user.jpg" id="123" style="width:80.11px !important" alt="">
+            </div>
+            <div class="col-xs-12 col-md-9 col-lg-9 col-xl-9 border border-muted rounded"  style="padding-top:10px !important">
+                @if (checkSession != null)
+                {
+                    if (item.User.Email.ToString() == checkSession.ToString())
+                    {
+                        <div class="btn-group dropleft position-absolute" style="right: 0 !important; top:0 !important; cursor: pointer">
+                            <i class="btn btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                ...
+                            </i>
+                            <div class="dropdown-menu">
+                                <div class="dropdown-item">
+                                    <button class="btn-danger w-100" id="clickDelete" onclick="deleteComment(@item.Id)">Silmək</button>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+
+                <p>
+                    @item.CommentText
+                </p>
+                <div class="row d-flex justify-content-between">
+                    <div class="col-xs-12 col-md-6 col-xl-6 col-lg-6 by text-danger font-weight-bold">
+                         @item.User.UserName @item.User.UserSurname
+                    </div>
+                    <div class="col-xs-12 col-md-6 col-xl-6 col-lg-6 by">
+                        <span class="text-danger font-weight-bold">Date :</span>  @item.CreatedDate
+                    </div>
+                    <div class="col-xs-12 col-md-12 col-xl-12 col-lg-12 d-flex justify-content-end">
+                        <button class="btn btn-sm btn-danger mb-1" data-toggle="collapse" href="#answerInput_@item.Id" role="button" aria-expanded="false" aria-controls="collapseExample">Rəy bildir</button>
+                    </div>
+                    <div class="answered-part" style="margin-bottom: 10px !important;">
+                        @foreach (var reply in db.AnswerComments.OrderByDescending(w => w.Id).Where(w => w.DeletedDate == null && w.CommentId == item.Id).ToList())
+                        {
+                            <div class="row mt-1 justify-content-center">
+                                <div class="col-xs-12 col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 user-img" style="display: flex;align-items: center;justify-content: center;">
+                                    <img src="~/Template/img/userpng.png" style="width:58px !important">
+                                </div>
+                                <div class="col-xs-12 col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9 border border-muted rounded answer-text" >
+                                    @if (checkSession != null)
+                                    {
+                                        if (reply.User.Email.ToString() == checkSession.ToString())
+                                        {
+                                            <div class="btn-group dropleft position-absolute" style="right: 0 !important; top:0 !important; cursor: pointer">
+                                                <i class="btn btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    ...
+                                                </i>
+                                                <div class="dropdown-menu">
+                                                    <div class="dropdown-item">
+                                                        <button class="btn-danger w-100" id="clickDelete" onclick="deleteAsnwerComment(@reply.Id)">Silmək</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                    }
+                                    <p style="word-break:break-all !important">
+                                        @reply.answeComment
+                                    </p>
+                                    <div class="row d-flex justify-content-between">
+                                        <div class="col-xs-12 col-md-6 col-xl-6 col-lg-6 by text-danger font-weight-bold">
+                                            @if (reply.ManagerId != null)
+                                            {
+                                                @reply.Manager.ManagerStatus @reply.Manager.ManagerStatus
+                                            }
+
+                                            @if (reply.UserId != null)
+                                            {
+                                                @(reply.User.UserName + " " + reply.User.UserSurname)
+                                            }
+                                        </div>
+                                        <div class="col-xs-12 col-md-6 col-xl-6 col-lg-6 by">
+                                            <span class="text-danger font-weight-bold">Date :</span>   @reply.CreatedDate
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+                    </div>
+                </div>
+                <div class="collapse mt-2" id="answerInput_@item.Id">
+                    <div class="row d-flex p-2">
+                        <div class="input-group">
+                            <input type="text" required value="" class="form-control asnwerInput" />
+                            <div class="input-group-append">
+                                <button onclick="answerMessage(@item.Id)" class="btn btn-sm btn-info">Göndər</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}
+
+

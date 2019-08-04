@@ -1,0 +1,84 @@
+﻿@{
+    Layout = null;
+}
+@model IEnumerable<FinalProjectMain.Models.Entity.shopList>
+@{
+    decimal price = 0;
+    int count = 0;
+}
+
+<div class="row justify-content-between" id="shopListRowId">
+    @foreach (var item in Model)
+    {
+        count++;
+        price = price +item.Product.Price*item.productCount;
+        <div class="col-xl-7 col-lg-12 col-md-12 col-xs-12 mt-2 border border-dark leftPart">
+            <div class="row shoppingScheduleTitle">
+                <div class="col-xs-12">
+                    <p class="text-uppercase font-weight-bold">Alış-veriş səbəti</p>
+                </div>
+            </div>
+            <div class="row mt-4 mb-4">
+                <div class="col-xs-12 col-md-3 col-lg-3 col-xl-3">
+                    <img src="~/Template/img/newImg/@item.Product.imgPath" width="100%" alt="">
+                </div>
+                <div class="col-xs-12 col-md-4 col-lg-4 col-xl-4">
+                    <p style="font-size: 15px" class="mt-2">@item.Product.Name</p>
+                    <span class="font-weight-bold">@item.Product.Price AZN</span>
+                    <p>Color: <span>@item.Product.color.ColorName </span></p>
+
+                </div>
+                <div class="col-xs-12 col-md-5 col-lg-5 col-xl-5 forCount d-flex">
+                    <!-- TODO -->
+                    <form class="d-flex">
+                        <div class="input-group input-group-xs mb-3 d-flex"
+                             style="border: transparent !important">
+                            <div class="input-group-prepend">
+                                <button type="button" disabled class="btn btn-sm btn-muted border decreaseCountt"
+                                        id="inputGroup-sizing-sm">
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                            </div>
+                            <input type="text" class="inputForCount h-100 text-center border" value="@item.productCount">
+                            <div class="input-group-append">
+                                <button type="button" disabled class="btn btn-sm btn-muted border increaseCountt"
+                                        id="inputGroup-sizing-sm">
+                                    <i class="fas fa-chevron-up"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <p class="text-danger font-weight-bold mr-5 price">@(item.Product.Price * @item.productCount) AZM</p>
+
+                        <a class="text-decoration-none text-dark mt-2" onclick="deleteFromShopList(@item.Id)">
+                            <i class="fas fa-trash"></i>
+                        </a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    }
+    <div class="col-xl-12 col-lg-12 col-md-12 col-xs-12 border border-dark calculatorPart mt-2">
+        <div class="column">
+            <div class="col-md-12 col-lg-12 col-xs-12 pb-4">
+                <ul class="nav w-100 justify-content-between mt-2">
+                    <li class="nav-item">@count Ədəd Məhsul</li>
+                    <li class="nav-item text-danger">@price AZN</li>
+                </ul>
+                <ul class="nav w-100 justify-content-between mt-2">
+                    <li class="nav-item">Göndərmə</li>
+                    <li class="nav-item text-danger">@(price * 10 / 100) AZN</li>
+                </ul>
+            </div>
+            <div class="col-md-12 col-lg-12 col-xs-12 pb-4">
+                <ul class="nav w-100 justify-content-between mt-2">
+                    <li class="nav-item">Ümumi</li>
+                    <li class="nav-item text-danger">@(price * 10 / 100 + price) AZN</li>
+                </ul>
+            </div>
+            <div class="col-md-12 col-lg-12 col-xs-12 d-flex justify-content-center pb-4">
+                <button type="button" class="btn btn-lg btn-dark mb-3 mt-3">Davam Edin</button>
+            </div>
+        </div>
+    </div>
+</div>

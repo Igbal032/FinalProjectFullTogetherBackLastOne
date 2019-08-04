@@ -1,0 +1,211 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section css
+    {
+    @*<link rel="stylesheet" href="~/Template/css/style.css" />*@
+}
+<p class="text-danger">@TempData["existsEmailInSubscribe"]</p>
+<section class="main-carousel mt-2">
+    @Html.Action("_mainCarousel", "Home")
+</section>
+
+<section class="new-product mt-5">
+    @Html.Action("_twoNewProduct", "Home")
+</section>
+
+<section class="mix-new carousel mt-5">
+    @Html.Action("_newProducttabContent", "Home")
+</section>
+
+<section class="new-product three-products mt-5">
+    @Html.Action("_threeNewProduct", "Home")
+</section>
+
+<section class="products-Tabs mix mt-5">
+    @Html.Action("_productsTabsLeft", "Home")
+</section>
+
+<section class="owl carousel-sale mt-5">
+    @Html.Action("_discountProduct", "Home")
+</section>
+
+<section class="owl carousel-Product mt-5">
+    <div class="container">
+        <ul class="nav nav-tabs font-weight-bold">
+            <li class="nav-item">
+                <a class="navbar-brand active  text-muted" data-toggle="tab"
+                   href="#tabCarouselProduct">Digər</a>
+            </li>
+        </ul>
+
+        <div class="tab-content mt-2">
+            @Html.Action("_otherPart", "Home")
+        </div>
+    </div>
+</section>
+
+<!--  -->
+<!--  -->
+<!--  -->
+
+
+<section class="modal-section">
+    <div class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document" style="height: 600px;">
+            <div class="modal-content" style="height: 600px;">
+
+                <div class="modal-body">
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+@section scripts{
+
+    <script src="~/Template/js/index.js"></script>
+
+    <script>
+
+
+        function clickLike(Id) {
+                var itemId = Id;
+                $.ajax({
+
+                    url: "@Url.Action("clickLike","LikeAndComment")",
+                    type: "POST",
+                    data: { productId: itemId },
+                    success: function (response) {
+                        if (response=="notSession") {
+                    swal({
+                         title: "Daxil Olun!",
+                         icon: "warning",
+                         button: "Daxil Ol!",
+                    }).then(function() {
+                          window.location.href = "/Home/logIn";
+                                 });
+                        }
+                        else
+                        {
+                            $(".like_" + Id).html(response)
+                        }
+                    },
+                    error: function (response) {
+                        console.error(response)
+                    },
+                })
+            }
+        
+        function getNewProductId(Id) {
+
+                $.ajax({
+
+                    url: "@Url.Action("_newProductTab2Click","Home")",
+                    type: "GET",
+                    data: { categoryId: Id },
+                    success: function (response) {
+                        $("#newProductsId").html(response)
+                    },
+                    error: function (response) {
+                        console.error(response)
+                    }
+                })
+             }
+
+        function clickLastProduct() {
+             $.ajax({
+
+                    url: "@Url.Action("lastProductsClick","Home")",
+                    type: "GET",
+                    success: function (response) {
+                        $("#newProductsId").html(response)
+                    },
+                    error: function (response) {
+                        console.error(response)
+                    }
+                })
+        }
+        function clickproductsTabsLeft(Id) {
+                $.ajax({
+
+                    url: "@Url.Action("_clickproductsTabsLeft","Home")",
+                    type: "GET",
+                    data: { categoryId: Id },
+                    success: function (response) {
+                        $("#leftPartId").html(response)
+                    },
+                    error: function (response) {
+                        console.error(response)
+                    }
+                })
+        }
+        function saleTabs(Id) {
+            $.ajax({
+                url: "@Url.Action("clickDiscountProductTab","Home")",
+                type: "GET",
+                data: {categoryId: Id},
+                success: function (response) {
+                    $("#discountProductId").html(response)
+                },
+                error: function (response) {
+                    console.error(response)
+                }
+
+            })
+        }
+
+        function clickWishlistt(Id) {
+
+            $.ajax({
+                url: "@Url.Action("addToMyWishListt","additionalActions")",
+                type: "POST",
+                data: { id: Id },
+                success: function (response) {
+                    if (response == "nosession")
+                    {
+                    swal({
+                         title: "Daxil Olun!",
+                         icon: "warning",
+                         button: "Daxil Ol!",
+                    }).then(function() {
+                          window.location.href = "/Home/logIn";
+                                 });
+                    }
+                    else if (response == "existsProduct")
+                    {
+                  swal({
+                    text: "Bu məhsul müqayisə listində mövcuddur!",
+                    icon: "warning",
+                    button: "Bağla!",
+                  });
+                    }
+                    else
+                    {
+                    swal({
+                        text: "Istək Siyahısına Elavə olundu!",
+                        icon: "success",
+                        button: "Bağla!",
+                    });
+                    }
+
+                },
+                error: function (response) {
+                    console.error(response)
+                }
+
+            })
+        }
+
+
+    </script>
+}

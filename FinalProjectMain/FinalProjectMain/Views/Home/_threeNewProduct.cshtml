@@ -1,0 +1,18 @@
+﻿@model IEnumerable <FinalProjectMain.Models.Entity.Product>
+@{
+    Layout = null;
+}
+
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="product-img1 mt-1 shadow">
+                        @*<h3><span class="badge badge-danger badge-lg">New</span></h3>*@ 
+                        <img class="w-100" src="~/Template/img/newImg/@item.imgPath" alt="">
+                    </div>
+                </div>
+            }
+        </div>
+    </div>

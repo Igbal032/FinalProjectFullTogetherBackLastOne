@@ -1,0 +1,29 @@
+﻿@using FinalProjectMain.Models.Entity
+@model Manager
+@{
+    Layout = "~/Areas/AdGetOn/Views/Shared/Layout.cshtml";
+}
+
+    <div class="container" style="margin-top:100px">
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12 border rounded-0">
+                <form class="m-3" action="@Url.Action("LoginPartForAdminSubmit","AdGetOn")" method="get">
+                    <p class="text-danger">@TempData["sentEmail"]</p>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email</label>
+                        <input type="email" name="Email" required class="form-control" id="exampleInputEmail1" placeholder="Email daxil et">
+                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                        <p class="text-danger">@TempData["emaildoesnexist"]</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Şifrə</label>
+                        <input type="password" name="Password" required maxlength="15" class="form-control" id="exampleInputPassword1" placeholder="Şifrəni daxil et">
+                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                        <p class="text-danger">@TempData["wrongPassword"]</p>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+                <a href="@Url.Action("forgetPasswordPage","AdGetOn")" class="text-danger text-end text-decoration-none" >Şifrəmi unutdum</a>
+            </div>
+        </div>
+    </div>

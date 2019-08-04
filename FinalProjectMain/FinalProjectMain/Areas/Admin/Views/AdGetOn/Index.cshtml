@@ -1,0 +1,187 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/Layout.cshtml";
+
+}
+
+<div class="page-container">
+    <!-- HEADER DESKTOP-->
+
+    <!-- HEADER DESKTOP-->
+    <!-- MAIN CONTENT-->
+    <div class="main-content">
+        <div class="section__content section__content--p30">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="overview-wrap">
+                            <h2 class="title-1">Xoş Gəlmisiz</h2>
+                            <p class="text-success">@TempData["SaveNewManager"]</p>
+                            <p class="text-success">@TempData["changePassword"]</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row m-t-25 text-center">
+                    <div class="col-sm-6 col-lg-3">
+                        <a href="@Url.Action("Index","ContactUS", new { areas="Admin"})">
+                            <div class="overview-item overview-item--c1">
+                                <div class="overview__inner">
+                                    <div class="overview-box clearfix">
+                                        <div class="text">
+                                            <p class="text-dark text-uppercase">Mesajlar</p>
+                                        </div>
+                                    </div>
+                                    <div class="overview-chart">
+                                        <canvas id=""></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <a href="@Url.Action("CreateNewItem","AdGetOn")">
+                            <div class="overview-item overview-item--c2">
+                                <div class="overview__inner">
+                                    <div class="overview-box clearfix">
+                                        <div class="text">
+                                            <p class="text-dark text-uppercase">Yeni Məhsul Əlavə Et</p>
+                                        </div>
+                                    </div>
+                                    <div class="overview-chart">
+                                        <canvas id=""></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <a href="@Url.Action("newAddProduct","AdGetOn")">
+                            <div class="overview-item overview-item--c3">
+                                <div class="overview__inner">
+                                    <div class="overview-box clearfix">
+                                        <div class="text">
+                                            <p class="text-dark text-uppercase">Gözləmədə Olan Məhsullar</p>
+                                        </div>
+                                    </div>
+                                    <div class="overview-chart">
+                                        <canvas id=""></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <a href="@Url.Action("sharedItemss","AdGetOn")">
+                            <div class="overview-item overview-item--c4">
+                                <div class="overview__inner">
+                                    <div class="overview-box clearfix">
+                                        <div class="text">
+                                            <p class="text-dark text-uppercase">Paylaşılmış Məsullar</p>
+                                        </div>
+                                    </div>
+                                    <div class="overview-chart">
+                                        <canvas id=""></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <a href="@Url.Action("mainCarousel","AdGetOn")">
+                            <div class="overview-item overview-item--c4">
+                                <div class="overview__inner">
+                                    <div class="overview-box clearfix">
+                                        <div class="text">
+                                            <p class="text-dark text-uppercase">Karusel</p>
+                                        </div>
+                                    </div>
+                                    <div class="overview-chart">
+                                        <canvas id=""></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    @if (TempData["notAllow"]==null)
+                    {
+                        <div class="col-sm-6 col-lg-3">
+                            <a href="@Url.Action("employeeList","AdGetOn")">
+                                <div class="overview-item overview-item--c4">
+                                    <div class="overview__inner">
+                                        <div class="overview-box clearfix">
+                                            <div class="text">
+                                                <p class="text-dark text-uppercase">Işçilər</p>
+                                            </div>
+                                        </div>
+                                        <div class="overview-chart">
+                                            <canvas id=""></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-6 col-lg-3">
+                            <a href="@Url.Action("addAdminPage","AdGetOn")">
+                                <div class="overview-item overview-item--c1">
+                                    <div class="overview__inner">
+                                        <div class="overview-box clearfix">
+                                            <div class="text">
+                                                <p class="text-dark text-uppercase">Admin və Super Admin Əlavə Etmək</p>
+                                            </div>
+                                        </div>
+                                        <div class="overview-chart">
+                                            <canvas id=""></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    }
+
+                    <div class="col-sm-6 col-lg-3">
+                        <a href="@Url.Action("userslist","AdGetOn")">
+                            <div class="overview-item overview-item--c2">
+                                <div class="overview__inner">
+                                    <div class="overview-box clearfix">
+                                        <div class="text">
+                                            <p class="text-dark text-uppercase">Istifadəçilərin Siyahısı</p>
+                                        </div>
+                                    </div>
+                                    <div class="overview-chart">
+                                        <canvas id=""></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <a href="@Url.Action("deletePage","CategoryColorCompany")">
+                            <div class="overview-item overview-item--c3">
+                                <div class="overview__inner">
+                                    <div class="overview-box clearfix">
+                                        <div class="text">
+                                            <p class="text-dark text-uppercase">Digər(Kat,Rəng,Şirkət..)</p>
+                                        </div>
+                                    </div>
+                                    <div class="overview-chart">
+                                        <canvas id=""></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="row" style="margin-top:300px">
+                    <div class="col-md-12">
+                        <div class="copyright">
+                            <p>Copyright © 2018 Colorlib. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END MAIN CONTENT-->
+    <!-- END PAGE CONTAINER-->
+</div>

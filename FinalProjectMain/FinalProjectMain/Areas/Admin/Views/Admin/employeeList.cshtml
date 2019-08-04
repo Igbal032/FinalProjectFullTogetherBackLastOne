@@ -1,0 +1,192 @@
+﻿@using FinalProjectMain.Models.Entity
+@model IEnumerable<Manager>
+@{
+    ViewBag.Title = "employeeList";
+    Layout = "~/Areas/Admin/Views/Shared/Layout.cshtml";
+    var count = 0;
+}
+
+<div class="container" style="margin-top:100px" id="employeeListId">
+
+
+    @foreach (var item in Model)
+    {
+
+        <br />
+        count++;
+        <h5>@count</h5>
+        <div class="row p-4">
+            <form>
+                <input type="hidden" value="@item.Id" />
+                <div class="form-group">
+                    <label for="">Kod</label>
+                    <input type="text" name="Id" readonly value="@item.Id" class="form-control-sm border border-muted rounded-0" />
+                </div>
+                <div class="form-group">
+                    <label for="">Ad</label>
+                    <input type="text" name="Name" readonly value="@item.Name" class="form-control-sm border border-muted rounded-0" />
+                </div>
+                <div class="form-group">
+                    <label for="">Soyad</label>
+                    <input type="text" name="Surname" readonly value="@item.Surname" class="form-control-sm border border-muted rounded-0" />
+                </div>
+                <div class="form-group">
+                    <label for="">Email</label>
+                    <input type="email" name="Email" readonly value="@item.Email" class="form-control-sm border border-muted rounded-0" />
+                </div>
+                <div class="form-group">
+                    <label for="">Şifrə</label>
+                    <input type="password" name="Password" readonly value="@item.Password" class="form-control-sm border border-muted rounded-0" />
+                </div>
+                <div class="form-group">
+                    <label for="">Nömrə</label>
+                    <input type="text" name="Phone" readonly value="@item.Phone" class="form-control-sm border border-muted rounded-0" />
+                </div>
+                <div class="form-group">
+                    <label for="">Vəzifə : @item.ManagerStatus.StatusName</label>
+                    <select class="form-control-sm border border-muted rounded-0" readonly name="ManagerStatusId" id="statusVal">
+                        @Html.Action("statusInCreateAdmin", "Admin");
+                    </select>
+                </div>
+                <div class="btn-group-sm" role="group" aria-label="Basic example">
+                    <button type="button" onclick="editEmployee(@item.Id)" class="btn btn-warning btn-sm">Redakte Et</button>
+                    <button type="button" onclick="deleteEmployee(@item.Id)" class="btn btn-danger btn-sm">Sil</button>
+                </div>
+            </form>
+        </div>
+
+    }
+    <div class="row mt-3">
+        <a class="btn btn-success btn-dark rounded-0" href="@Url.Action("addAdminPage","Admin")">Admin vəya Super Admin Əlavə Et</a>
+    </div>
+</div>
+
+<section class="modal-section">
+    <div class="modal" id="editManagerModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Redakte Etmək</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="editEmployeForm">
+                        <input type="hidden" id="inModalHiddenInput" name="Id" value="" />
+                        <div class="form-group">
+                            <label for="">Ad</label>
+                            <input type="text" name="Name" value="" class="form-control-sm border border-muted rounded-0" id="nameInModal" />
+                        </div>
+                        <div class="form-group">
+                            <label for="">Soyad</label>
+                            <input type="text" name="Surname" value="" class="form-control-sm border border-muted rounded-0" id="surnameInModal" />
+                        </div>
+                        <div class="form-group">
+                            <label for="">Email</label>
+                            <input type="email" name="Email" value="" class="form-control-sm border border-muted rounded-0" id="emailInModal" />
+                        </div>
+                        <div class="form-group">
+                            <label for="">Şifrə</label>
+                            <input name="Password" value="" class="form-control-sm border border-muted rounded-0" id="passwordInModal" />
+                        </div>
+                        <div class="form-group">
+                            <label for="">Nömrə</label>
+                            <input type="text" name="Phone" value="" class="form-control-sm border border-muted rounded-0" id="phoneInModal" />
+                        </div>
+                        <div class="form-group">
+                            <label for="">Vəzifə : </label>
+                            <select class="form-control-sm border border-muted rounded-0" name="ManagerStatusId" id="statusValInModal">
+                                @Html.Action("statusInCreateAdmin", "Admin");
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" onclick="editEmployeeSubmit($('#inModalHiddenInput').val())" class="btn btn-primary">Yadda Saxla</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Bağla</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section scripts{
+
+    <script>
+
+        //delete Employee
+    function deleteEmployee(Id) {
+
+        $.ajax({
+
+            url: "@Url.Action("DeleteEmployeeInList","Admin")",
+            type: "POST",
+            data: { id: Id },
+            success: function (response) {
+                $("#employeeListId").html(response);
+            },
+            error: function (response) {
+
+                console.error(response);
+            }
+        })
+
+            }
+        //delete Employee
+
+        //edit Employee
+
+    function editEmployee(Id) {
+
+        $("#editManagerModal").modal('show')
+        $.ajax({
+
+            url: "@Url.Action("editEmployeeInList","Admin")",
+            type: "GET",
+            data: { id: Id },
+            success: function (response) {
+                $("#inModalHiddenInput").val(Id)
+                $("#nameInModal").val(response.Name)
+                $("#surnameInModal").val(response.Surname)
+                $("#emailInModal").val(response.Email)
+                $("#phoneInModal").val(response.Phone)
+                $("#passwordInModal").val(response.Password)
+            },
+            error: function (response) {
+                console.error(response)
+            },
+        })
+
+    }
+         function editEmployeeSubmit(Id) {
+
+             var editEmployeForm = $("#editEmployeForm").serialize();
+
+             $.ajax({
+             url: "@Url.Action("EditEmployeeInListSubmit","Admin")",
+             type: "POST",
+             data: editEmployeForm,
+            success: function (response) {
+               swal({
+                      title: ":)",
+                      text: "Redakte Edildi",
+                      icon: "success",
+                      button: "Bağla",
+                });
+                $("#employeeListId").html(response);
+                $("#editManagerModal").modal('hide')
+
+            },
+            error: function (response) {
+
+                console.error(response);
+            }
+        })
+         }
+
+         //edit Employee
+
+    </script>
+
+}

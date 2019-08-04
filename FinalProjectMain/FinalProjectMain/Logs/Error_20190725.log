@@ -1,0 +1,23 @@
+2019-07-25 14:20:16.9101 FATAL    - 
+2019-07-25 14:43:45.5361 FATAL    -The view '_clickproductsTabsLeft' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/Home/_clickproductsTabsLeft.aspx
+~/Views/Home/_clickproductsTabsLeft.ascx
+~/Views/Shared/_clickproductsTabsLeft.aspx
+~/Views/Shared/_clickproductsTabsLeft.ascx
+~/Views/Home/_clickproductsTabsLeft.cshtml
+~/Views/Home/_clickproductsTabsLeft.vbhtml
+~/Views/Shared/_clickproductsTabsLeft.cshtml
+~/Views/Shared/_clickproductsTabsLeft.vbhtml 
+2019-07-25 19:18:40.5721 FATAL    -The parameters dictionary contains a null entry for parameter 'Id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult itemPage(Int32)' in 'FinalProjectMain.Controllers.HomeController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters 
+2019-07-25 19:22:22.1454 FATAL    -Object reference not set to an instance of an object. 
+2019-07-25 19:33:22.3857 FATAL    -Cannot apply indexing with [] to an expression of type 'System.Dynamic.DynamicObject' 
+2019-07-25 21:10:01.4450 FATAL    -Unable to create a null constant value of type 'System.Object'. Only entity types, enumeration types or primitive types are supported in this context. 
+2019-07-25 21:10:16.2838 FATAL    -Unable to create a null constant value of type 'System.Object'. Only entity types, enumeration types or primitive types are supported in this context. 
+2019-07-25 21:11:06.2581 FATAL    -Unable to create a null constant value of type 'System.Object'. Only entity types, enumeration types or primitive types are supported in this context. 
+2019-07-25 21:24:06.1730 FATAL    - 
+2019-07-25 21:25:03.9551 FATAL    - 
+2019-07-25 21:26:37.3317 FATAL    - 
+2019-07-25 21:32:24.6452 FATAL    - 
+2019-07-25 21:44:48.2598 FATAL    -Unable to create a null constant value of type 'System.Object'. Only entity types, enumeration types or primitive types are supported in this context. 
+2019-07-25 21:59:10.1453 FATAL    -Unable to create a null constant value of type 'System.Object'. Only entity types, enumeration types or primitive types are supported in this context. 

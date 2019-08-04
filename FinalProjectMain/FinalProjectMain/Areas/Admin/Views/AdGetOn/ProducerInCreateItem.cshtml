@@ -1,0 +1,8 @@
+﻿@using FinalProjectMain.Models.Entity
+@model IEnumerable<ProducerCompany>
+
+
+    @foreach (var item in Model)
+    {
+        <option value="@item.Id">@item.ProducerName</option>
+    }

@@ -1,0 +1,460 @@
+﻿
+@{
+    var checkSession = Session[SessionKey.User];
+}
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Main Page</title>
+    @*<link rel="stylesheet" href="~/Template/css/style.css">*@
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Animate.Css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="~/Template/css/animate.min.css">
+    <!-- Owl-Carousel -->
+    <link rel="stylesheet" href="~/Template/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/Template/css/owl.theme.default.min.css">
+    <!-- Imgae-Hover -->
+    <link rel="stylesheet" href="~/Template/css/imagehover.min.css">
+    <!-- Wawes-PlagIn -->
+    <link rel="stylesheet" href="~/Template/css/waves.min.css">
+    @*google-font <link href="https://fonts.googleapis.com/css?family=Didact+Gothic&display=swap" rel="stylesheet">*@
+    <link href="https://fonts.googleapis.com/css?family=Happy+Monkey&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/Template/css/theSamePart.css">
+
+    @RenderSection("css", required: false)
+
+</head>
+
+<body>
+    <section class="header-part">
+        <header class="header-nav text-muted">
+            <nav class="" id="forBackTop">
+                <div class="container">
+                    <div class="row d-flex">
+                        <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6 col-xl-6 top-left">
+                            <ul class="nav justify-content-center">
+                                <li class="nav-item">
+                                    <span class="">
+                                        <i class="fas fa-phone"></i> Ələqə:
+                                        (+994)-50-539-55-69 &nbsp;
+                                    </span>
+                                </li>
+                                <li class="nav-item">
+                                    <span>
+                                        &nbsp;&nbsp;<i class="far fa-envelope"></i> Email:
+                                        iqbal.hoff@list.ru
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6 col-xl-6 top-right d-flex justify-content-around">
+                            <div class="row text-center">
+                                <div class="wishlist-part col-md-6 col-xl-6 col-lg-6 col-xs-12">
+                                    <a class="text-decoration-none text-muted" href="@Url.Action("myWishList","additionalActions")">
+                                        <span><i class="fas fa-heart"></i> Istək siyahısı</span>
+                                    </a>
+                                </div>
+                                <div class="dropdown my-account-dropdown col-md-6 col-xl-6 col-lg-6 col-xs-12">
+                                    <span class="dropdown-toggle" id="dropdownForMyAccount" data-toggle="dropdown"
+                                          aria-haspopup="true" aria-expanded="false">
+                                        <a href="@Url.Action("myAccount","Home")" class="text-decoration-none text-muted">
+                                            <i class="far fa-user"></i> Mənim
+                                            Hesabım
+                                        </a>
+                                    </span>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownForMyAccount">
+                                        <a class="dropdown-item" href="#"><span>Ələqə</span></a>
+                                        <a class="dropdown-item" href="@Url.Action("viewCard","additionalActions")"><span>Kartım</span></a>
+                                        @if (Session[SessionKey.User] == null)
+                                        {
+                                            <a class="dropdown-item" href="@Url.Action("LogIn","Home")"><span>Daxil Ol</span></a>
+                                        }
+                                        @if (Session[SessionKey.User] != null)
+                                        {
+                                            <a class="dropdown-item"><span>@Session[SessionKey.User].ToString()</span></a>
+                                            <a class="dropdown-item" href="@Url.Action("LogoutUser","Home")"><span>Hesabdan Çixmaq</span></a>
+                                        }
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="search-part">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-md-12 col-lg-4 logo-col d-flex justify-content-center">
+                        <div class="logo-image justify-content-start ">
+                            <a href="@Url.Action("Index","Home")"><img class="mt-2" src="~/Template/img/logo2.png" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-8 search-shop">
+                        @Html.Partial("~/Views/Shared/_PartialViews/_searchPartial.cshtml")
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="navbar-main mt-2">
+        <nav class="navbar navbar-expand-lg navbar-light bg-danger">
+            <div class="container d-flex justify-content-between text-white">
+                <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+                <button class="navbar-toggler openSideBar" style="margin-left:-15px !important; border:none !important; outline:none" type="button" data-toggle="collapse" data-target="#"
+                        aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars text-white"></i>
+                </button>
+
+                <form class="form-inline icon-for-mobile" action="@Url.Action("clickSearchButton","Search")" method="get">
+                    <input class="form-control-xs mr-sm-2" value="@TempData["searchContent"]" name="content" type="search" placeholder="Search" aria-label="Search" style="width:184px !important">
+                    <button class="btn btn-sm btn-outline my-2 my-sm-0" type="submit"><i class="fas fa-search text-white"></i></button>
+                </form>
+
+                <div class="shopping-icon-col-for-navBar">
+                    <div class="shopping-icon d-flex dropdown dropleft" id="intoShopIconId">
+                        @Html.Action("shopIconInNavbar", "additionalActions")
+                    </div>
+                </div>
+                <div class="sideBarForMobile  d-none fixed">
+                    <ul class="sideBarUl" id="accordion">
+                        @Html.Action("intoSideBar", "Category")
+                    </ul>
+                </div>
+
+                <div class="collapse navbar-collapse justify-content-around" id="mainNavbar">
+                    <ul class="navbar-nav mr-auto ulForMainNav w-100 justify-content-around">
+                        <li class="nav-item dropdown dropdown-categories  menu">
+                            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                               aria-haspopup="true" aria-expanded="false" aria-label="Toggle navigation">
+                                <h5> <i class="fas fa-bars"></i> Bütün Kateqoriyalar</h5>
+                            </a>
+                            <ul class="dropdown-menu allCategoriesInNavBar rounded-0" aria-labelledby="navbarDropdown">
+                                @Html.Action("allCategoriesInNavBar", "Category")@*test*@  
+                            </ul>
+                        </li>
+                        <li class="nav-item active">
+
+                            <a class="nav-link" href="@Url.Action("Index","Home")">Əsas Səhifə</a>
+                        </li>
+                        <li class="nav-item dropdown dropdown-hover menu">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Servizlər
+                            </a>
+                            <div class="dropdown-menu rounded-0" aria-labelledby="navbarDropdown">
+                                @Html.Partial("~/Views/Shared/_PartialViews/_ServizSubCategory.cshtml")
+
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown dropdown-hover menu" id="checkTest">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Bakallar
+                            </a>
+                            <div class="dropdown-menu rounded-0" aria-labelledby="navbarDropdown">
+                                @Html.Partial("~/Views/Shared/_PartialViews/_bokalSubCategory.cshtml")
+                            </div>
+                        </li>
+                        <li class="nav-item  menu">
+                            <form action="@Url.Action("findProduct","category", new { souvenir=2})" method="post">
+                                <button type="submit" class="nav-link btn" href="#" style="">
+                                    Suvenirlər
+                                </button>
+                            </form>
+                        </li>
+                        <li class="nav-item dropdown dropdown-hover menu">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Qaşıqlar
+                            </a>
+
+                            <div class="dropdown-menu rounded-0" aria-labelledby="navbarDropdown">
+                                @Html.Partial("~/Views/Shared/_PartialViews/_qashiqSubCategory.cshtml")
+                            </div>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="@Url.Action("contactUs","Home")">Əlaqə</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+
+            @*@Html.Action("activeUserIcon", "Home")*@
+        </nav>
+    </section>
+
+    @RenderBody()
+
+    <section class="footerPart mt-5">
+        <footer>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="container footer-top-Part mt-5 pb-4">
+                        <div class="row">
+                            <div class="col-md-12 col-xl-4 col-xs-12 text-center font-weight-bold">
+                                <span class="text-uppercase span-subscribe-title">
+                                    Son Melumatlardan Xebardar olmaq üçün
+                                    Qeydiyyatdan Keç
+                                </span>
+                            </div>
+                            <div class="col-md-12 col-xl-5 col-xs-12">
+                                <form action="@Url.Action("subscribeButton","Home")">
+
+                                    <div class="input-group input-group-md w-100 mb-3">
+                                        <input type="text" name="email" class="form-control forSubScribe"
+                                               placeholder="Email adresiniz..." plas aria-label="Small"
+                                               aria-describedby="inputGroup-sizing-sm">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-md btn-danger" type="submit">Abunə Ol</button>
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
+                            <div class="col-md-12 col-xl-3 col-xs-12 socialPartInFooter">
+                                <ul class="nav justify-content-center">
+                                    <li><a class="nav-link" href="#"><i class="fab fa-facebook"></i></a></li>
+                                    <li><a class="nav-link" href="#"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a class="nav-link" href="#"><i class="fab fa-skype"></i></a></li>
+                                    <li><a class="nav-link" href="#"><i class="fab fa-instagram"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container footer-center-Part mt-5">
+                        <div class="row">
+                            <div class="col-md-6 col-lg-3 col-xl-3 col-xs-12 footer-contactUs mt-1">
+                                <span class="text-uppercase text-dark font-weight-bold">Bizimlə Əlaqə</span>
+                                <p>Ünvan: <span>Genclik Metrosunun Yaxınlığı</span></p>
+                                <p>Phone: <span>+994506705569</span></p>
+                                <p>Fax: <span>95959562956</span></p>
+                                <p>E-mail: <span>iqbal.hoff@list.ru</span></p>
+                            </div>
+                            <div class="col-md-6 col-lg-3 col-xl-3 col-xs-12 footer-account">
+                                <span class="text-uppercase text-dark  font-weight-bold">Hesabım</span>
+
+                                <li><a href="#">Şəxsi Məlumatlar</a></li>
+                                <li><a href="#">Sifarişlər</a></li>
+                                <li><a href="#">Ünvanlar</a></li>
+                                <li><a href="@Url.Action("myWishList","additionalActions")">Mənim Sevdiklərim</a></li>
+
+                            </div>
+                            <div class="col-md-6 col-lg-3 col-xl-3 col-xs-12  footer-information">
+                                <span class="text-uppercase text-dark  font-weight-bold">Məlumatlar</span>
+
+                                <li><a href="@Url.Action("infoPartMyAccount","Home")">Çatdırılma</a></li>
+                                <li><a href="@Url.Action("infoPartMyAccount","Home")">Qaydalar</a></li>
+                                <li><a href="@Url.Action("infoPartMyAccount","Home")">Haqqımızda</a></li>
+                                <li><a href="@Url.Action("contactUs","Home")">Bizimlə Əlaqə</a></li>
+                            </div>
+                            <div class="col-md-6 col-lg-3 col-xl-3 col-xs-12  footer-servis">
+                                <span class="text-uppercase text-dark  font-weight-bold">MÜŞTƏRİ XİDMƏTİ</span>
+                                <li><a href="@Url.Action("infoPartMyAccount","Home")">Şəxsi Məlumatlar</a></li>
+                                <li><a href="@Url.Action("shoppingAdress","Home")">Mağazalar</a></li>
+                                <li><a href="@Url.Action("logIn","Home")">Daxil Ol</a></li>
+                                <li><a href="@Url.Action("myAccount","Home")">Mənim Hesabım</a></li>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-fluid footer-bottom-part">
+                        <div class="row">
+                            <div class="container">
+                                <div class="row pt-2 pb-2 mt-2">
+                                    <div class="col-md-5 col-xl-5 col-lg-5 col-xs-12">
+                                        <p>
+                                            Copyright © 2019 <a href="#" class="text-muted">Igbal Hasanli</a> All Right
+                                            Reserved.
+                                        </p>
+                                    </div>
+                                    <div class="col-md-7 col-xl-7 col-lg-7 col-xs-12 text-end imagePayment">
+                                        <img width="100%"
+                                             src="https://demo.fieldthemes.com/techo/modules/fieldhtmlblock/images/payment_ft.png"
+                                             alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#forBackTop"><i class="fas fa-chevron-up"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+
+    <section class="scripts">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+        <script src="~/Template/js/owl.carousel.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="~/Template/js/waves.min.js"></script>
+        <script src="~/Template/js/jquery.elevatezoom.js"></script>
+        <!-- <script src="https://kit.fontawesome.com/4e9f4545fc.js"></script> -->
+        <script src="~/Template/js/theSameScripts.js"></script>
+        @RenderSection("scripts", required: false)
+
+    </section>
+
+    <script>
+        //$("#top-serarch-dropdown .dropdown-item").on("click", function () {
+        //    console.log($(this).text())
+        //})
+        $('#dropDownId :selected').text();
+
+    </script>
+    <script>
+    function findProducts(Id) {
+        $.ajax({
+
+            url: "@Url.Action("findProducts","Category")",
+            type: "POST",
+            data:
+            {
+                categoryName: $(this).text(),
+                subCategoryId:Id
+            },
+            success: function (response) {
+                console.log(response)
+            },
+            error: function (response) {
+                console.error(response)
+            }
+        })
+    }
+    function clickShopIcon(Id) {
+            var newId;
+          if ($(window).width() < 992) {
+              newId = Id;
+            }
+            $.ajax({
+                url: "@Url.Action("addToShopList","additionalActions")",
+                type: "POST",
+                data: {
+                    productId: Id,
+                    newProductId: newId,
+                },
+                success: function (response) {
+                    if (response == "nosession")
+                    {
+                    swal({
+                         title: "Daxil Olun!",
+                         icon: "warning",
+                         button: "Daxil Ol!",
+                    }).then(function() {
+                          window.location.href = "/Home/logIn";
+                                 });
+                    }
+                    else if(response=="alreadyInShopList")
+                    {
+                  swal({
+                    text: "Bu məhsul artıq səbətə elavə olunub!",
+                    icon: "warning",
+                    button: "Bağla!",
+                  });
+                    }
+                    else if (response=="alreadySold") {
+                  swal({
+                    text: "Bu məhsul satılıb!",
+                    icon: "warning",
+                    button: "Bağla!",
+                  });
+                    }
+                    else
+                    {
+                  swal({
+                    text: "Səbətə elavə olundu!",
+                    icon: "success",
+                    button: "Bağla!",
+                  });
+                        if (newId!=null) {
+                            $("#idShopIconImNavBar").html(response)
+                            console.log("asa")
+                        }
+                        $("#intoShopIconId").html(response)
+
+                    }
+                },
+                error: function (response) {
+                    console.error(response)
+                }
+
+            })
+        }
+    function deleteFromShopList(Id) {
+        $.ajax({
+
+            url: "@Url.Action("deleteFromShopList","additionalActions")",
+            type: "POST",
+            data: { id: Id },
+            success: function (response) {
+              swal({
+                    text: "Bu məhsul səbətdən silindi!",
+                    icon: "success",
+                    button: "Bağla!",
+              });
+                        $("#shopListRowId").html(response)
+            },
+            error: function (response) {
+                console.error(response)
+            }
+        })
+    }
+    function deleteFromShopIcon(IdInIcon) {
+             $.ajax({
+
+            url: "@Url.Action("deleteFromShopList","additionalActions")",
+            type: "POST",
+            data: { idInShopIcon: IdInIcon },
+            success: function (response) {
+              swal({
+                    text: "Bu məhsul səbətdən silindi!",
+                    icon: "success",
+                    button: "Bağla!",
+              });
+                        $("#intoShopIconId").html(response)
+            },
+            error: function (response) {
+                console.error(response)
+            }
+        })
+        }
+    function deleteFromShopNavIcon(IdInNavIcon) {
+             $.ajax({
+
+            url: "@Url.Action("deleteFromShopList","additionalActions")",
+            type: "POST",
+            data: { idInShopNavId: IdInNavIcon },
+            success: function (response) {
+              swal({
+                    text: "Bu məhsul səbətdən silindi!",
+                    icon: "success",
+                    button: "Bağla!",
+              });
+                        $("#idShopIconImNavBar").html(response)
+            },
+            error: function (response) {
+                console.error(response)
+            }
+        })
+        }
+    </script>
+</body>
+
+</html>

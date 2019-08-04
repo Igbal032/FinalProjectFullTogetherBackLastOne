@@ -1,0 +1,460 @@
+﻿@using FinalProjectMain.Models.Entity;
+@{
+    Layout = "~/Areas/Admin/Views/Shared/Layout.cshtml";
+
+}
+
+
+
+<div class="container" style="margin-top:100px">
+    <div class="row ml-1">
+        <div class="col-xl-6 col-md-12 col-lg-6">
+            <form id="infoFrom" class="pb-5" action="@Url.Action("SubmitCreateNewItem","Admin")" method="post" enctype="multipart/form-data">
+
+                <div class="form-group">
+                    <label for="">Kateqoriya Seç</label>
+                    <select multiple name="categoryVal" class="form-control" id="categoryVal">
+                       @Html.Action("CategorySelectInCreateItem", "Admin", new { areas = "admin" })
+                    </select>
+                    <p class="text-danger">@TempData["emptyCategory"]</p>
+                    <a id="addNewCategoryOpenModal" href="#">Yeni Kateqoriya Əlavə Et</a>
+                </div>
+
+                <div class="form-group">
+
+                    <label for="">Multi Kateqoriya Seç</label>
+                    <select  name="multiCategoryVal" class="form-control" id="multiCategoryVal">
+                        @*@Html.Action("MultiCategorySelectInCreateItem", "Admin", new { areas = "admin" })*@
+                    </select>
+                    <a id="addNewMultiCategoryOpenModal" href="#">Yeni Multi-Kateqoriya Əlavə Et</a>
+                </div>
+
+                <div class="form-group">
+                    <label id="namename" for="">Ad</label>
+                    <input type="text" class="form-control" id="itemName" aria-describedby="" name="name" placeholder="Məhsulun Adını Daxil Edin">
+                    <p class="text-danger">@TempData["emptyNameInput"]</p>
+                </div>
+                <div class="form-group">
+                    <label for="">Haqqında Məlumat</label>
+                    <input type="text" class="form-control" id="aboutItem" name="about" aria-describedby="" placeholder="Məlumat">
+                </div>
+                <div class="form-group">
+                    <label for="">Istehsal</label>
+                    <select class="form-control" name="producerVal" id="producerVal">
+                        @Html.Action("ProducerInCreateItem", "Admin", new { areas = "admin" })
+                    </select>
+                    <a href="#" id="addNewProducerOpenModal">Yeni Firma Əlavə Et</a>
+                </div>
+                <div class="form-group">
+                    <label for="">Rəng Seç</label>
+                    <select class="form-control" name="ColorVal" id="ColorVal">
+                        @Html.Action("ColorInCreateItem", "Admin", new { areas = "admin" })
+                    </select>
+                    <a href="#" id="addNewColorOpenModal">Yeni Rəng Əlavə Et</a>
+
+                </div>
+                <div class="form-group">
+                    <label for="">Ölçü Əlavə Et</label> <br />
+                    <input type="text" name="size" value="0" class="form-control-sm border border-dark rounded-0" />
+                </div>
+
+                <div class="form-group">
+                    <label for="">Şəkillər</label>
+                    <input type="file" multiple name="imgFiles" class="form-control-file" id="imgInp" />
+
+                    <p class="text-danger">@TempData["imgIsEmpty"]</p>
+                </div>
+                @*<div>
+         <label for="">Şəkillər</label>
+        <input type="file" name="imgFile" class="form-control-file" id="imgInp" />
+        <br />
+        <img id="blah" src="#" alt="your image" style="width:100px !important" />
+        <br />
+
+        </div>*@
+                <div class="form-group">
+                    <label for="">Qiymət</label> <br />
+                    <input type="number" name="price" class="form-control-sm border border-dark rounded-0" min="0" max="5000" step="1" value="1" />
+                </div>
+
+                <div class="form-group">
+                    <label for="">Endirim Qiymət</label> <br />
+                    <input type="number" name="discountPrice" class="form-control-sm border border-dark rounded-0" min="0" max="5000" step="1" value="1" />
+                </div>
+                <button type="submit" id="createNewItemOnClick" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+
+<section class="modalSection">
+    <div class="modal" id="addNewCategory" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Kateqoriya Əlavə Et</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body mt-3 mb-3">
+                    <input type="text" id="categoryNameInputId" name="CategoryName" class="form-control" placeholder="Kateqoriyanın adı" />
+                    <p class="mt-1">Multi Kateqoriyası</p>
+                    <select id="withSubCategory" class="mt-2">
+                        <option selected disabled>Seçin</option>
+                        <option value="1">Hə</option>
+                        <option value="2">Yox</option>
+                    </select>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Bağla</button>
+                    <button type="button" id="addNewCategoryButton" class="btn btn-primary">Əlavə Et</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="addNewMultiCategory" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Multi-Kateqoriya Əlavə Et</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body mt-3 mb-3">
+                    <input type="text" id="multiCategoryNameInputId" class="form-control" placeholder="Multi-Kateqoriyanın adı" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Bağla</button>
+                    <button type="button" id="addNewMultiCategoryButton" class="btn btn-primary">Əlavə Et</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="addNewColor" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Rəng Əlavə Et</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body mt-3 mb-3">
+                    <input type="text" id="ColorNameInputId" class="form-control" placeholder="Rəng adı" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Bağla</button>
+                    <button type="button" id="addNewColorButton" class="btn btn-primary">Əlavə Et</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="addNewProducer" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Firma Əlavə Et</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body mt-3 mb-3">
+                    <input type="text" id="ProducerNameInputId" class="form-control" placeholder="Firma adı" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Bağla</button>
+                    <button type="button" id="addNewProducerButton" class="btn btn-primary">Əlavə Et</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section scripts{
+    <script>
+        var selectedCategory;
+
+        $(document).ready(function (e) {
+
+
+            //Fill SubCategory
+            $("#categoryVal").on("click", function (e) {
+                var id = $(this).val();
+                $.ajax({
+                    url: "@Url.Action("FillMultiCategorySelectInCreateItem","Admin")",
+                    type: "POST",
+                    data:
+                    {
+                        categoryId: id,
+                    },
+                    success: function (response) {
+                        if (response == "null") {
+                          $("#multiCategoryVal").html("")
+                        }
+                        else {
+                         $("#multiCategoryVal").html(response)
+                        }
+                    },
+                    error: function (response) {
+                        console.error(response)
+                    }
+                })
+            })
+
+             $("#categoryVal").change(function(){
+            selectedCategory = $(this).children("option:selected").val();
+    });
+
+            //Fill SubCategory
+
+
+            // Add Category
+
+            $("#addNewCategoryOpenModal").on("click", function (e) {
+
+                $("#addNewCategory").modal('show')
+            })
+
+            $("#addNewCategoryButton").on("click", function (e) {
+
+
+                $.ajax({
+
+                    url: "@Url.Action("addNewCategory","Admin")",
+                    type: "POST",
+                    data: {
+                        categoryname: $("#categoryNameInputId").val(),
+                        withSubCategory :$('#withSubCategory').val(),
+                    },
+                    success: function (response) {
+                        if (response == "theSameName") {
+                             swal({
+                           title: ":(",
+                           text: "Bu kateqoriya mövcuddur",
+                           icon: "warning",
+                           button: "Bitdi",
+                              });
+                        }
+                        if (response == "") {
+                            swal({
+                                title: ":(",
+                                text: "Zəhmət olmasa xananı doldurun!",
+                                icon: "warning",
+                                button: "Bitdi",
+                            });
+                        }
+                        else if( response != "theSameName" && response != "")
+                        {
+                            $("#addNewCategory").modal('hide')
+                            swal({
+                                title: ":)",
+                                text: "Əlavə olundu",
+                                icon: "success",
+                                button: "Bitdi",
+                            });
+                            $("#categoryNameInputId").val("");
+                            $("#categoryVal").html(response);
+                        }
+                    },
+                    error: function (response) {
+                        console.error(response)
+                    }
+                })
+
+            })
+
+            // Add Category
+
+            // Add New Multi Category
+
+            $("#addNewMultiCategoryOpenModal").on("click", function (e) {
+
+                $("#addNewMultiCategory").modal('show')
+            })
+
+            $("#addNewMultiCategoryButton").on("click", function (e) {
+
+
+                $.ajax({
+
+                    url: "@Url.Action("addNewSubCategory","Admin")",
+                    type: "POST",
+                    data: {
+                        subcategoryname: $("#multiCategoryNameInputId").val(),
+                        categoryId : selectedCategory,
+
+                    },
+                    success: function (response) {
+                        debugger
+                        if (response == "0") {
+                       $("#addNewMultiCategory").modal('hide')
+                             swal({
+                           title: ":(",
+                           text: "Zəhmət olmasa Kateqoriya Seçin!!",
+                           icon: "warning",
+                           button: "Bitdi",
+                              });
+                        }
+                        else if (response == "theSameName") {
+                             swal({
+                           title: ":(",
+                           text: "Bu Multi kateqoriya mövcuddur",
+                           icon: "warning",
+                           button: "Bitdi",
+                              });
+                        }
+                        else if (response == "") {
+                            swal({
+                                title: ":(",
+                                text: "Zəhmət olmasa xananı doldurun!",
+                                icon: "warning",
+                                button: "Bitdi",
+                            });
+                        }
+                        else if( response != "theSameName" && response != "")
+                        {
+                            swal({
+                                title: ":)",
+                                text: "Multi - Kategoriya Əlavə olundu",
+                                icon: "success",
+                                button: "Bitdi",
+                            });
+                            $("#multiCategoryNameInputId").val("");
+                            $("#multiCategoryVal").html(response);
+                            $("#addNewMultiCategory").modal('hide')
+
+                        }
+                    },
+                    error: function (response) {
+                        console.error(response)
+                    }
+                })
+
+            })
+
+            // Add New Multi Category
+
+
+            // Add Color
+
+            $("#addNewColorOpenModal").on("click", function (e) {
+
+                $("#addNewColor").modal('show')
+            })
+
+            $("#addNewColorButton").on("click", function (e) {
+
+
+                $.ajax({
+
+                    url: "@Url.Action("addNewColor","Admin")",
+                    type: "POST",
+                    data: {
+                        colorname: $("#ColorNameInputId").val(),
+                    },
+                    success: function (response) {
+                        if (response == "theSameName") {
+                             swal({
+                           title: ":(",
+                           text: "Bu Rəng mövcuddur",
+                           icon: "warning",
+                           button: "Bitdi",
+                              });
+                        }
+                        if (response == "") {
+                            swal({
+                                title: ":(",
+                                text: "Zəhmət olmasa xananı doldurun!",
+                                icon: "warning",
+                                button: "Bitdi",
+                            });
+                        }
+                        else if( response != "theSameName" && response != "")
+                        {
+                            $("#addNewColor").modal('hide')
+                            swal({
+                                title: ":)",
+                                text: "Əlavə olundu",
+                                icon: "success",
+                                button: "Bitdi",
+                            });
+                            $("#ColorNameInputId").val("");
+                            $("#ColorVal").html(response);
+                        }
+                    },
+                    error: function (response) {
+                        console.error(response)
+                    }
+                })
+
+            })
+
+            // Add Color
+
+
+            // Add Producer
+
+            $("#addNewProducerOpenModal").on("click", function (e) {
+
+                $("#addNewProducer").modal('show')
+            })
+
+            $("#addNewProducerButton").on("click", function (e) {
+
+                $.ajax({
+
+                    url: "@Url.Action("addNewProducer","Admin")",
+                    type: "POST",
+                    data: {
+                        producername: $("#ProducerNameInputId").val(),
+                    },
+                    success: function (response) {
+                        if (response == "theSameName") {
+                             swal({
+                           title: ":(",
+                           text: "Bu Firma mövcuddur",
+                           icon: "warning",
+                           button: "Bitdi",
+                              });
+                        }
+                        if (response == "") {
+                            swal({
+                                title: ":(",
+                                text: "Zəhmət olmasa xananı doldurun!",
+                                icon: "warning",
+                                button: "Bitdi",
+                            });
+                        }
+                        else if( response != "theSameName" && response != "")
+                        {
+                            $("#addNewProducer").modal('hide')
+                            swal({
+                                title: ":)",
+                                text: "Əlavə olundu",
+                                icon: "success",
+                                button: "Bitdi",
+                            });
+                            $("#ProducerNameInputId").val("");
+                            $("#producerVal").html(response);
+                        }
+                    },
+                    error: function (response) {
+                        console.error(response)
+                    }
+                })
+
+            })
+
+            // Add Producer
+        })
+
+    </script>
+}

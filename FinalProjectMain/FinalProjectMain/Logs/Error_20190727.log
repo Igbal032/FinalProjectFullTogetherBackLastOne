@@ -1,0 +1,29 @@
+2019-07-27 09:15:00.9393 FATAL    -Unable to create a null constant value of type 'System.Object'. Only entity types, enumeration types or primitive types are supported in this context. 
+2019-07-27 09:20:28.7918 FATAL    -Unable to create a null constant value of type 'System.Object'. Only entity types, enumeration types or primitive types are supported in this context. 
+2019-07-27 10:26:24.7526 FATAL    -The partial view '~/Views/Shared/_PartialViews/_SevizSubCategory.cshtml' was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/Shared/_PartialViews/_SevizSubCategory.cshtml 
+2019-07-27 10:34:55.7497 FATAL    -The partial view '~/Views/Shared/_PartialViews/_SevizSubCategory.cshtml' was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/Shared/_PartialViews/_SevizSubCategory.cshtml 
+2019-07-27 10:35:09.1792 FATAL    -The partial view '~/Views/Shared/_PartialViews/_SevizSubCategory.cshtml' was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/Shared/_PartialViews/_SevizSubCategory.cshtml 
+2019-07-27 10:35:42.5219 FATAL    -The partial view '~/Views/Shared/_PartialViews/_SevizSubCategory.cshtml' was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/Shared/_PartialViews/_SevizSubCategory.cshtml 
+2019-07-27 10:46:20.3778 FATAL    -The parameters dictionary contains a null entry for parameter 'Id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult itemPage(Int32)' in 'FinalProjectMain.Controllers.HomeController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters 
+2019-07-27 21:14:40.9232 FATAL    -Child actions are not allowed to perform redirect actions. 
+2019-07-27 21:16:42.5019 FATAL    - 
+2019-07-27 23:01:27.0827 FATAL    -The parameters dictionary contains a null entry for parameter 'Id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult itemPage(Int32)' in 'FinalProjectMain.Controllers.HomeController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters 
+2019-07-27 23:16:44.4830 FATAL    - 
+2019-07-27 23:16:46.1186 FATAL    - 
+2019-07-27 23:16:52.1312 FATAL    - 
+2019-07-27 23:18:38.8081 FATAL    - 
+2019-07-27 23:19:44.6127 FATAL    - 
+2019-07-27 23:24:17.7641 FATAL    - 
+2019-07-27 23:24:18.1951 FATAL    - 
+2019-07-27 23:24:19.2342 FATAL    - 
+2019-07-27 23:24:20.4031 FATAL    - 
+2019-07-27 23:26:47.2910 FATAL    - 
+2019-07-27 23:26:48.0580 FATAL    - 
+2019-07-27 23:26:49.1381 FATAL    - 
+2019-07-27 23:40:49.7839 FATAL    -Object reference not set to an instance of an object. 

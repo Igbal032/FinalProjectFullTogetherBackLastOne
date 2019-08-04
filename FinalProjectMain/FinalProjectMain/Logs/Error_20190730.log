@@ -1,0 +1,19 @@
+2019-07-30 01:29:55.8507 FATAL    -Cannot perform runtime binding on a null reference 
+2019-07-30 01:31:30.4361 FATAL    -Cannot perform runtime binding on a null reference 
+2019-07-30 01:32:18.4326 FATAL    -Cannot perform runtime binding on a null reference 
+2019-07-30 01:32:57.4937 FATAL    -Cannot perform runtime binding on a null reference 
+2019-07-30 01:36:47.4822 FATAL    -Object reference not set to an instance of an object. 
+2019-07-30 01:37:36.1671 FATAL    -Object reference not set to an instance of an object. 
+2019-07-30 01:39:20.7067 FATAL    -Object reference not set to an instance of an object. 
+2019-07-30 20:34:53.0074 FATAL    - 
+2019-07-30 20:42:22.1539 FATAL    - 
+2019-07-30 20:44:15.8162 FATAL    - 
+2019-07-30 20:45:10.2079 FATAL    -The parameters dictionary contains a null entry for parameter 'Id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult itemPage(Int32)' in 'FinalProjectMain.Controllers.HomeController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters 
+2019-07-30 20:45:44.6625 FATAL    - 
+2019-07-30 22:37:17.4999 FATAL    -Object reference not set to an instance of an object. 
+2019-07-30 22:37:55.3519 FATAL    -Object reference not set to an instance of an object. 
+2019-07-30 22:43:09.5413 FATAL    -The model item passed into the dictionary is of type 'System.Collections.Generic.List`1[FinalProjectMain.Models.Entity.CategoryAndProduct]', but this dictionary requires a model item of type 'System.Collections.Generic.IEnumerable`1[FinalProjectMain.Models.Entity.Product]'. 
+2019-07-30 22:44:52.8296 FATAL    -The model item passed into the dictionary is of type 'System.Collections.Generic.List`1[FinalProjectMain.Models.Entity.CategoryAndProduct]', but this dictionary requires a model item of type 'System.Collections.Generic.IEnumerable`1[FinalProjectMain.Models.Entity.Product]'. 
+2019-07-30 23:22:34.8976 FATAL    - 
+2019-07-30 23:31:48.9950 FATAL    - 
