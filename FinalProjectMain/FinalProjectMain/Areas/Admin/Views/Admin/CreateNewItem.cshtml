@@ -24,7 +24,7 @@
 
                     <label for="">Multi Kateqoriya Seç</label>
                     <select  name="multiCategoryVal" class="form-control" id="multiCategoryVal">
-                        @*@Html.Action("MultiCategorySelectInCreateItem", "Admin", new { areas = "admin" })*@
+
                     </select>
                     <a id="addNewMultiCategoryOpenModal" href="#">Yeni Multi-Kateqoriya Əlavə Et</a>
                 </div>
@@ -64,14 +64,7 @@
 
                     <p class="text-danger">@TempData["imgIsEmpty"]</p>
                 </div>
-                @*<div>
-         <label for="">Şəkillər</label>
-        <input type="file" name="imgFile" class="form-control-file" id="imgInp" />
-        <br />
-        <img id="blah" src="#" alt="your image" style="width:100px !important" />
-        <br />
 
-        </div>*@
                 <div class="form-group">
                     <label for="">Qiymət</label> <br />
                     <input type="number" name="price" class="form-control-sm border border-dark rounded-0" min="0" max="5000" step="1" value="1" />

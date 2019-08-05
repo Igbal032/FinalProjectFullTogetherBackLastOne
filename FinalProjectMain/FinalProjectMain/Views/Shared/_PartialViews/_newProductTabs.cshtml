@@ -36,7 +36,7 @@
                 </figure>
                 <div class="card-body text-center">
                     <form action="@Url.Action("itemPage","Home")" method="get">
-                        <input type="hidden" name="Id" value="@item.Id" />
+                        <input type="hidden" name="Id" value="@item.Product.Id" />
                         <button type="submit" class="text-decoration-none btn btn-transparent"><span class="text-danger font-weight-bold">@item.Product.Name</span></button>
 
                         <h4>@item.Product.Price AZN</h4>

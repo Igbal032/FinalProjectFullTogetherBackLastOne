@@ -193,6 +193,7 @@ namespace FinalProjectMain.Controllers
 
         }
         [AllowAnonymous]
+        [ChildActionOnly]
         public ActionResult shopIcon()
         {
             if (Session[SessionKey.User] != null)
@@ -210,6 +211,7 @@ namespace FinalProjectMain.Controllers
             }
         }
         [AllowAnonymous]
+        [ChildActionOnly]
         public ActionResult shopIconInNavbar()
         {
             if (Session[SessionKey.User] != null)

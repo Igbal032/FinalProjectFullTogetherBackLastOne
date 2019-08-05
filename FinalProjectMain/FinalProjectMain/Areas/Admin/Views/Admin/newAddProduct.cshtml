@@ -43,6 +43,7 @@
                                     <button id="confirmButtonInWaitlist" onclick="confirmButtomInWaitlist(@item.Id)" class="btn btn-sm btn-success">Təstiqlə</button>
 
                                 }
+                                <a href="@Url.Action("Edit","EditProducts", routeValues: new { id = item.Id})" class="btn btn-sm btn-warning"></a>
                                 <button id="deleteButtomInWaitlist" onclick="deleteButtomInWaitlist(@item.Id)" class="btn btn-sm btn-danger">Sil</button>
                                 <form action="@Url.Action("LookAtAllİmages","Admin")" method="get">
                                     <input id="hiddenID" name="id" type="hidden" value="@item.Id" />

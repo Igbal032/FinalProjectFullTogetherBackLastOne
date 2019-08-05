@@ -5,7 +5,10 @@ $('.carousel').carousel({
 
 $('.main-carousel .container-fluid .row .owl-carousel').owlCarousel({
     loop: false,
-    autoplay: true,
+    nav: false,
+    dots: true,
+    
+    autoplay: false,
     autoplayTimeout: 2000,
     autoplayHoverPause: true,
     responsiveClass: true,

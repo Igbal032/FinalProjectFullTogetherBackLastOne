@@ -897,6 +897,9 @@
     <Content Include="Template\img\250x250.gif" />
     <Content Include="Template\img\250X250.png" />
     <Content Include="Template\img\250xx250.png" />
+    <Content Include="Template\img\3_master.jpg" />
+    <Content Include="Template\img\78747_69000_kitchen-stuff-plus-ophelia-white-porcelain-dinnerware-set-of-16.jpg" />
+    <Content Include="Template\img\84061-dishes-stack.png" />
     <Content Include="Template\img\c1.jpg" />
     <Content Include="Template\img\c2.jpg" />
     <Content Include="Template\img\commentUser.jfif" />
@@ -917,13 +920,18 @@
     <Content Include="Template\img\m-carousel3.jpg" />
     <Content Include="Template\img\m1.jpg" />
     <Content Include="Template\img\m2.jpg" />
+    <Content Include="Template\img\mainCarousel\3_master.jpg" />
     <Content Include="Template\img\mainCarousel\bakal %281%29.JPG" />
     <Content Include="Template\img\mainCarousel\bakal %2812%29.JPG" />
     <Content Include="Template\img\mainCarousel\bakal %2820%29.JPG" />
+    <Content Include="Template\img\mainCarousel\bakal %283%29.JPG" />
     <Content Include="Template\img\mainCarousel\bakal %2837%29.JPG" />
     <Content Include="Template\img\mainCarousel\bakal %284%29.JPG" />
     <Content Include="Template\img\mainCarousel\bakal %287%29.JPG" />
+    <Content Include="Template\img\mainCarousel\bakal %288%29.JPG" />
+    <Content Include="Template\img\mainCarousel\bakal %289%29.JPG" />
     <Content Include="Template\img\mainCarousel\IMG_6262.JPG" />
+    <Content Include="Template\img\mainCarousel\organic-shaped-dinnerware-set-o.jpg" />
     <Content Include="Template\img\newImg\bakal %281%29.JPG" />
     <Content Include="Template\img\newImg\bakal %2810%29.JPG" />
     <Content Include="Template\img\newImg\bakal %2811%29.JPG" />
@@ -1124,6 +1132,9 @@
     <Content Include="Template\img\newImg\Suvuner %2834%29.JPG" />
     <Content Include="Template\img\newImg\Suvuner %2839%29.JPG" />
     <Content Include="Template\img\newImg\Suvuner %2841%29.JPG" />
+    <Content Include="Template\img\organic-shaped-dinnerware-set-o.jpg" />
+    <Content Include="Template\img\plate-png-kitchen-19.png" />
+    <Content Include="Template\img\royal_white_teacup_and_saucer_front_1.png" />
     <Content Include="Template\img\single.jpg" />
     <Content Include="Template\img\svgIcon\cart-plus-solid.svg" />
     <Content Include="Template\img\svgIcon\file.jpeg" />
@@ -1177,6 +1188,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryColorCompanyController.cs" />
+    <Compile Include="Areas\Admin\Controllers\EditProductsController.cs" />
     <Compile Include="Controllers\additionalActionsController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\ContactUSController.cs" />
@@ -1284,6 +1296,8 @@
     <Content Include="Areas\Admin\Views\Admin\forgetPasswordPage.cshtml" />
     <Content Include="NLog.config" />
     <Content Include="Areas\Admin\Views\Shared\_SieBarAdmin.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\EditItemFromWaitList.cshtml" />
+    <Content Include="Areas\Admin\Views\EditProducts\Edit.cshtml" />
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>

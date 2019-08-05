@@ -225,8 +225,13 @@ namespace FinalProjectMain.Controllers
                     }
                     else if (getPriceVal == 11)
                     {
-                        var sortingListt = saveProduct.saveProductsWithcategory.Where(n => n.Product.Price >= 2000).ToList();
-                        return PartialView("~/Views/Shared/_PartialViews/_intoProductPageForCategory.cshtml", sortingListt.OrderByDescending(w => w.Id).Take(9));
+                        var sortingList = saveProduct.saveProductsWithcategory.Where(n => n.Product.Price >= 1000 && n.Product.Price <= 2000).ToList();
+                        return PartialView("~/Views/Shared/_PartialViews/_intoProductPageForCategory.cshtml", sortingList.OrderByDescending(w => w.Id).Take(9));
+                    }
+                    else if (getPriceVal == 12)
+                    {
+                        var sortingList = saveProduct.saveProductsWithcategory.Where(n => n.Product.Price >= 2000).ToList();
+                        return PartialView("~/Views/Shared/_PartialViews/_intoProductPageForCategory.cshtml", sortingList.OrderByDescending(w => w.Id).Take(9));
                     }
                     else
                     {

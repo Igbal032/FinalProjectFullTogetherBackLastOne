@@ -1,14 +1,17 @@
 ﻿@charset "UTF-8";
+
 * {
     font-family: 'Happy Monkey', cursive;
+}
 
-}
 .card .card-body.text-center button span.text-danger {
-    word-break:break-all !important;
+    word-break: break-all !important;
 }
-.card.md-4{
+
+.card.md-4 {
     height: 350px !important;
 }
+
 .card span.badge {
     position: absolute !important;
     right: 25px !important;
@@ -16,10 +19,12 @@
     border-radius: 4px !important;
     box-shadow: 0px 0px 19px 20px white;
 }
+
 button {
     outline: 0 !important;
     box-shadow: 0 0 0 0 !important;
 }
+
 div.owl-dots {
     display: none;
 }
@@ -338,7 +343,6 @@ html {
 }
 
 .productsPage-center #accordion .card {
-   
 }
 
 .footerPart footer {
@@ -495,25 +499,25 @@ html {
 @media only screen and (max-width: 992px) {
 
     #spanIdForStar {
-        top:295px !important;
+        top: 295px !important;
     }
 
-    .wishlist-part{
-        display:none !important;
+    .wishlist-part {
+        display: none !important;
     }
+
     .search-part .container .row .search-shop {
         display: none;
     }
 
-        .shopping-icon i{
+    .shopping-icon i {
+        line-height: unset !important;
+        padding-right: 2px !important;
+    }
 
-            line-height: unset!important;
-            padding-right: 2px !important;
-        }
-
-        .search-part .container .row .search-shop .shopping-icon-col {
-            display: none;
-        }
+    .search-part .container .row .search-shop .shopping-icon-col {
+        display: none;
+    }
 
     .navbar-main .shopping-icon-col-for-navBar {
         display: block;
@@ -557,7 +561,6 @@ html {
                     height: 100%;
                     font-weight: bold !important;
                     color: white !important;
-
                 }
 
                     .navbar-main .navbar-expand-lg .container .sideBarForMobile ul li a:focus {
@@ -581,26 +584,52 @@ html {
     width: 100%;
     justify-content: space-between;
 }
-.main-carousel .container-fluid .row .owl-carousel .owl-nav button {
-background-color:transparent;
-font-size:40px;
+
+    .main-carousel .container-fluid .row .owl-carousel .owl-nav button {
+        background-color: transparent;
+        font-size: 40px;
+    }
+
+.main-carousel .container-fluid .row .owl-carousel .owl-dots {
+    background-color: transparent;
+    display: block !important;
 }
+
+    .main-carousel .container-fluid .row .owl-carousel .owl-dots button {
+        background-color: transparent;
+    }
+
+    .main-carousel .container-fluid .row .owl-carousel .owl-dots span {
+        width: 19px;
+        height: 4px;
+        background-color: red;
+    }
+
+        .main-carousel .container-fluid .row .owl-carousel .owl-dots span:hover {
+            background: black;
+        }
+        .main-carousel .container-fluid .row .owl-carousel .owl-dots span:active {
+            background: black;
+        }  
+
+
 .main-carousel .container-fluid .row .owl-carousel .owl-nav button:hover {
-background-color:transparent;
-color:red;
+    background-color: transparent;
+    color: red;
 }
-    .main-carousel .container-fluid .row .owl-carousel .owl-nav button span {
-        color: red;
-    }
 
-    .main-carousel .container-fluid .row .owl-carousel .owl-prev:focus, .main-carousel .container-fluid .row .owl-carousel .owl-next:focus {
-        -webkit-box-shadow: 0 0 0 0.0rem transparent !important;
-        box-shadow: 0 0 0 0.0rem transparent !important;
-    }
+.main-carousel .container-fluid .row .owl-carousel .owl-nav button span {
+    color: red;
+}
 
-    .main-carousel .container-fluid .row .owl-carousel .owl-prev:hover, .main-carousel .container-fluid .row .owl-carousel .owl-next:hover {
-        background-color: transparent !important;
-    }
+.main-carousel .container-fluid .row .owl-carousel .owl-prev:focus, .main-carousel .container-fluid .row .owl-carousel .owl-next:focus {
+    -webkit-box-shadow: 0 0 0 0.0rem transparent !important;
+    box-shadow: 0 0 0 0.0rem transparent !important;
+}
+
+.main-carousel .container-fluid .row .owl-carousel .owl-prev:hover, .main-carousel .container-fluid .row .owl-carousel .owl-next:hover {
+    background-color: transparent !important;
+}
 
 .main-carousel .container-fluid .row .owl-carousel .item img {
     -o-object-fit: cover !important;
@@ -726,45 +755,45 @@ color:red;
     border-radius: 0% !important;
 }
 
-    .products-Tabs .container .row .rightPartOneCard .card .card-body a {
-        font-size: 30px !important;
+.products-Tabs .container .row .rightPartOneCard .card .card-body a {
+    font-size: 30px !important;
+    text-decoration: none !important;
+}
+
+    .products-Tabs .container .row .rightPartOneCard .card .card-body a .fa-star {
+        color: yellow !important;
+        font-size: 15px;
+    }
+
+    .products-Tabs .container .row .rightPartOneCard .card .card-body a span {
+        color: red !important;
+        font-weight: bold;
+    }
+
+.products-Tabs .container .row .rightPartOneCard .card .card-footer .icon-part div {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background-color: white;
+}
+
+    .products-Tabs .container .row .rightPartOneCard .card .card-footer .icon-part div:hover {
+        background-color: red !important;
+        -webkit-transition: 1s;
+        transition: 1s;
+    }
+
+        .products-Tabs .container .row .rightPartOneCard .card .card-footer .icon-part div:hover .icon-link {
+            color: white !important;
+        }
+
+    .products-Tabs .container .row .rightPartOneCard .card .card-footer .icon-part div a {
         text-decoration: none !important;
     }
 
-        .products-Tabs .container .row .rightPartOneCard .card .card-body a .fa-star {
-            color: yellow !important;
-            font-size: 15px;
+        .products-Tabs .container .row .rightPartOneCard .card .card-footer .icon-part div a i {
+            margin-top: 7px !important;
         }
-
-        .products-Tabs .container .row .rightPartOneCard .card .card-body a span {
-            color: red !important;
-            font-weight: bold;
-        }
-
-    .products-Tabs .container .row .rightPartOneCard .card .card-footer .icon-part div {
-        width: 30px;
-        height: 30px;
-        border-radius: 100%;
-        background-color: white;
-    }
-
-        .products-Tabs .container .row .rightPartOneCard .card .card-footer .icon-part div:hover {
-            background-color: red !important;
-            -webkit-transition: 1s;
-            transition: 1s;
-        }
-
-            .products-Tabs .container .row .rightPartOneCard .card .card-footer .icon-part div:hover .icon-link {
-                color: white !important;
-            }
-
-        .products-Tabs .container .row .rightPartOneCard .card .card-footer .icon-part div a {
-            text-decoration: none !important;
-        }
-
-            .products-Tabs .container .row .rightPartOneCard .card .card-footer .icon-part div a i {
-                margin-top: 7px !important;
-            }
 
 .carousel-sale .container .tabsCarousels .card {
     border-radius: 0%;
@@ -936,6 +965,13 @@ color:red;
 @media only screen and (max-width: 992px) {
     .shpping-adress-part .container .row .img-part {
         display: none !important;
+    }
+
+    .main-carousel .container-fluid .row .owl-carousel {
+        width: 100% !important;
+    }
+    #mainCarouselmg{
+        height:500px !important;
     }
 }
 
@@ -1218,14 +1254,14 @@ color:red;
 }
 
 
-.singlePage-center .container .row .col-about-allCategories .additionalDropdown li {
-    list-style: none;
-    max-height: -webkit-max-content;
-    max-height: -moz-max-content;
-    max-height: max-content;
-    border: 0.1px solid #dfdfdf;
-    height: 50px !important;
-}
+    .singlePage-center .container .row .col-about-allCategories .additionalDropdown li {
+        list-style: none;
+        max-height: -webkit-max-content;
+        max-height: -moz-max-content;
+        max-height: max-content;
+        border: 0.1px solid #dfdfdf;
+        height: 50px !important;
+    }
 
         .singlePage-center .container .row .col-about-allCategories .additionalDropdown li a.dropdown-item {
             margin-top: 5px;
@@ -1236,15 +1272,18 @@ color:red;
             .singlePage-center .container .row .col-about-allCategories .additionalDropdown li a.dropdown-item:hover {
                 color: red !important;
             }
+
     .singlePage-center .container .row .col-about-allCategories .additionalDropdown a.dropdown-item:hover {
         color: red !important;
-        background-color:transparent !important;
+        background-color: transparent !important;
     }
+
     .singlePage-center .container .row .col-about-allCategories .additionalDropdown a.dropdown-item:focus {
         outline: none;
         box-shadow: 0 0 0 0 !important;
         background-color: transparent !important;
     }
+
 .singlePage-center .col-about-allCategories .owl-carousel .owl-nav {
     position: absolute;
     top: 37%;
@@ -1252,24 +1291,28 @@ color:red;
     display: flex !important;
     justify-content: space-between;
 }
-.singlePage-center .col-about-allCategories .owl-carousel .owl-nav button:hover {
-background-color:transparent !important;
-}
-.singlePage-center .col-about-allCategories .owl-carousel .owl-nav button{
-background-color:transparent !important;
-}
-.singlePage-center .col-about-allCategories .owl-carousel .owl-nav button span{
-color:red;
-font-weight:bold !important;
-}
+
+    .singlePage-center .col-about-allCategories .owl-carousel .owl-nav button:hover {
+        background-color: transparent !important;
+    }
+
+    .singlePage-center .col-about-allCategories .owl-carousel .owl-nav button {
+        background-color: transparent !important;
+    }
+
+        .singlePage-center .col-about-allCategories .owl-carousel .owl-nav button span {
+            color: red;
+            font-weight: bold !important;
+        }
+
 .badgeItemPage {
     font-size: 18px !important;
     margin-top: 11px !important;
 }
 
-    .singlePage-center .container .row .col-about-allCategories .additionalDropdown .dropdown-menu {
-        border-left: 3px solid red !important;
-    }
+.singlePage-center .container .row .col-about-allCategories .additionalDropdown .dropdown-menu {
+    border-left: 3px solid red !important;
+}
 
 .singlePage-center .container .row .col-md-9 .row .col-for-Images .column .item-img {
     height: 100% !important;
@@ -1296,9 +1339,10 @@ font-weight:bold !important;
     .singlePage-center .container .row .col-md-9 .row .col-for-Images .column .item-pictures .owl-carousel li img {
         height: 90.25px !important;
     }
-    .singlePage-center .container .row .col-md-9 .row .col-for-Images .column .item-pictures .owl-carousel .owl-nav {
-        display:none;
-    }
+
+.singlePage-center .container .row .col-md-9 .row .col-for-Images .column .item-pictures .owl-carousel .owl-nav {
+    display: none;
+}
 
 .singlePage-center .container .row .col-md-9 .row .col-for-itemInfo p {
     font-size: 20px;
@@ -1517,8 +1561,9 @@ font-weight:bold !important;
         width: 60% !important;
         height: 60% !important;
     }
+
     .carouselForCompany .container .row .owl-carousel .owl-nav {
-        display:none;
+        display: none;
     }
 
 .modal-section .img-modal .modal-content {

@@ -210,11 +210,11 @@ namespace FinalProjectMain.Areas.Admin.Controllers
 
             return PartialView("~/Areas/Admin/Views/Admin/newAddProductForEach.cshtml", db.products.OrderByDescending(o => o.Id).Where(w => w.DeletedDate == null && (w.isWaitListForAdmin == true && w.isConfirm == false)).ToList());
         }
-        public JsonResult EditItemFromWaitList(int id)
+        public ActionResult EditItemFromWaitList(int? id)
         {
             db.Configuration.ProxyCreationEnabled = false;
             var editItem = db.products.Where(w => w.DeletedDate == null && w.Id == id).FirstOrDefault();
-            return Json(editItem, JsonRequestBehavior.AllowGet);
+            return View(editItem);
         }
         public ActionResult ConfirmeditButtomInWaitlistModal(Product product)
         {
@@ -542,6 +542,7 @@ namespace FinalProjectMain.Areas.Admin.Controllers
             return View();
         }
         [AllowAnonymous]
+        [ChildActionOnly]
         public ActionResult messageIcon()
         {
             var x = Session[SessionKey.Admin];
@@ -556,6 +557,7 @@ namespace FinalProjectMain.Areas.Admin.Controllers
             }
         }
         [AllowAnonymous]
+        [ChildActionOnly]
         public ActionResult notificationIcon()
 
         {
@@ -572,6 +574,7 @@ namespace FinalProjectMain.Areas.Admin.Controllers
 
         }
         [AllowAnonymous]
+        [ChildActionOnly]
         public ActionResult accountPart()
         {
             var x = Session[SessionKey.Admin];
