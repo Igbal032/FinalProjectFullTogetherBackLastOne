@@ -5,14 +5,14 @@
 <section class="loginPart mt-5">
     <div class="container">
         <div class="row">
-            <div class="col-md-12 col-xl-12 col-lg-12 col-xs-12  text-center forTitle">
+            <div class="col-md-12 col-xl-12 col-lg-12 col-12  text-center forTitle">
                 <span style="font-size: 30px" class="font-weight-bold">Hesabına Daxil Ol</span>
             </div>
         </div>
         <div class="row justify-content-between mt-5 loginInputs">
             @*@if (Session[SessionKey.User] == null)
             {*@
-                <div class="col-lg-5 col-xl-5 col-md-5 col-xs-5 shadow mt-2">
+                <div class="col-lg-5 col-xl-5 col-md-5 col-5 shadow mt-2">
                     <div class="row d-flex">
                         <p class="questionFor Account">Hesabınız yoxdursa, buradan Qeydiyyatdan keçin.</p>
                     </div>
@@ -23,7 +23,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-6 col-xl-6 col-md-6 col-xs-6 shadow mt-2">
+                <div class="col-lg-6 col-xl-6 col-md-6 col-6 shadow mt-2">
                     <p class="text-danger">@TempData["blockUser"]</p>
                     <div class="row justify-content-center" style="border-bottom:1px solid rgb(214, 214, 214)">
                         <form action="@Url.Action("logInSubmit","Home")" method="get" style="padding: 50px; width:80%">
@@ -66,7 +66,7 @@
             @*}*@
             @*@if (Session[SessionKey.User] != null)
             {
-                <div class="col-lg-6 col-xl-6 col-md-6 col-xs-6 shadow mt-2">
+                <div class="col-lg-6 col-xl-6 col-md-6 col-6 shadow mt-2">
                     <div class="row justify-content-center" style="border-bottom:1px solid rgb(214, 214, 214)">
                         <form method="get" style="padding: 50px; width:80%">
                             <div class="form-group row">

@@ -33,14 +33,7 @@
 
 .owl-carousel .owl-nav button.owl-next
 {
-    background:transparent;
-    color:red;
-    border:none;
-    font-size: 50px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    border-color: transparent;
+
 }
 
 .owl-carousel .owl-nav button.owl-next:focus{
@@ -56,13 +49,7 @@
 }
 
 .owl-carousel .owl-nav button.owl-prev{
-    background:transparent;
-    color:red;
-    border:none;
-    font-size: 50px;
-    position: absolute;
-    top: 0;
-    left: 0;
+
 }
 .owl-carousel button.owl-dot{
 display: none;

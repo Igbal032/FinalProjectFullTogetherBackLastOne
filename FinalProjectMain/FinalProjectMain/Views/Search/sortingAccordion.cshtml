@@ -4,7 +4,6 @@
     var db = new FinalProjectMain.Models.ShoppingDbContext();
     var colors = db.Color.Where(w => w.DeletedDate == null).OrderBy(w=>w.ColorName).ToList();
 }
-
     <div id="accordion">
         <div class="card">
             <div class="card-header text-center bg-danger" id="headingTwo">

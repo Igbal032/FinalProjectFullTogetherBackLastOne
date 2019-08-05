@@ -6,12 +6,12 @@
 <section class="order-history mt-5">
     <div class="container border-bottom border-muted">
         <div class="row">
-            <div class="col-md-12 col-xl-12 col-lg-12 col-xs-12  text-center forTitle  mb-3">
+            <div class="col-md-12 col-xl-12 col-lg-12 col-12  text-center forTitle  mb-3">
                 <span style="font-size: 30px" class="font-weight-bold">Sifarış Tarixcəsi</span>
             </div>
         </div>
         <div class="row shadow">
-            <div class="col-md-12 col-xl-12 col-lg-12 col-xs-12">
+            <div class="col-md-12 col-xl-12 col-lg-12 col-12">
                 <p class="font-weight-bold p-1 text-muted">
                     Hesabınız yarandığı gündən etibarən yerləşdirdiyiniz
                     sifarişlər.
@@ -19,21 +19,21 @@
                 <div class="row">
                     @foreach (var item in Model)
                     {
-                        <div class="col-12 col-lg-3 col-xl-3 col-md-6 col-xs-12">
+                        <div class="col-12 col-lg-3 col-xl-3 col-md-6 col-12">
                             <Label>Məhsulun Kodu</Label>
                             <p>@item.product.Id</p>
                         </div>
-                        <div class="col-12 col-lg-3 col-xl-3 col-md-6 col-xs-12">
+                        <div class="col-12 col-lg-3 col-xl-3 col-md-6 col-12">
                             <label> Məhsulun adı</label>
                             <p>@item.product.Name</p>
 
                         </div>
-                        <div class="col-12 col-lg-3 col-xl-3 col-md-6 col-xs-12">
+                        <div class="col-12 col-lg-3 col-xl-3 col-md-6 col-12">
                             <label>Məhsulun qiyməti</label>
                             <p>@item.product.Price AZN</p>
 
                         </div>
-                        <div class="col-12 col-lg-3 col-xl-3 col-md-6 col-xs-12">
+                        <div class="col-12 col-lg-3 col-xl-3 col-md-6 col-12">
                             <label>Sifarış Tarixi</label>
                             <p>@item.CreatedDate</p>
                         </div>

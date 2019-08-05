@@ -4,7 +4,7 @@ $('.item-pictures .owl-carousel').owlCarousel({
     responsiveClass: true,
     responsive: {
         0: {
-            items: 1,
+            items: 2,
             nav: true
         },
         543: {
@@ -137,7 +137,6 @@ $('.carouselForCompany .owl-carousel').owlCarousel({
         }
     }
 })
-
 $(document).ready(function (params) {
 
     $("#zoom_02").elevateZoom();

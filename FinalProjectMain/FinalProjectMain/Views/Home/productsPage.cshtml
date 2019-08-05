@@ -10,7 +10,7 @@
 <section class="productsPage-center">
     <div class="container">
         <div class="row">
-            <div class="col-md-3 col-xs-12 col-lg-3 mt-1 col-about-allCategories">
+            <div class="col-md-4 col-12 col-lg-3 col-sm-12 col-12 mt-1 col-about-allCategories">
                 <ul class="additionalDropdown justify-content-center">
                     @Html.Action("intoAllCategories", "Category")
                 </ul>
@@ -19,21 +19,21 @@
                 </div>
 
             </div>
-            <div class="col-md-9 col-xs-12 col-lg-9 mt-4 sorting-col">
+            <div class="col-md-8 col-12 col-lg-9 mt-4 sorting-col">
                 <div class="row">
-                    <div class="col-md-12 col-xs-12 mt-5">
+                    <div class="col-md-12 col-12 mt-5">
                         <!--  -->
                         <!-- <img src="~/Template/img/h.jpg" style="background-position: center center; background-size: cover" alt=""> -->
                         <!--  -->
                     </div>
-                    <div class="col-md-12 col-xs-12 mt-5 sorting-filter">
+                    <div class="col-md-12 col-12 col-sm-12 col-12 mt-5 sorting-filter">
                         <div class="row mt-3">
-                            <div class="col-xl-5 col-lg-5 col-md-5 col-xs-12 product-sort-part">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-12 product-sort-part">
                                 <div class="row">
-                                    <div class="col-xl-4 col-lg-4 col-md-12 col-xs-12 select-label">
-                                        <label for="№">Filtir :</label>
+                                    <div class="col-xl-3 col-lg-3 col-md-3 col-3 select-label">
+                                        <label class="text-danger font-weight-bold" for="№">Filtir :</label>
                                     </div>
-                                    <div class="col-xl-4 col-lg-4 col-md-12 col-xs-12 form-group d-flex sorting-product">
+                                    <div class="col-xl-9 col-lg-9 col-md-9 col-9 form-group d-flex sorting-product">
                                         <select id="selectABC" name="sortingABC" class="form-control rounded-0 border-muted selectABC">
                                             <option selected disabled>Seçin</option>
                                             <option value="AtoZ">A-Z</option>
@@ -44,11 +44,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row mt-5 items-card" id="intoProductsPageId">
+                    <div class="container items-card" style="margin-bottom:24% !important">
+                        <div class="row"  id="intoProductsPageId">   
                         @Html.Action("IntoproductsPage", "Home")
-
+                        </div>
                     </div>
-                    <div class="col-md-12 col-xs-12 pagination-part mt-3 d-flex justify-content-center" style="position:absolute !important; bottom:0 !important">
+                    <div class="col-md-12 col-12 pagination-part mt-3 d-flex justify-content-center" style="position:absolute !important; bottom:0 !important">
 
                         <nav aria-label="Page navigation example mt-2">
                             <ul class="pagination text-dark font-weight-bold">

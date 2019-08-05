@@ -40,10 +40,10 @@
                         <p>Sayı və ölçüsü: @item.SizeORCount</p>
                     </div>
                     <div class="card-footer">
-                        <div class="icon-part d-flex justify-content-around text-center col-xs-12">
+                        <div class="icon-part d-flex justify-content-around text-center col-12">
                             <p>Paylaşdı :</p>
                         </div>
-                        <div class="col-xs-12 mt-1 mb-1 d-flex justify-content-around">
+                        <div class="col-12 mt-1 mb-1 d-flex justify-content-around">
                             <button id="deleteButtomInSharedPage" onclick="deleteButtomInSharedPage(@item.Id)" class="btn btn-sm btn-danger">Sil</button>
                             <form action="@Url.Action("LookAtAllİmages","Admin")" method="get">
                                 <input id="hiddenID" name="id" type="hidden" value="@item.Id" />

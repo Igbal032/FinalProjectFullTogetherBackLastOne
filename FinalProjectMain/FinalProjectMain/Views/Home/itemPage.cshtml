@@ -7,7 +7,7 @@
 <section class="singlePage-center">
     <div class="container">
         <div class="row">
-            <div class="col-md-3 col-xs-12 col-lg-3 mt-1 col-about-allCategories">
+            <div class="col-md-3 col-12 col-lg-3 mt-1 col-about-allCategories">
 
                 <ul class="dropdown-menu allCategoriesInNavBar rounded-0" aria-labelledby="navbarDropdown"></ul>
                 <ul class="additionalDropdown justify-content-center">
@@ -25,9 +25,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-9 col-xs-12 col-lg-9 mt-4">
+            <div class="col-md-9 col-12 col-lg-9 mt-4">
                 <div class="row">
-                    <div class="col-md-12 col-xs-12 mt-5">
+                    <div class="col-md-12 col-12 mt-5">
                         <!--  -->
                         <!-- <img src="~/Template/img/h.jpg" style="background-position: center center; background-size: cover" width="100%" alt=""> -->
                         <!--  -->
@@ -38,13 +38,13 @@
                     <div class="col-md-12 col-lg-6 col-xl-6 col-for-Images">
                         <div class="column">
                             <input type="hidden" value="@Model.Id" id="hiddenProductId" />
-                            <div class="col-md-12 col-lg-12 col-xs-12 item-img">
+                            <div class="col-md-12 col-lg-12 col-12 item-img">
 
                                 <img id="zoom_02" src="~/Template/img/newImg/@Model.imgPath" class="w-100 mainPicture"
                                      data-zoom-image="~/Template/img/newImg/@Model.imgPath" />
 
                             </div>
-                            <div class="col-md-12 col-lg-12 col-xs-12 item-pictures mt-2">
+                            <div class="col-md-12 col-lg-12 col-12 item-pictures mt-2">
                                 <div class="owl-carousel" id="mainItemImmages">
                                     @Html.Action("itemPicturesOwlCarouseInItemPage", "Home")
                                 </div>
@@ -69,10 +69,10 @@
                                     <label for="star1" title="text">1 star</label>
                                 </div>
                             </form>
-                            <div class="reviews col-xs-12">
+                            <div class="reviews col-12">
                                 <span>(@ViewBag.commentCount Rəylər)</span>
                             </div>
-                            <div class="write-review col-xs-12">
+                            <div class="write-review col-12">
                                 <a class="text-muted" href="#commentContex"> <span>Rəy Yaz</span></a>
                             </div>
                         </div>

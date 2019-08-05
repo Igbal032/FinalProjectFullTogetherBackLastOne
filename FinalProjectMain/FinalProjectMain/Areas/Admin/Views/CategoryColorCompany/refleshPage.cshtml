@@ -10,12 +10,12 @@
     <div class="row">
         @foreach (var item in db.categories.Where(w => w.DeletedDate == null).ToList())
         {
-            <div class="col-md-4 col-xs-4 col-lg-4 col-xl-4 mt-2">
+            <div class="col-md-4 col-4 col-lg-4 col-xl-4 mt-2">
                 <span>
                     @item.Id.  @item.CategoryName
                 </span>
             </div>
-            <div class="col-md-2 col-xs-12 col-lg-2 col-xl-2">
+            <div class="col-md-2 col-12 col-lg-2 col-xl-2">
                 <button class="btn btn-sm btn-danger" onclick="deleteCategories(@item.Id)">
                     Sil
                 </button>
@@ -28,12 +28,12 @@
     <div class="row">
         @foreach (var item in db.SubCategories.Where(w => w.DeletedDate == null).ToList())
         {
-            <div class="col-md-4 col-xs-4 col-lg-4 col-xl-4 mt-2">
+            <div class="col-md-4 col-4 col-lg-4 col-xl-4 mt-2">
                 <span>
                     @item.Id.  @item.SubCategoryName (Kategoriya Nömrəsi: @item.CategoryId)
                 </span>
             </div>
-            <div class="col-md-2 col-xs-12 col-lg-2 col-xl-2">
+            <div class="col-md-2 col-12 col-lg-2 col-xl-2">
                 <button class="btn btn-sm btn-danger" onclick="deleteSubCategories(@item.Id)">
                     Sil
                 </button>
@@ -47,12 +47,12 @@
     <div class="row">
         @foreach (var item in db.Color.Where(w => w.DeletedDate == null).ToList())
         {
-            <div class="col-md-4 col-xs-4 col-lg-4 col-xl-4 mt-2">
+            <div class="col-md-4 col-4 col-lg-4 col-xl-4 mt-2">
                 <span>
                     @item.Id.  @item.ColorName
                 </span>
             </div>
-            <div class="col-md-2 col-xs-12 col-lg-2 col-xl-2">
+            <div class="col-md-2 col-12 col-lg-2 col-xl-2">
                 <button class="btn btn-sm btn-danger" onclick="deleteColor(@item.Id)">
                     Sil
                 </button>
@@ -66,12 +66,12 @@
     <div class="row">
         @foreach (var item in db.producers.Where(w => w.DeletedDate == null).ToList())
         {
-            <div class="col-md-4 col-xs-4 col-lg-4 col-xl-4 mt-2">
+            <div class="col-md-4 col-4 col-lg-4 col-xl-4 mt-2">
                 <span>
                     @item.Id.  @item.ProducerName
                 </span>
             </div>
-            <div class="col-md-2 col-xs-12 col-lg-2 col-xl-2">
+            <div class="col-md-2 col-12 col-lg-2 col-xl-2">
                 <button class="btn btn-sm btn-danger" onclick="deleteCompany(@item.Id)">
                     Sil
                 </button>

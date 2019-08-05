@@ -12,7 +12,7 @@
 {
     count++;
     TempData["count"] = count;
-    <div class="col-xs-12 col-md-6 col-lg-4 col-xl-4">
+    <div class="col-12 col-md-6 col-lg-4 col-xl-4">
         <div class="card mt-2" style="height:347px !important">
             <figure class="imghvr-shutter-in-out-diag-2">
                 <img class="card-img-top" src="~/Template/img/newImg/@item.Product.imgPath" />
@@ -34,7 +34,7 @@
             </figure>
             <div class="card-body text-center">
                 <form action="@Url.Action("itemPage","Home")" method="get">
-                    <input type="hidden" name="Id" value="@item.Id" />
+                    <input type="hidden" name="Id" value="@item.Product.Id" />
                     <button type="submit" class="text-decoration-none btn btn-transparent"><span class="text-danger font-weight-bold">@item.Product.Name</span></button>
 
                     <h4>@item.Product.Price AZN</h4>

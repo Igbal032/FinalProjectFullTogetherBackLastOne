@@ -10,8 +10,8 @@
     if (item.withSubCtegory==true)
     {
         <li class="dropdown dropright dropdown-hover">
-            <a style="cursor:pointer"class="dropdown-item dropdown-toggle" onclick="clickCategoryToProdcutPage(@item.Id)"
-               data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"
+            <a style="cursor:pointer;border: none;"class="dropdown-item dropdown-toggle" onclick="clickCategoryToProdcutPage(@item.Id)"
+               data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" 
                >@item.CategoryName</a>
             <ul class="dropdown-menu ml-0 rounded-0">
                 @foreach (var subItem in db.SubCategories.Where(w => w.CategoryId == item.Id).ToList())

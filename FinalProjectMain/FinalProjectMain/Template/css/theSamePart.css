@@ -338,7 +338,7 @@ html {
 }
 
 .productsPage-center #accordion .card {
-    width: 250px !important;
+   
 }
 
 .footerPart footer {
@@ -557,7 +557,7 @@ html {
                     height: 100%;
                     font-weight: bold !important;
                     color: white !important;
-                    background-color: #5a5a5a;
+
                 }
 
                     .navbar-main .navbar-expand-lg .container .sideBarForMobile ul li a:focus {
@@ -574,9 +574,24 @@ html {
     }
 }
 
-.main-carousel .container-fluid .row .owl-carousel .owl-prev, .main-carousel .container-fluid .row .owl-carousel .owl-next {
-    top: 250px;
+.main-carousel .container-fluid .row .owl-carousel .owl-nav {
+    position: absolute;
+    top: 42%;
+    display: flex !important;
+    width: 100%;
+    justify-content: space-between;
 }
+.main-carousel .container-fluid .row .owl-carousel .owl-nav button {
+background-color:transparent;
+font-size:40px;
+}
+.main-carousel .container-fluid .row .owl-carousel .owl-nav button:hover {
+background-color:transparent;
+color:red;
+}
+    .main-carousel .container-fluid .row .owl-carousel .owl-nav button span {
+        color: red;
+    }
 
     .main-carousel .container-fluid .row .owl-carousel .owl-prev:focus, .main-carousel .container-fluid .row .owl-carousel .owl-next:focus {
         -webkit-box-shadow: 0 0 0 0.0rem transparent !important;
@@ -1001,37 +1016,37 @@ html {
             box-shadow: 0 0 0 0.0rem transparent !important;
         }
 
-.productsPage-center .container .row .sorting-col .row .items-card .col-xs-12 .card .card-body a {
+.productsPage-center .container .row .sorting-col .row .items-card .col-12 .card .card-body a {
     color: red;
     text-decoration: none;
 }
 
-    .productsPage-center .container .row .sorting-col .row .items-card .col-xs-12 .card .card-body a .fa-star {
+    .productsPage-center .container .row .sorting-col .row .items-card .col-12 .card .card-body a .fa-star {
         color: yellow;
     }
 
-.productsPage-center .container .row .sorting-col .row .items-card .col-xs-12 .card .card-footer .icon-part div {
+.productsPage-center .container .row .sorting-col .row .items-card .col-12 .card .card-footer .icon-part div {
     width: 30px;
     height: 30px;
     border-radius: 100%;
     background-color: white;
 }
 
-    .productsPage-center .container .row .sorting-col .row .items-card .col-xs-12 .card .card-footer .icon-part div:hover {
+    .productsPage-center .container .row .sorting-col .row .items-card .col-12 .card .card-footer .icon-part div:hover {
         background-color: red !important;
         -webkit-transition: 1s;
         transition: 1s;
     }
 
-        .productsPage-center .container .row .sorting-col .row .items-card .col-xs-12 .card .card-footer .icon-part div:hover .icon-link {
+        .productsPage-center .container .row .sorting-col .row .items-card .col-12 .card .card-footer .icon-part div:hover .icon-link {
             color: white !important;
         }
 
-    .productsPage-center .container .row .sorting-col .row .items-card .col-xs-12 .card .card-footer .icon-part div a {
+    .productsPage-center .container .row .sorting-col .row .items-card .col-12 .card .card-footer .icon-part div a {
         text-decoration: none !important;
     }
 
-        .productsPage-center .container .row .sorting-col .row .items-card .col-xs-12 .card .card-footer .icon-part div a i {
+        .productsPage-center .container .row .sorting-col .row .items-card .col-12 .card .card-footer .icon-part div a i {
             margin-top: 7px !important;
         }
 
@@ -1048,7 +1063,8 @@ html {
     }
 
     .productsPage-center .container .row .sorting-col .row .sorting-filter .product-sort-part .row .select-label {
-        text-align: end !important;
+        align-items: center;
+        display: flex;
     }
 
     .productsPage-center .container .row .sorting-col .row .sorting-filter .product-sort-part .row .sorting-product select:focus {
@@ -1214,12 +1230,38 @@ html {
         .singlePage-center .container .row .col-about-allCategories .additionalDropdown li a.dropdown-item {
             margin-top: 5px;
             padding-bottom: 10px;
-            background-color: transparent;
+            background-color: transparent !important;
         }
 
             .singlePage-center .container .row .col-about-allCategories .additionalDropdown li a.dropdown-item:hover {
                 color: red !important;
             }
+    .singlePage-center .container .row .col-about-allCategories .additionalDropdown a.dropdown-item:hover {
+        color: red !important;
+        background-color:transparent !important;
+    }
+    .singlePage-center .container .row .col-about-allCategories .additionalDropdown a.dropdown-item:focus {
+        outline: none;
+        box-shadow: 0 0 0 0 !important;
+        background-color: transparent !important;
+    }
+.singlePage-center .col-about-allCategories .owl-carousel .owl-nav {
+    position: absolute;
+    top: 37%;
+    width: 100%;
+    display: flex !important;
+    justify-content: space-between;
+}
+.singlePage-center .col-about-allCategories .owl-carousel .owl-nav button:hover {
+background-color:transparent !important;
+}
+.singlePage-center .col-about-allCategories .owl-carousel .owl-nav button{
+background-color:transparent !important;
+}
+.singlePage-center .col-about-allCategories .owl-carousel .owl-nav button span{
+color:red;
+font-weight:bold !important;
+}
 .badgeItemPage {
     font-size: 18px !important;
     margin-top: 11px !important;
@@ -1253,6 +1295,9 @@ html {
 
     .singlePage-center .container .row .col-md-9 .row .col-for-Images .column .item-pictures .owl-carousel li img {
         height: 90.25px !important;
+    }
+    .singlePage-center .container .row .col-md-9 .row .col-for-Images .column .item-pictures .owl-carousel .owl-nav {
+        display:none;
     }
 
 .singlePage-center .container .row .col-md-9 .row .col-for-itemInfo p {
@@ -1472,6 +1517,9 @@ html {
         width: 60% !important;
         height: 60% !important;
     }
+    .carouselForCompany .container .row .owl-carousel .owl-nav {
+        display:none;
+    }
 
 .modal-section .img-modal .modal-content {
     width: 550px;
@@ -1561,7 +1609,7 @@ html {
     border: 1px solid #a1a0a0;
 }
 
-.changeInfoPart .container .buttons-part .col-xs-12 a {
+.changeInfoPart .container .buttons-part .col-12 a {
     border-radius: 30px;
 }
 
