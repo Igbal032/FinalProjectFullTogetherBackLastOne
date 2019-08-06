@@ -619,7 +619,12 @@ namespace FinalProjectMain.Controllers
                         return View("logIn");
                     }
                 }
-                var x = Session[SessionKey.User];
+                else
+                {
+                    TempData["doesntExist"] = "İstifadəçi tapılmadı!!";
+                    return View("logIn");
+
+                }
 
                 return RedirectToAction("Index", "Home");
             }

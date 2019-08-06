@@ -1202,41 +1202,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201907280751228_step6.cs" />
-    <Compile Include="Migrations\201907280751228_step6.Designer.cs">
-      <DependentUpon>201907280751228_step6.cs</DependentUpon>
+    <Compile Include="Migrations\201908060606450_Initial.cs" />
+    <Compile Include="Migrations\201908060606450_Initial.Designer.cs">
+      <DependentUpon>201908060606450_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201908011853133_step1.cs" />
-    <Compile Include="Migrations\201908011853133_step1.Designer.cs">
-      <DependentUpon>201908011853133_step1.cs</DependentUpon>
+    <Compile Include="Migrations\201908060609508_Initial2.cs" />
+    <Compile Include="Migrations\201908060609508_Initial2.Designer.cs">
+      <DependentUpon>201908060609508_Initial2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201908011853493_step2.cs" />
-    <Compile Include="Migrations\201908011853493_step2.Designer.cs">
-      <DependentUpon>201908011853493_step2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201908011859021_step.cs" />
-    <Compile Include="Migrations\201908011859021_step.Designer.cs">
-      <DependentUpon>201908011859021_step.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201908011904508_step78.cs" />
-    <Compile Include="Migrations\201908011904508_step78.Designer.cs">
-      <DependentUpon>201908011904508_step78.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201908011911112_step79.cs" />
-    <Compile Include="Migrations\201908011911112_step79.Designer.cs">
-      <DependentUpon>201908011911112_step79.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201908011912415_step80.cs" />
-    <Compile Include="Migrations\201908011912415_step80.Designer.cs">
-      <DependentUpon>201908011912415_step80.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201908052225100_11.cs" />
-    <Compile Include="Migrations\201908052225100_11.Designer.cs">
-      <DependentUpon>201908052225100_11.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201908060059563_12.cs" />
-    <Compile Include="Migrations\201908060059563_12.Designer.cs">
-      <DependentUpon>201908060059563_12.cs</DependentUpon>
+    <Compile Include="Migrations\201908060630181_Initiall.cs" />
+    <Compile Include="Migrations\201908060630181_Initiall.Designer.cs">
+      <DependentUpon>201908060630181_Initiall.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Entity\addAdressToAccount.cs" />
@@ -1264,6 +1240,7 @@
     <Compile Include="Models\Entity\saveProduct.cs" />
     <Compile Include="Models\Entity\shopList.cs" />
     <Compile Include="Models\Entity\shoppingAdresses.cs" />
+    <Compile Include="Models\Entity\siteInfo.cs" />
     <Compile Include="Models\Entity\Size.cs" />
     <Compile Include="Models\Entity\SubCategory.cs" />
     <Compile Include="Models\Entity\Subscribe.cs" />
@@ -1360,7 +1337,6 @@
     <Content Include="Views\Category\intoSideBar.cshtml" />
     <Content Include="Views\LikeAndComment\CommentPage.cshtml" />
     <Content Include="Views\Shared\_PartialViews\_searchPartial.cshtml" />
-    <Content Include="Views\additionalActions\comparePart.cshtml" />
     <Content Include="Views\Shared\_PartialViews\_compareList.cshtml" />
     <Content Include="Views\View.cshtml" />
     <Content Include="Views\Home\ErrorPage.cshtml" />
@@ -1401,32 +1377,14 @@
     <Folder Include="Template\img\Adresses\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201907280751228_step6.resx">
-      <DependentUpon>201907280751228_step6.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908060606450_Initial.resx">
+      <DependentUpon>201908060606450_Initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908011853133_step1.resx">
-      <DependentUpon>201908011853133_step1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908060609508_Initial2.resx">
+      <DependentUpon>201908060609508_Initial2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908011853493_step2.resx">
-      <DependentUpon>201908011853493_step2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908011859021_step.resx">
-      <DependentUpon>201908011859021_step.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908011904508_step78.resx">
-      <DependentUpon>201908011904508_step78.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908011911112_step79.resx">
-      <DependentUpon>201908011911112_step79.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908011912415_step80.resx">
-      <DependentUpon>201908011912415_step80.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908052225100_11.resx">
-      <DependentUpon>201908052225100_11.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908060059563_12.resx">
-      <DependentUpon>201908060059563_12.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908060630181_Initiall.resx">
+      <DependentUpon>201908060630181_Initiall.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

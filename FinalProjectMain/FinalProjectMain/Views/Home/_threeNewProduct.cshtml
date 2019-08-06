@@ -7,12 +7,16 @@
         <div class="row">
             @foreach (var item in Model)
             {
-                <div class="col-md-4 col-sm-4 col-12">
-                    <div class="product-img1 mt-1 shadow">
-                        @*<h3><span class="badge badge-danger badge-lg">New</span></h3>*@ 
-                        <img class="w-100" src="~/Template/img/newImg/@item.imgPath" alt="">
+                
+            <div class="col-md-4 col-sm-4 col-12 mt-2">
+                <a href="@Url.Action("itemPage","Home",routeValues: new { Id = item.Id})">
+                    <div class="product-img1 shadow h-100">
+                        @*<h3><span class="badge badge-danger badge-lg">New</span></h3>*@
+                        <img class="w-100 h-100" style="object-fit:cover !important" src="~/Template/img/newImg/@item.imgPath" alt="">
                     </div>
-                </div>
+                </a>
+            </div>
+
             }
         </div>
     </div>

@@ -496,6 +496,8 @@ html {
     }
 }
 
+
+
 @media only screen and (max-width: 992px) {
 
     #spanIdForStar {
@@ -636,7 +638,11 @@ html {
     object-fit: cover !important;
     height: 600px !important;
 }
-
+@media only screen and (max-width: 411px) {
+    .main-carousel .container-fluid .row .owl-carousel #mainCarouselTitle {
+        font-size: 16px !important;
+    }
+}
 .new-product .container .row .col-md-6 div {
     height: 250px;
 }

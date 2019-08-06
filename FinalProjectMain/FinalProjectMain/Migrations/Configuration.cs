@@ -119,6 +119,22 @@
                         
                     });
                 }
+                if (!context.siteInfo.Any())
+                {
+
+                    context.siteInfo.AddRange(new[]
+                    {
+                        new siteInfo                        {
+
+                             Phone = "(+994)50 6705569",
+                             Phone_2 = "(+994)12 5644488",
+                             Instgram = "www.Instagram.Com",
+                             Email = "zahidhesenov96@gmail.com",
+                             CreatedDate = DateTime.Now,
+                        },
+                        
+                    });
+                }
 
             }
             catch (Exception ex)

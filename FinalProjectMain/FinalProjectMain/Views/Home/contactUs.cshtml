@@ -1,9 +1,7 @@
 ﻿@using FinalProjectMain.Models.Entity
 @model ContactUS
-
-@section css
-    {
-    <link rel="stylesheet" href="~/Template/css/contactStyle.css" />
+@{ 
+        var siteInfo = new FinalProjectMain.Models.ShoppingDbContext().siteInfo.FirstOrDefault();
 }
 
 <section class="contact-part mt-5">
@@ -58,28 +56,28 @@
                         <i class="fas fa-phone"></i>
                     </label>
                     <div class="col-sm-10">
-                        <p class="phone-number">+99450-539-55-69</p>
+                        <p class="phone-number">@siteInfo.Phone</p>
                     </div>
 
                     <label class="col-sm-2 col-form-label">
                         <i class="fas fa-fax"></i>
                     </label>
                     <div class="col-sm-10">
-                        <p class="fax-number">94915481151</p>
+                        <p class="fax-number">@siteInfo.Phone_2</p>
                     </div>
 
                     <label class="col-sm-2 col-form-label">
                         <i class="fas fa-envelope"></i>
                     </label>
                     <div class="col-sm-10">
-                        <p class="email-adress">sales@yoursite.com</p>
+                        <p class="email-adress">@siteInfo.Email</p>
                     </div>
 
                     <label class="col-sm-2 col-form-label">
                         <i class="fas fa-map-marker-alt"></i>
                     </label>
                     <div class="col-sm-10">
-                        <p class="location">Genclik Metrosu</p>
+                        <p class="location">Nərimanov Rayonu Atatürk Pr2</p>
                     </div>
 
                     <!-- <div class="col-md-2 col-xl-2 col-lg-2 col-2 col-2 icon-col">

@@ -44,6 +44,7 @@ namespace FinalProjectMain.Models
         public DbSet<ErrorHistory> ErrorHistory { get; set; }
         public DbSet<shopList> shopList { get; set; }
         public DbSet<Rating> rating { get; set; }
+        public DbSet<siteInfo> siteInfo { get; set; }
 
     }
 }

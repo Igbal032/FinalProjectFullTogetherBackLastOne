@@ -10,92 +10,62 @@
             </div>
         </div>
         <div class="row justify-content-between mt-5 loginInputs">
-            @*@if (Session[SessionKey.User] == null)
-            {*@
-                <div class="col-lg-5 col-xl-5 col-md-5 col-5 shadow mt-2">
-                    <div class="row d-flex">
-                        <p class="questionFor Account">Hesabınız yoxdursa, buradan Qeydiyyatdan keçin.</p>
-                    </div>
-                    <div class="row mt-2 registerButtonforRegisterPage d-flex justify-content-center pb-5">
-                        <a href="@Url.Action("registerPart","Home")" class="btn btn-lg btn-dark rounded-0 rippler">
-                            QEYDIYYAT
-                        </a>
-                    </div>
+
+            <div class="col-lg-5 col-xl-5 col-md-5 col-12 shadow mt-2">
+                <div class="row d-flex">
+                    <p class="questionFor Account">Hesabınız yoxdursa, buradan Qeydiyyatdan keçin.</p>
                 </div>
-
-                <div class="col-lg-6 col-xl-6 col-md-6 col-6 shadow mt-2">
-                    <p class="text-danger">@TempData["blockUser"]</p>
-                    <div class="row justify-content-center" style="border-bottom:1px solid rgb(214, 214, 214)">
-                        <form action="@Url.Action("logInSubmit","Home")" method="get" style="padding: 50px; width:80%">
-                            <div class="form-group row">
-                                <label for="staticEmail" class="col-sm-4 col-form-label">Email</label>
-                                <div class="col-sm-8">
-                                    <input type="email" placeholder="Email" name="Email" class="form-control" id="staticEmail">
-                                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="inputPassword" class="col-sm-4 col-form-label">Password</label>
-                                <div class="col-sm-8">
-                                    <div class="input-group-append">
-                                        <input type="password" name="Password" class="form-control" id="inputPasswordForLogin"
-                                               placeholder="Password">
-
-                                        <button type="button" class="btn btn-dark btn-sm showPasswordForLogin"
-                                                id="basic-addon2">
-                                            Göstər
-                                        </button>
-
-                                    </div>
-                                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
-                                    <p class="text-danger">@TempData["wrongPassword"]</p>
-                                    <p class="text-danger">@TempData["isBlock"]</p>
-                                </div>
-                            </div>
-                            <p class="text-center">
-                                <a class="text-dark text-decoration-none" href="@Url.Action("forgetPasswordPage","Home")">
-                                    Şifrəni
-                                    Unutmusan?
-                                </a>
-                            </p>
-                            <button type="submit" class="btn btn-dark btn-lg rippler loginButton mt-2">Daxil Ol</button>
-                            <p class="mt-2 text-danger">@TempData["Registered"]</p>
-                            <p class="text-danger">@TempData["sendEmailForResetPassword"]</p>
-                        </form>
-                    </div>
+                <div class="row mt-2 registerButtonforRegisterPage d-flex justify-content-center pb-5">
+                    <a href="@Url.Action("registerPart","Home")" class="btn btn-lg btn-dark rounded-0 rippler">
+                        QEYDIYYAT
+                    </a>
                 </div>
-            @*}*@
-            @*@if (Session[SessionKey.User] != null)
-            {
-                <div class="col-lg-6 col-xl-6 col-md-6 col-6 shadow mt-2">
-                    <div class="row justify-content-center" style="border-bottom:1px solid rgb(214, 214, 214)">
-                        <form method="get" style="padding: 50px; width:80%">
-                            <div class="form-group row">
-                                <label for="staticEmail" class="col-sm-4 col-form-label">Email</label>
-                                <div class="col-sm-8">
-                                    <input type="email" placeholder="Email" name="Email" class="form-control" id="staticEmail" value="@Model.Email">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="inputPassword" class="col-sm-4 col-form-label">Password</label>
-                                <div class="col-sm-8">
-                                    <div class="input-group-append">
-                                        <input type="password" name="Password" class="form-control" id="inputPasswordForLogin" value="@Model.Password"
-                                               placeholder="Password">
-                                        <button type="button" class="btn btn-dark btn-sm showPasswordForLogin"
-                                                id="basic-addon2">
-                                            Göstər
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                }*@
+            </div>
 
+            <div class="col-lg-6 col-xl-6 col-md-6 col-12 shadow mt-2">
+                <p class="text-danger">@TempData["blockUser"]</p>
+                <div class="row justify-content-center" style="border-bottom:1px solid rgb(214, 214, 214)">
+                    <form action="@Url.Action("logInSubmit","Home")" method="get" style="padding: 50px; width:80%">
+                        <div class="form-group row">
+                            <label for="staticEmail" class="col-sm-4 col-form-label">Email</label>
+                            <div class="col-sm-8">
+                                <input type="email" placeholder="Email" name="Email" class="form-control" id="staticEmail">
+                                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputPassword" class="col-sm-4 col-form-label">Password</label>
+                            <div class="col-sm-8">
+                                <div class="input-group-append">
+                                    <input type="password" name="Password" class="form-control" id="inputPasswordForLogin"
+                                           placeholder="Password">
+
+                                    <button type="button" class="btn btn-dark btn-sm showPasswordForLogin"
+                                            id="basic-addon2">
+                                        Göstər
+                                    </button>
+
+                                </div>
+                                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                                <p class="text-danger">@TempData["wrongPassword"]</p>
+                                <p class="text-danger">@TempData["isBlock"]</p>
+                                <p class="text-danger">@TempData["doesntExist"]</p>
+
+                            </div>
+                        </div>
+                        <p class="text-center">
+                            <a class="text-dark text-decoration-none" href="@Url.Action("forgetPasswordPage","Home")">
+                                Şifrəni
+                                Unutmusan?
+                            </a>
+                        </p>
+                        <button type="submit" class="btn btn-dark btn-sm rippler loginButton mt-2">Daxil Ol</button>
+                        <p class="mt-2 text-danger">@TempData["Registered"]</p>
+                        <p class="text-danger">@TempData["sendEmailForResetPassword"]</p>
+                    </form>
+                </div>
+            </div>
         </div>
-
     </div>
 </section>
 

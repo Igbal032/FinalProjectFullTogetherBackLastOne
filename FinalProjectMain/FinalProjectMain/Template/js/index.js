@@ -4,11 +4,11 @@ $('.carousel').carousel({
 
 
 $('.main-carousel .container-fluid .row .owl-carousel').owlCarousel({
-    loop: false,
+    loop: true,
     nav: false,
     dots: true,
     
-    autoplay: false,
+    autoplay: true,
     autoplayTimeout: 2000,
     autoplayHoverPause: true,
     responsiveClass: true,
