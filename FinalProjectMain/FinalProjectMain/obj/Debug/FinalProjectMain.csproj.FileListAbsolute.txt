@@ -72,6 +72,8 @@ D:\Code Academy\Final\FinalProjectMain - Copy\FinalProjectMain\obj\Debug\FinalPr
 D:\Code Academy\Final\FinalProjectMain - Copy\FinalProjectMain\obj\Debug\FinalProjectMain.csproj.CopyComplete
 D:\Code Academy\Final\FinalProjectMain - Copy\FinalProjectMain\obj\Debug\FinalProjectMain.dll
 D:\Code Academy\Final\FinalProjectMain - Copy\FinalProjectMain\obj\Debug\FinalProjectMain.pdb
+D:\Code Academy\Final\FinalProjectMain\FinalProjectMain\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Code Academy\Final\FinalProjectMain\FinalProjectMain\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
 D:\Code Academy\Final\FinalProjectMain\FinalProjectMain\bin\FinalProjectMain.dll.config
 D:\Code Academy\Final\FinalProjectMain\FinalProjectMain\bin\FinalProjectMain.dll
 D:\Code Academy\Final\FinalProjectMain\FinalProjectMain\bin\FinalProjectMain.pdb
@@ -82,11 +84,9 @@ D:\Code Academy\Final\FinalProjectMain\FinalProjectMain\bin\roslyn\csi.exe
 D:\Code Academy\Final\FinalProjectMain\FinalProjectMain\bin\roslyn\csi.exe.config
 D:\Code Academy\Final\FinalProjectMain\FinalProjectMain\bin\roslyn\csi.rsp
 D:\Code Academy\Final\FinalProjectMain\FinalProjectMain\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-D:\Code Academy\Final\FinalProjectMain\FinalProjectMain\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
 D:\Code Academy\Final\FinalProjectMain\FinalProjectMain\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
 D:\Code Academy\Final\FinalProjectMain\FinalProjectMain\bin\roslyn\Microsoft.CodeAnalysis.dll
 D:\Code Academy\Final\FinalProjectMain\FinalProjectMain\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-D:\Code Academy\Final\FinalProjectMain\FinalProjectMain\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
 D:\Code Academy\Final\FinalProjectMain\FinalProjectMain\bin\roslyn\Microsoft.CSharp.Core.targets
 D:\Code Academy\Final\FinalProjectMain\FinalProjectMain\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
 D:\Code Academy\Final\FinalProjectMain\FinalProjectMain\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
@@ -142,12 +142,12 @@ D:\Code Academy\Final\FinalProjectMain\FinalProjectMain\bin\System.Web.Webpages.
 D:\Code Academy\Final\FinalProjectMain\FinalProjectMain\bin\System.Web.Helpers.xml
 D:\Code Academy\Final\FinalProjectMain\FinalProjectMain\bin\System.Web.Mvc.xml
 D:\Code Academy\Final\FinalProjectMain\FinalProjectMain\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Code Academy\Final\FinalProjectMain\FinalProjectMain\obj\Debug\FinalProjectMain.csprojAssemblyReference.cache
+D:\Code Academy\Final\FinalProjectMain\FinalProjectMain\obj\Debug\FinalProjectMain.Migrations.Initial.resources
+D:\Code Academy\Final\FinalProjectMain\FinalProjectMain\obj\Debug\FinalProjectMain.Migrations.Initial2.resources
+D:\Code Academy\Final\FinalProjectMain\FinalProjectMain\obj\Debug\FinalProjectMain.Migrations.Initiall.resources
+D:\Code Academy\Final\FinalProjectMain\FinalProjectMain\obj\Debug\FinalProjectMain.csproj.GenerateResource.cache
 D:\Code Academy\Final\FinalProjectMain\FinalProjectMain\obj\Debug\FinalProjectMain.csproj.CoreCompileInputs.cache
 D:\Code Academy\Final\FinalProjectMain\FinalProjectMain\obj\Debug\FinalProjectMain.csproj.CopyComplete
 D:\Code Academy\Final\FinalProjectMain\FinalProjectMain\obj\Debug\FinalProjectMain.dll
 D:\Code Academy\Final\FinalProjectMain\FinalProjectMain\obj\Debug\FinalProjectMain.pdb
-D:\Code Academy\Final\FinalProjectMain\FinalProjectMain\obj\Debug\FinalProjectMain.Migrations.Initial.resources
-D:\Code Academy\Final\FinalProjectMain\FinalProjectMain\obj\Debug\FinalProjectMain.csproj.GenerateResource.cache
-D:\Code Academy\Final\FinalProjectMain\FinalProjectMain\obj\Debug\FinalProjectMain.Migrations.Initial2.resources
-D:\Code Academy\Final\FinalProjectMain\FinalProjectMain\obj\Debug\FinalProjectMain.Migrations.Initiall.resources
-D:\Code Academy\Final\FinalProjectMain\FinalProjectMain\obj\Debug\FinalProjectMain.csprojAssemblyReference.cache

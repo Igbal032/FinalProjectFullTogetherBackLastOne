@@ -1363,6 +1363,7 @@
     <Content Include="Views\Home\pagePagination.cshtml" />
     <Content Include="Views\Shared\_PartialViews\_shopListForNavIcon.cshtml" />
     <Content Include="Views\Home\smallCarousel.cshtml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
