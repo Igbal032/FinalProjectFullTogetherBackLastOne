@@ -1,0 +1,43 @@
+2019-08-05 12:44:57.3400 FATAL    -The parameters dictionary contains a null entry for parameter 'Id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult itemPage(Int32)' in 'FinalProjectMain.Controllers.HomeController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters 
+2019-08-05 14:33:01.1495 FATAL    -Object reference not set to an instance of an object. 
+2019-08-05 14:33:05.0213 FATAL    -Object reference not set to an instance of an object. 
+2019-08-05 14:33:07.8667 FATAL    -Object reference not set to an instance of an object. 
+2019-08-05 14:33:15.8032 FATAL    -Object reference not set to an instance of an object. 
+2019-08-05 14:33:32.9794 FATAL    -The parameters dictionary contains a null entry for parameter 'Id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult itemPage(Int32)' in 'FinalProjectMain.Controllers.HomeController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters 
+2019-08-05 14:34:59.5068 FATAL    -Object reference not set to an instance of an object. 
+2019-08-05 14:36:44.4679 FATAL    -Object reference not set to an instance of an object. 
+2019-08-05 14:39:03.2126 FATAL    -Object reference not set to an instance of an object. 
+2019-08-05 14:39:15.7049 FATAL    -Object reference not set to an instance of an object. 
+2019-08-05 17:14:01.5577 FATAL    -The action 'editEmployeeInList' is accessible only by a child request. 
+2019-08-05 17:14:04.6160 FATAL    -The action 'editEmployeeInList' is accessible only by a child request. 
+2019-08-05 17:14:08.1450 FATAL    -The action 'editEmployeeInList' is accessible only by a child request. 
+2019-08-05 17:14:11.4231 FATAL    -The action 'editEmployeeInList' is accessible only by a child request. 
+2019-08-05 17:14:22.5748 FATAL    -The action 'editEmployeeInList' is accessible only by a child request. 
+2019-08-05 17:14:24.3268 FATAL    -The action 'DeleteEmployeeInList' is accessible only by a child request. 
+2019-08-05 17:15:22.2888 FATAL    -The action 'DeleteEmployeeInList' is accessible only by a child request. 
+2019-08-05 17:15:35.5887 FATAL    -The action 'editEmployeeInList' is accessible only by a child request. 
+2019-08-05 17:19:42.1179 FATAL    -The action 'editEmployeeInList' is accessible only by a child request. 
+2019-08-05 17:21:03.3303 FATAL    -The action 'editEmployeeInList' is accessible only by a child request. 
+2019-08-05 17:24:54.6672 FATAL    -The parameters dictionary contains a null entry for parameter 'size' of non-nullable type 'System.Decimal' for method 'System.Web.Mvc.ActionResult SubmitCreateNewItem(System.String, System.String, Int32, Int32, System.Collections.Generic.List`1[System.Int32], System.Nullable`1[System.Int32], System.Decimal, System.Decimal, System.Decimal, System.Collections.Generic.List`1[System.Web.HttpPostedFileBase])' in 'FinalProjectMain.Areas.Admin.Controllers.AdminController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters 
+2019-08-05 17:38:09.5584 FATAL    -The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult EditItemFromWaitList(Int32)' in 'FinalProjectMain.Areas.Admin.Controllers.AdminController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters 
+2019-08-05 17:39:13.7591 FATAL    -The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult EditItemFromWaitList(Int32)' in 'FinalProjectMain.Areas.Admin.Controllers.AdminController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters 
+2019-08-05 17:39:29.9303 FATAL    -Non-static method requires a target. 
+2019-08-05 17:39:43.9168 FATAL    -The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult EditItemFromWaitList(Int32)' in 'FinalProjectMain.Areas.Admin.Controllers.AdminController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters 
+2019-08-05 17:39:46.0821 FATAL    -The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult EditItemFromWaitList(Int32)' in 'FinalProjectMain.Areas.Admin.Controllers.AdminController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters 
+2019-08-05 17:45:00.3768 FATAL    -The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult EditItemFromWaitList(Int32)' in 'FinalProjectMain.Areas.Admin.Controllers.AdminController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters 
+2019-08-05 17:45:28.8249 FATAL    -The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult EditItemFromWaitList(Int32)' in 'FinalProjectMain.Areas.Admin.Controllers.AdminController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters 
+2019-08-05 17:45:48.3226 FATAL    -Non-static method requires a target. 
+2019-08-05 17:45:52.2571 FATAL    -Non-static method requires a target. 
+2019-08-05 17:45:57.2995 FATAL    -Non-static method requires a target. 
+2019-08-05 18:21:37.6181 FATAL    -Child actions are not allowed to perform redirect actions. 
+2019-08-05 20:23:07.2654 FATAL    -Object reference not set to an instance of an object. 
+2019-08-05 20:23:28.6074 FATAL    -Object reference not set to an instance of an object. 

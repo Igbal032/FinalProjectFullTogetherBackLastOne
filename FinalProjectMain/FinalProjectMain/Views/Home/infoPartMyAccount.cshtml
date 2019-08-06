@@ -2,9 +2,11 @@
 @model User
 @section css
     {
-    <link href="~/Template/css/info-my-Account.css" rel="stylesheet" />
     <link rel="stylesheet" href="    https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css">
 
+}
+@{ 
+    var genderDb = new FinalProjectMain.Models.ShoppingDbContext().Genders.ToList();
 }
 
 <section class="changeInfoPart mt-5">
@@ -12,6 +14,8 @@
         <div class="row">
             <div class="col-md-12 col-xl-12 col-lg-12 col-12  text-center forTitle">
                 <span class="font-weight-bold">Şəxsi Məlumatlar</span>
+                <p class="text-danger">@TempData["changed"]</p>
+
             </div>
         </div>
         <div class="row justify-content-center mt-5">
@@ -20,11 +24,12 @@
                     <div class="form-group row mt-4">
                         <label class="col-sm-4 col-form-label">Sosial başlıq</label>
                         <div class="col-sm-8 d-flex">
-                            <select name="Gemder">
-                                <option value="">Kişi</option>
-                                <option value="">Qadın</option>
+                            <select required name="GenderId" class="form-control-sm">
+                                @foreach (var item in genderDb)
+                                {
+                                    <option value="@item.Id">@item.GenderName</option>
+                                }
                             </select>
-
                         </div>
                     </div>
                     <div class="form-group row mt-4">
@@ -91,7 +96,7 @@
                     <div class="form-group row mt-4">
                         <label class="col-sm-4 col-form-label"></label>
                         <div class="col-sm-8">
-                            <input type="checkbox" name="Notification" value="@Model.Notification">
+                            <input type="checkbox" value="true" name="Notifi">
                             <span class="form-control-comment text-muted notification">
                                 Melumatlardan sizə bildiriş gəsin?
                             </span>

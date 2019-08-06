@@ -1,5 +1,4 @@
 ﻿
-
 @using FinalProjectMain.Models.Entity
 @model Product
 
@@ -14,15 +13,7 @@
                     @Html.Action("allCategoriesItemPage", "Category")
                 </ul>
                 <div class="owl-carousel owl-theme">
-                    <div class="item">
-                        <img src="~/Template/img/250X250.png" width="250px" height="250px" alt="">
-                    </div>
-                    <div class="item">
-                        <img src="~/Template/img/250x250.gif" width="250px" height="250px" alt="">
-                    </div>
-                    <div class="item">
-                        <img src="~/Template/img/250xx250.png" width="250px" height="250px" alt="">
-                    </div>
+                    @Html.Action("smallCarousel", "Home")
                 </div>
             </div>
             <div class="col-md-9 col-12 col-lg-9 mt-4">

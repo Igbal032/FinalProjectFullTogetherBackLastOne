@@ -49,6 +49,7 @@
                                     </div>
                                     @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                                     <p class="text-danger">@TempData["wrongPassword"]</p>
+                                    <p class="text-danger">@TempData["isBlock"]</p>
                                 </div>
                             </div>
                             <p class="text-center">

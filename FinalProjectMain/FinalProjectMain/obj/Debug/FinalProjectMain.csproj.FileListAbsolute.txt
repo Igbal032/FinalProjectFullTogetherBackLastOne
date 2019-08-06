@@ -154,3 +154,5 @@ D:\Code Academy\Final\FinalProjectMain\FinalProjectMain\obj\Debug\FinalProjectMa
 D:\Code Academy\Final\FinalProjectMain\FinalProjectMain\obj\Debug\FinalProjectMain.csproj.CopyComplete
 D:\Code Academy\Final\FinalProjectMain\FinalProjectMain\obj\Debug\FinalProjectMain.dll
 D:\Code Academy\Final\FinalProjectMain\FinalProjectMain\obj\Debug\FinalProjectMain.pdb
+D:\Code Academy\Final\FinalProjectMain\FinalProjectMain\obj\Debug\FinalProjectMain.Migrations._11.resources
+D:\Code Academy\Final\FinalProjectMain\FinalProjectMain\obj\Debug\FinalProjectMain.Migrations._12.resources

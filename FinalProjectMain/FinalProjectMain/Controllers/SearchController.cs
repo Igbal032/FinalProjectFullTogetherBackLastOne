@@ -93,7 +93,7 @@ namespace FinalProjectMain.Controllers
                     if (getColorValue == 0)
                     {
                         var sortingListt = saveProduct.saveProductsWithcategory.ToList();
-                        return PartialView("~/Views/Home/IntoproductsPage.cshtml", sortingListt.OrderByDescending(w => w.Id).Take(9));
+                        return PartialView("~/Views/Shared/_PartialViews/_intoProductPageForCategory.cshtml", sortingListt.OrderByDescending(w => w.Id).Take(9));
                     }
                     var sortingList = saveProduct.saveProductsWithcategory.Where(w => w.Product.color.Id == getColorValue).ToList();
                     return PartialView("~/Views/Shared/_PartialViews/_intoProductPageForCategory.cshtml", sortingList.OrderByDescending(w => w.Id).Take(9));
@@ -210,17 +210,17 @@ namespace FinalProjectMain.Controllers
                     }
                     else if (getPriceVal == 8)
                     {
-                        var sortingListt = saveProduct.saveProductsWithcategory.Where(n => n.Product.Price >= 800 && n.Product.Price <= 900).ToList();
+                        var sortingListt = saveProduct.saveProductsWithcategory.Where(n => n.Product.Price >= 700 && n.Product.Price <= 800).ToList();
                         return PartialView("~/Views/Shared/_PartialViews/_intoProductPageForCategory.cshtml", sortingListt.OrderByDescending(w => w.Id).Take(9));
                     }
                     else if (getPriceVal == 9)
                     {
-                        var sortingListt = saveProduct.saveProductsWithcategory.Where(n => n.Product.Price >= 900 && n.Product.Price <= 1000).ToList();
+                        var sortingListt = saveProduct.saveProductsWithcategory.Where(n => n.Product.Price >= 800 && n.Product.Price <= 900).ToList();
                         return PartialView("~/Views/Shared/_PartialViews/_intoProductPageForCategory.cshtml", sortingListt.OrderByDescending(w => w.Id).Take(9));
                     }
                     else if (getPriceVal == 10)
                     {
-                        var sortingListt = saveProduct.saveProductsWithcategory.Where(n => n.Product.Price <= 1000 && n.Product.Price >= 2000).ToList();
+                        var sortingListt = saveProduct.saveProductsWithcategory.Where(n => n.Product.Price >= 900 && n.Product.Price <= 1000).ToList();
                         return PartialView("~/Views/Shared/_PartialViews/_intoProductPageForCategory.cshtml", sortingListt.OrderByDescending(w => w.Id).Take(9));
                     }
                     else if (getPriceVal == 11)

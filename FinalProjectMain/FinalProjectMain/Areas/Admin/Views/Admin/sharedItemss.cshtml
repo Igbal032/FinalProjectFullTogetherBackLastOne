@@ -45,6 +45,7 @@
                         </div>
                         <div class="col-12 mt-1 mb-1 d-flex justify-content-around">
                             <button id="deleteButtomInSharedPage" onclick="deleteButtomInSharedPage(@item.Id)" class="btn btn-sm btn-danger">Sil</button>
+                            <a href="@Url.Action("Edit","EditProducts", routeValues: new { id = item.Id})" class="btn btn-sm btn-warning">Redakte Et</a>
                             <form action="@Url.Action("LookAtAllİmages","Admin")" method="get">
                                 <input id="hiddenID" name="id" type="hidden" value="@item.Id" />
                                 <button id="lookAtImages" type="submit" class="btn btn-sm btn-warning">Şəkillər</button>

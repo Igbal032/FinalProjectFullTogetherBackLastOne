@@ -4,12 +4,6 @@
 
 }
 
-@*<li class="page-item">
-    <a class="page-link" href="#" aria-label="Previous">
-        <span aria-hidden="true">&laquo;</span>
-        <span class="sr-only">Previous</span>
-    </a>
-</li>*@
 
 @for (int i = 0; i < ViewBag.count; i++)
 {
@@ -18,10 +12,4 @@
         <a class="@(increaseCount==1? "bg-danger page-link" : "page-link" )" onclick="changePage(@increaseCount)">@increaseCount</a>
     </li>
 }
-@*<li class="page-item">
-    <a class="page-link" href="#" aria-label="Next">
-        <span aria-hidden="true">&raquo;</span>
-        <span class="sr-only">Next</span>
-    </a>
-</li>*@
 

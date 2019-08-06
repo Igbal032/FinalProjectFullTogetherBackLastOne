@@ -52,7 +52,8 @@ namespace FinalProjectMain.Controllers
         [AllowAnonymous]
         public ActionResult _twoNewProduct()
         {
-            return View();
+            var product = db.CategoryAndProduct.Where(w => w.DeletedDate == null && w.Product.DeletedDate == null && w.Product.isConfirm == true && w.Category.CategoryName == "Yemək Dəsti").OrderByDescending(o=>o.ProductId).Take(2).ToList();
+            return View(product);
         }
         // Two new Products
         
@@ -146,6 +147,13 @@ namespace FinalProjectMain.Controllers
             return View(findItem);
         }
         // itemPage
+
+        [AllowAnonymous]
+        public ActionResult smallCarousel()
+        {
+            var products = new FinalProjectMain.Models.ShoppingDbContext().products.Where(w => w.DeletedDate == null && w.isConfirm == true).OrderByDescending(w => w.Id).Take(5).ToList();
+            return View(products);
+        }
         [AllowAnonymous]
         // releatedIten
         public ActionResult relatedItemsCarousel(int Id)
@@ -349,11 +357,12 @@ namespace FinalProjectMain.Controllers
         // infoPartMyAccount
 
         // changeMyAccount
-        public ActionResult changeMyAccount(User User, string repeatedPassword)
+        public ActionResult changeMyAccount(int GenderId, string UserName,string UserSurname,
+            string Email,string Password, string repeatedPassword, DateTime BirtDay, bool? Notifi)
         {
             var checkSession = Session[SessionKey.User];
             var user = db.user.Where(w => w.DeletedDate == null && w.isBlock == false && w.Email == checkSession.ToString()).FirstOrDefault();
-            if (User.Password != repeatedPassword)
+            if (Password != repeatedPassword)
             {
 
                 TempData["wrongPassword"] = "Şifrəni Düzgün Təstiqləyin";
@@ -361,9 +370,24 @@ namespace FinalProjectMain.Controllers
             }
             else
             {
-                db.Entry(User).State = EntityState.Modified;
+                user.UserName = UserName;
+                user.UserSurname = UserSurname;
+                user.GenderId = GenderId;
+                user.Email = Email;
+                user.Password = Password;
+                user.BirthDate = BirtDay;
+                if (Notifi==null)
+                {
+                    user.Notification = false;
+                }
+                else
+                {
+                    user.Notification = Notifi;
+                }
+                user.Notification = Notifi;
+                db.Entry(user).State = EntityState.Modified;
                 db.SaveChanges();
-                //todo
+                TempData["changed"] = "Melumatlar Yeniləndi";
             }
             return View("infoPartMyAccount", user);
         }
@@ -499,8 +523,8 @@ namespace FinalProjectMain.Controllers
         // shopping-Adress
         public ActionResult shoppingAdress()
         {
-
-            return View();
+            var shoppingAdress = db.shoppingAdresses.Where(w => w.DeletedDate == null).ToList();
+            return View(shoppingAdress);
         }
         // shopping-Adress
 
@@ -572,11 +596,18 @@ namespace FinalProjectMain.Controllers
             if (!(string.IsNullOrWhiteSpace(User.Email) || string.IsNullOrWhiteSpace(User.Password)))
             {
                 var findUser = db.user.Where(w => w.DeletedDate == null && w.Email == User.Email).FirstOrDefault();
+
                 if (findUser != null)
                 {
+
                     if (findUser.Password == User.Password)
                     {
+                        if (findUser.isBlock == true)
+                        {
+                            TempData["isBlock"] = "Sizin Hesab Bloklanıb!!";
+                            return RedirectToAction("logIn");
 
+                        }
                         Session[SessionKey.User] = User.Email;
                         var active = Session[SessionKey.User];
 

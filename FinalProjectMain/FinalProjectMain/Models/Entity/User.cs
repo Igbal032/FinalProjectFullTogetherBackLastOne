@@ -23,7 +23,7 @@ namespace FinalProjectMain.Models.Entity
         [Required(ErrorMessage = "Doğum tarixini daxil edin")]
         [DataType(DataType.DateTime)]
         public DateTime BirthDate { get; set; }
-        public bool Notification { get; set; }
+        public bool? Notification { get; set; }
         public bool isBlock { get; set; }
     }
 }

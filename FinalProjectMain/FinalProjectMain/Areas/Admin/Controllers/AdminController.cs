@@ -190,7 +190,7 @@ namespace FinalProjectMain.Areas.Admin.Controllers
             db.Entry(item).State = System.Data.Entity.EntityState.Modified;
             db.SaveChanges();
             var products = db.products.OrderByDescending(o => o.Id).Where(w => w.DeletedDate == null && w.isConfirm == true).ToList();
-            return PartialView("~/Areas/Admin/Views/Admin/sharedItemss.cshtml", products);
+            return PartialView("~/Areas/Admin/Views/Shared/PartialView/_deleteProductsInSharedItems.cshtml", products);
         }
         public ActionResult confirmItemFromWaitList(int id)
         {
@@ -210,26 +210,7 @@ namespace FinalProjectMain.Areas.Admin.Controllers
 
             return PartialView("~/Areas/Admin/Views/Admin/newAddProductForEach.cshtml", db.products.OrderByDescending(o => o.Id).Where(w => w.DeletedDate == null && (w.isWaitListForAdmin == true && w.isConfirm == false)).ToList());
         }
-        public ActionResult EditItemFromWaitList(int? id)
-        {
-            db.Configuration.ProxyCreationEnabled = false;
-            var editItem = db.products.Where(w => w.DeletedDate == null && w.Id == id).FirstOrDefault();
-            return View(editItem);
-        }
-        public ActionResult ConfirmeditButtomInWaitlistModal(Product product)
-        {
-            var activeSession = Session[SessionKey.Admin];
-            var admin = db.Manager.Where(w => w.DeletedDate == null && w.Email == activeSession.ToString()).FirstOrDefault();
-            var findProduct = db.products.Where(w => w.DeletedDate == null && w.isConfirm == false && w.isWaitListForAdmin == true&&w.Id==product.Id).FirstOrDefault();
-            product.imgPath = findProduct.imgPath;
-            product.isWaitListForAdmin = true;
-            product.ModifiedDate = DateTime.Now;
-            product.ModifiedId = admin.Id;
-            db.Entry(product).State = System.Data.Entity.EntityState.Modified;
-            db.SaveChanges();
-            var newProductOrWaitList = db.products.OrderByDescending(o => o.Id).Where(p => p.DeletedDate == null && (p.isWaitListForAdmin == true && p.isConfirm == false));
-            return PartialView("~/Areas/Admin/Views/Admin/newAddProduct.cshtml", newProductOrWaitList);
-        }
+
         public ActionResult CategorySelectInCreateItem()
         {
             var categories = db.categories.Where(c => c.DeletedDate == null).OrderBy(w=>w.CategoryName).ToList();
@@ -604,6 +585,11 @@ namespace FinalProjectMain.Areas.Admin.Controllers
                 TempData["wrongOldPassword"] = "Şifrə yanlışdır!!";
                 return View("changePasswordAdmin");
             }
+            if (currentPassword == findAdmin.Password && (newPassword==""||confirmNewPassword==""))
+            {
+                TempData["writePassword"] = "Yeni şifrəni daxil edin!!";
+                return View("changePasswordAdmin");
+            }
             else
             {
                 if (confirmNewPassword != newPassword)
@@ -687,7 +673,7 @@ namespace FinalProjectMain.Areas.Admin.Controllers
             return PartialView("~/Views/Shared/_PartialViews/_mainCarouselPictures.cshtml", carouselimh);
         }
         [AllowAnonymous]
-        public ActionResult changeMainCarousel(string title, string shortContent, HttpPostedFileBase imgPath)
+        public ActionResult changeMainCarousel(string title,  HttpPostedFileBase imgPath)
         {
             if (imgPath != null)
             {
@@ -704,9 +690,9 @@ namespace FinalProjectMain.Areas.Admin.Controllers
                 {
                     carouselPicture.title = title;
                 }
-                if (shortContent != null)
+                else
                 {
-                    carouselPicture.shortContent = shortContent;
+                    carouselPicture.title = null;
                 }
                 carouselPicture.CreatedDate = DateTime.Now;
                 db.mainCarousels.Add(carouselPicture);

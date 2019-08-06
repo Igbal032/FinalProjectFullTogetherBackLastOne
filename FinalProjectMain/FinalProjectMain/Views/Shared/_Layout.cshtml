@@ -10,7 +10,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Main Page</title>
+    <title>Antik Qablar</title>
+    <link rel="shortcut icon" href="~/Template/img/plate-png-kitchen-19.png" type="image/x-icon" />
     @*<link rel="stylesheet" href="~/Template/css/style.css">*@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <!-- Font Awesome -->
@@ -45,14 +46,18 @@
                             <ul class="nav justify-content-center">
                                 <li class="nav-item">
                                     <span class="">
-                                        <i class="fas fa-phone"></i> Ələqə:
-                                        (+994)-50-539-55-69 &nbsp;
+                                        <a class="text-decoration-none text-muted" href="#">
+                                            <i class="fas fa-phone"></i> Ələqə:
+                                            (+994)-50-539-55-69 &nbsp;
+                                        </a>
                                     </span>
                                 </li>
                                 <li class="nav-item">
                                     <span>
-                                        &nbsp;&nbsp;<i class="far fa-envelope"></i> Email:
-                                        iqbal.hoff@list.ru
+                                        <a class="text-decoration-none text-muted" href="#">
+                                            &nbsp;&nbsp;<i class="far fa-envelope"></i> Email:
+                                            iqbal.hoff@list.ru
+                                        </a>
                                     </span>
                                 </li>
                             </ul>
@@ -73,7 +78,7 @@
                                         </a>
                                     </span>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownForMyAccount">
-                                        <a class="dropdown-item" href="#"><span>Ələqə</span></a>
+                                        <a class="dropdown-item" href="@Url.Action("contactUs","Home")"><span>Ələqə</span></a>
                                         <a class="dropdown-item" href="@Url.Action("viewCard","additionalActions")"><span>Kartım</span></a>
                                         @if (Session[SessionKey.User] == null)
                                         {
@@ -128,7 +133,7 @@
                         @Html.Action("shopIconInNavbar", "additionalActions")
                     </div>
                 </div>
-                <div class="sideBarForMobile  d-none fixed"  style="background-color: #707070 !important;">
+                <div class="sideBarForMobile  d-none fixed" style="background-color: #707070 !important;">
                     <ul class="sideBarUl" id="accordion">
                         @Html.Action("intoSideBar", "Category")
                     </ul>
@@ -142,7 +147,7 @@
                                 <h5> <i class="fas fa-bars"></i> Bütün Kateqoriyalar</h5>
                             </a>
                             <ul class="dropdown-menu allCategoriesInNavBar rounded-0" aria-labelledby="navbarDropdown">
-                                @Html.Action("allCategoriesInNavBar", "Category")@*test*@  
+                                @Html.Action("allCategoriesInNavBar", "Category")@*test*@
                             </ul>
                         </li>
                         <li class="nav-item active">
@@ -191,10 +196,6 @@
                     </ul>
                 </div>
             </div>
-
-
-
-            @*@Html.Action("activeUserIcon", "Home")*@
         </nav>
     </section>
 
@@ -255,17 +256,13 @@
 
                             </div>
                             <div class="col-md-6 col-lg-3 col-xl-3 col-12  footer-information">
-                                <span class="text-uppercase text-dark  font-weight-bold">Məlumatlar</span>
-
-                                <li><a href="@Url.Action("infoPartMyAccount","Home")">Çatdırılma</a></li>
-                                <li><a href="@Url.Action("infoPartMyAccount","Home")">Qaydalar</a></li>
-                                <li><a href="@Url.Action("infoPartMyAccount","Home")">Haqqımızda</a></li>
+                                <li><a href="@Url.Action("aboutUs","Home")">Haqqımızda</a></li>
                                 <li><a href="@Url.Action("contactUs","Home")">Bizimlə Əlaqə</a></li>
                             </div>
                             <div class="col-md-6 col-lg-3 col-xl-3 col-12  footer-servis">
                                 <span class="text-uppercase text-dark  font-weight-bold">MÜŞTƏRİ XİDMƏTİ</span>
                                 <li><a href="@Url.Action("infoPartMyAccount","Home")">Şəxsi Məlumatlar</a></li>
-                                <li><a href="@Url.Action("shoppingAdress","Home")">Mağazalar</a></li>
+                                <li><a href="@Url.Action("shoppingAdress","Home")">Mağaza</a></li>
                                 <li><a href="@Url.Action("logIn","Home")">Daxil Ol</a></li>
                                 <li><a href="@Url.Action("myAccount","Home")">Mənim Hesabım</a></li>
                             </div>

@@ -412,6 +412,7 @@
     <Content Include="Template\Dishes Images\bakal %287%29.JPG" />
     <Content Include="Template\Dishes Images\bakal %288%29.JPG" />
     <Content Include="Template\Dishes Images\bakal %289%29.JPG" />
+    <Content Include="Template\Dishes Images\Bokal.JPG" />
     <Content Include="Template\Dishes Images\Guldan %281%29.JPG" />
     <Content Include="Template\Dishes Images\Guldan %2810%29.JPG" />
     <Content Include="Template\Dishes Images\Guldan %2811%29.JPG" />
@@ -850,6 +851,8 @@
     <Content Include="Template\Dishes Images\Serviz Red %284%29.JPG" />
     <Content Include="Template\Dishes Images\Serviz Red %285%29.JPG" />
     <Content Include="Template\Dishes Images\Serviz Red %286%29.JPG" />
+    <Content Include="Template\Dishes Images\somavar.jpeg" />
+    <Content Include="Template\Dishes Images\somavar2.jpg" />
     <Content Include="Template\Dishes Images\Suvuner %2810%29.JPG" />
     <Content Include="Template\Dishes Images\Suvuner %2811%29.JPG" />
     <Content Include="Template\Dishes Images\Suvuner %2812%29.JPG" />
@@ -1189,6 +1192,7 @@
     <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryColorCompanyController.cs" />
     <Compile Include="Areas\Admin\Controllers\EditProductsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\shoppingAdressesController.cs" />
     <Compile Include="Controllers\additionalActionsController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\ContactUSController.cs" />
@@ -1225,6 +1229,14 @@
     <Compile Include="Migrations\201908011912415_step80.cs" />
     <Compile Include="Migrations\201908011912415_step80.Designer.cs">
       <DependentUpon>201908011912415_step80.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908052225100_11.cs" />
+    <Compile Include="Migrations\201908052225100_11.Designer.cs">
+      <DependentUpon>201908052225100_11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908060059563_12.cs" />
+    <Compile Include="Migrations\201908060059563_12.Designer.cs">
+      <DependentUpon>201908060059563_12.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Entity\addAdressToAccount.cs" />
@@ -1298,6 +1310,13 @@
     <Content Include="Areas\Admin\Views\Shared\_SieBarAdmin.cshtml" />
     <Content Include="Areas\Admin\Views\Admin\EditItemFromWaitList.cshtml" />
     <Content Include="Areas\Admin\Views\EditProducts\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\PartialView\_productImage.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\PartialView\_deleteProductsInSharedItems.cshtml" />
+    <Content Include="Areas\Admin\Views\shoppingAdresses\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\shoppingAdresses\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\shoppingAdresses\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\shoppingAdresses\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\shoppingAdresses\Index.cshtml" />
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -1367,6 +1386,7 @@
     <Content Include="Views\Shared\_PartialViews\_singleProductToShopList.cshtml" />
     <Content Include="Views\Home\pagePagination.cshtml" />
     <Content Include="Views\Shared\_PartialViews\_shopListForNavIcon.cshtml" />
+    <Content Include="Views\Home\smallCarousel.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1378,6 +1398,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="ContactFiles\" />
+    <Folder Include="Template\img\Adresses\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201907280751228_step6.resx">
@@ -1400,6 +1421,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908011912415_step80.resx">
       <DependentUpon>201908011912415_step80.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908052225100_11.resx">
+      <DependentUpon>201908052225100_11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908060059563_12.resx">
+      <DependentUpon>201908060059563_12.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

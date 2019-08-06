@@ -9,7 +9,6 @@ namespace FinalProjectMain.Models.Entity
     {
         public string imgPath { get; set; }
         public string title { get; set; }
-        public string shortContent { get; set; }
         public DateTime? changedDate { get; set; }
     }
 }
