@@ -1,0 +1,107 @@
+﻿@using FinalProjectMain.Models.Entity
+@model IEnumerable<User>
+@{
+    Layout = "~/Areas/Admin/Views/Shared/Layout.cshtml";
+    var count = 0;
+}
+
+<div class="container" style="margin-top:100px" id="UsersListId">
+
+
+    @foreach (var item in Model)
+    {
+        <br />
+        count++;
+        <h5>@count</h5>
+        <div class="row p-4">
+            <form id="editEmployeForm" action="@Url.Action("","Admin")" method="post">
+                <input type="hidden" value="@item.Id" />
+                <div class="form-group">
+                    <label for="">Kod</label>
+                    <input type="text" name="Id" value="@item.Id" disabled class="form-control-sm border border-muted rounded-0" />
+                </div>
+                <div class="form-group">
+                    <label for="">Ad</label>
+                    <input type="text" name="Name" value="@item.UserName" disabled class="form-control-sm border border-muted rounded-0" />
+                </div>
+                <div class="form-group">
+                    <label for="">Soyad</label>
+                    <input type="text" name="Surname" value="@item.UserSurname" disabled class="form-control-sm border border-muted rounded-0" />
+                </div>
+                <div class="form-group">
+                    <label for="">Email</label>
+                    <input type="email" name="Email" value="@item.Email"disabled class="form-control-sm border border-muted rounded-0" />
+                </div>
+                <div class="form-group">
+                    <label for="">Yaş</label>
+                    <input type="text" name="Phone" value="@item.UserAge" disabled class="form-control-sm border border-muted rounded-0" />
+                </div>
+                <div class="btn-group-sm" role="group" aria-label="Basic example">
+
+                    @if (item.isBlock == false)
+                    {
+                        <button type="button" onclick="ignoreuser(@item.Id)" class="btn btn-danger btn-sm">Blok Et</button>
+                    }
+                    else
+                    {
+                        <button type="button" onclick="notignoreuser(@item.Id)" class="btn btn-danger btn-sm">Blokdan Çıxar</button>
+                    }
+                </div>
+            </form>
+        </div>
+
+    }
+    <div class="row mt-3">
+        <a class="btn btn-success btn-dark rounded-0" href="@Url.Action("Index","Admin")">Əsas Səhifə</a>
+    </div>
+</div>
+
+@section scripts{
+    
+    <script>
+    function ignoreuser(Id) {
+
+        $.ajax({
+
+            url: "@Url.Action("ignoreUser","Admin")",
+            type: "POST",
+            data: { id: Id },
+            success: function (response) {
+                    $("#UsersListId").html(response)
+                    swal({
+                      text: "Istifadəçi bloklandı!",
+                      icon: "success",
+                      button: "Bitdi",
+                    });
+            },
+            error: function (response) {
+                console.error(response)
+            }
+        })
+
+    }
+
+     function notignoreuser(Id) {
+
+        $.ajax({
+
+            url: "@Url.Action("notignoreUser","Admin")",
+            type: "POST",
+            data: { id: Id },
+            success: function (response) {
+                    $("#UsersListId").html(response)
+                    swal({
+                      text: "Istifadəçi blokdan çıxarıldı!",
+                      icon: "success",
+                      button: "Bitdi",
+                    });
+            },
+            error: function (response) {
+                console.error(response)
+            }
+        })
+
+    }
+    </script>
+    
+    }

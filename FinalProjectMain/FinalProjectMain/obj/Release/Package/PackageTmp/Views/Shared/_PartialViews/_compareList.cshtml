@@ -1,0 +1,30 @@
+﻿@{
+    Layout = null;
+}
+
+@foreach (var item in Model)
+{
+    <div class="card text-center col-xl-4 col-lg-4 col-md-6 col-sm-12">
+        <a onclick="deleteCompare(@item.Id)" style="cursor:pointer; right:0% !important" class="text-decoration-none text-danger font-weight-bold position-absolute">X</a>
+        <div class="img-top">
+            <img class="card-img-top w-100" src="~/Template/img/newImg/@item.Product.imgPath" alt="Card image cap">
+        </div>
+        <div class="card-body">
+            <p class="card-title">@item.Product.Name<p>
+            <p class="compared-Item-price">@item.Product.Price AZN</p>
+            <p class="card-text">
+                @item.Product.About
+            </p>
+            <div class="card-f">
+                <div class="shop bg ">
+                    <a class="text-muted icon-link" onclick="clickShopIcon(@item.Product.Id)">
+                        <i class="fas fa-shopping-bag"></i>
+                    </a>
+                </div>
+                <div class="wishlist bg">
+                    <a class="text-muted icon-link" onclick="clickWishlistt(@item.Product.Id)"><i class="fas fa-heart"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+}

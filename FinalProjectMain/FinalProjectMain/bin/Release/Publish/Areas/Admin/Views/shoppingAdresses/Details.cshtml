@@ -1,0 +1,55 @@
+﻿@model FinalProjectMain.Models.Entity.shoppingAdresses
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/Layout.cshtml";
+}
+
+
+    <div class="container" style="margin-top:100px">
+        <div class="row">
+            <div>
+                <h4>shoppingAdresses</h4>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Name)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.About)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.About)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Adress)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Adress)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.imgPath)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.imgPath)
+                    </dd>
+
+                </dl>
+            </div>
+            <p>
+                @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+                @Html.ActionLink("Back to List", "Index")
+            </p>
+
+        </div>
+    </div>

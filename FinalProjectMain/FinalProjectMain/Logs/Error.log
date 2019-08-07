@@ -24,3 +24,10 @@ Parameter name: parameters
 2019-08-06 10:28:24.2262 FATAL    -Object reference not set to an instance of an object. 
 2019-08-06 10:28:57.3839 FATAL    -Object reference not set to an instance of an object. 
 2019-08-06 11:41:12.5695 FATAL    - 
+2019-08-06 13:27:28.6479 FATAL    -Non-static method requires a target. 
+2019-08-06 13:27:31.1730 FATAL    -Non-static method requires a target. 
+2019-08-06 13:27:32.2631 FATAL    -Non-static method requires a target. 
+2019-08-06 13:27:32.9175 FATAL    -Non-static method requires a target. 
+2019-08-06 13:27:33.6020 FATAL    -Non-static method requires a target. 
+2019-08-06 15:13:12.7369 FATAL    - 
+2019-08-06 15:33:39.3539 FATAL    - 

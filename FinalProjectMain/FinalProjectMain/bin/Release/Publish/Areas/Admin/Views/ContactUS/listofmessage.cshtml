@@ -1,0 +1,57 @@
+﻿
+@using FinalProjectMain.Models.Entity
+@model IEnumerable  <ContactUS>
+
+
+    <table class="table">
+        <tr>
+            <th>
+                Email
+            </th>
+            <th>
+                Mövzu
+            </th>
+            <th>
+                Şəkil
+            </th>
+            <th>
+                Mesaj
+            </th>
+            <th>
+                Cavab
+            </th>
+            <th>
+                Vaxt
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr style="@Html.Raw(item.isRead==false?"font-weight:bold" : "")">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Subject)
+                </td>
+                <td>
+                    <input type="image" src="~/ContactFiles/@item.filePath" style="width:90px; height:90px;" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Message)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AnsweredMessage)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedDate)
+                </td>
+                <td>
+                    <button type="button" class="btn btn-warning btn-sm rounded-0" onclick="lookatmessage(@item.Id)"><i class="fas fa-reply"></i></button>
+                    <button type="button" class="btn btn-danger btn-sm rounded-0" onclick="deletemessage(@item.Id)"><i class="fas fa-trash"></i></button>
+                </td>
+            </tr>
+        }
+
+    </table>

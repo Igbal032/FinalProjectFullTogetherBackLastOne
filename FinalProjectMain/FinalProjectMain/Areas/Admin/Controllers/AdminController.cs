@@ -652,7 +652,6 @@ namespace FinalProjectMain.Areas.Admin.Controllers
             }
 
         }
-        [AllowAnonymous]
         public ActionResult mainCarousel()
         {
             var carouselimg = db.mainCarousels.OrderByDescending(w=>w.Id).Where(w => w.DeletedDate == null).ToList();

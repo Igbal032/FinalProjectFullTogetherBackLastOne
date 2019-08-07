@@ -1,0 +1,57 @@
+﻿@model IEnumerable<FinalProjectMain.Models.Entity.shoppingAdresses>
+
+
+<div class="shpping-adress-part mt-5">
+    <div class="container">
+        @foreach (var item in Model)
+        {
+            <div class="row shadow">
+                <div class="col-md-6 img-part col-lg-4 col-xl-4 col-12  border-right border-muted d-flex justify-content-center align-items-center">
+                    <div class="img-padding">
+                        <img src="~/Template/img/Adresses/@item.imgPath" width="150px" alt="">
+                    </div>
+                </div>
+                <div class="col-md-6 info-part col-lg-4 col-xl-4 col-12  text-center border-right border-muted">
+                    <div class="info mt-5 ">
+                        <h4>@item.Name</h4>
+                        <p>@item.About</p>
+                    </div>
+                </div>
+                <div class="col-md-6 open-houres col-lg-4 col-xl-4 col-12 text-center">
+                    <div class="open-days pt-2 pb-2">
+                        <p> Bazar-Ertəsi: <span class="font-weight-bold">10:00 - 18:00</span> </p>
+                        <p> Çərşənbə-axşamı: <span class="font-weight-bold">10:00 - 18:00</span> </p>
+                        <p> Çərşənbə: <span class="font-weight-bold">10:00 - 18:00</span> </p>
+                        <p> Cümə-axşamı: <span class="font-weight-bold">10:00 - 18:00</span> </p>
+                        <p> Cümə: <span class="font-weight-bold">10:00 - 18:00</span> </p>
+                        <p> Şənbə: <span class="font-weight-bold">10:00 - 18:00</span> </p>
+                        <p> Bazar: <span class="font-weight-bold">10:00 - 18:00</span> </p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<section class="carouselForCompany mt-5">
+    <div class="container  mt-5">
+        <div class="row">
+            <div class="owl-carousel">
+                <div><img src="~/Template/img/Companies/1.jpg" alt=""></div>
+                <div><img src="~/Template/img/Companies/2.jpg" alt=""></div>
+                <div><img src="~/Template/img/Companies/3.jpg" alt=""></div>
+                <div><img src="~/Template/img/Companies/4.jpg" alt=""></div>
+                <div><img src="~/Template/img/Companies/5.jpg" alt=""></div>
+                <div><img src="~/Template/img/Companies/1.jpg" alt=""></div>
+                <div><img src="~/Template/img/Companies/3.jpg" alt=""></div>
+                <div><img src="~/Template/img/Companies/5.jpg" alt=""></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section scripts{
+
+    <script src="~/Template/js/shopping-adress-js.js"></script>
+
+}

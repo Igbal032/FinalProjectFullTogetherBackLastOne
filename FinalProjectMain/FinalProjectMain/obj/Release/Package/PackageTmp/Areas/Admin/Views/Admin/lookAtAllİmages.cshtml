@@ -1,0 +1,38 @@
+﻿@using FinalProjectMain.Models.Entity
+@model  IEnumerable<imageProduct>
+@{
+    Layout = "~/Areas/Admin/Views/Shared/Layout.cshtml";
+}
+
+    <div class="container" style="margin-top:100px">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+                    <img id="picturesId" class="shadow picturesHover mt-2 border border-danger" src="~/Template/img/newImg/@item.imgPath" alt="" style="object-fit:cover !important; opacity:0.7;" />
+                </div>
+            }
+        </div>
+        <br />
+        <a id="backToWaitList" href="@Url.Action("newAddProduct","Admin")" class="btn btn-sm btn-danger rounded-0">Geri dön</a>
+
+    </div>
+
+@section scripts{
+    
+    <script>
+
+        $(".picturesHover").hover(function (e) {
+
+            $(this).css({"opacity":"1","transition":"300ms"})
+        })
+
+        $(".picturesHover").mouseout(function (e) {
+
+            $(this).css({"opacity":"0.7","transition":"300ms"})
+        })
+
+
+    </script>
+    
+    }

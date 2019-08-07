@@ -1,0 +1,156 @@
+﻿@using FinalProjectMain.Models.Entity
+@model ContactUS
+@{ 
+        var siteInfo = new FinalProjectMain.Models.ShoppingDbContext().siteInfo.FirstOrDefault();
+}
+
+<section class="contact-part mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-8 col-lg-8 col-md-8 col-12 contact-part-col">
+                <h3>Əlaqə</h3>
+                <form class="contactForm" action="@Url.Action("ContactUs","Home")" method="post" enctype="multipart/form-data">
+                    <div class="form-group row">
+                        <label for="subjectForContact" class="col-sm-3 col-form-label">Mövzu</label>
+                        <div class="col-sm-9">
+                            <input type="text" required name="subject" id="contactSubject" placeholder="  Mövzu" class="form-control">
+                            @Html.ValidationMessageFor(m=>m.Subject," ", new { @class="text-danger"})
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Email Ünvani</label>
+                        <div class="col-sm-9">
+                            <input type="text" name="email" class="form-control" placeholder="  Email Ünvanı" id="EmailForContact">
+                            @Html.ValidationMessageFor(m => m.Email, " ", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Əlavə</label>
+                        <div class="col-sm-9">
+                            <div class="custom-file">
+                                <input type="file" name="file" id="fileForContact" class="custom-file-input">
+                                <label class="custom-file-label" for="inputGroupFile04">Əlavələr Seçin</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Mesaj</label>
+                        <div class="col-sm-9">
+                            <textarea type="text" name="message" placeholder="  Sizə necə kömək ola bilərik?" class="form-control" id="messageForContact"></textarea>
+                            @Html.ValidationMessageFor(m => m.Message, " ", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <p class="text-danger">@TempData["fillInput"]</p>
+                    <button class="btn btn-dark mt-3 mb-3 rounded-0" id="sendMessageAdmin" type="submit">Göndər</button>
+                </form>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-12 contactInfo-part-col">
+                <span class="font-weight-bold about-tittle">Məlumatlar</span>
+                <p class="about-product">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab doloribus
+                    architecto non deleniti
+                    laudantium, odio culpa ipsa ea sequi id neque nisi facilis.
+                </p>
+                <div class="row about-info">
+                    <label class="col-sm-2 col-form-label">
+                        <i class="fas fa-phone"></i>
+                    </label>
+                    <div class="col-sm-10">
+                        <p class="phone-number">@siteInfo.Phone</p>
+                    </div>
+
+                    <label class="col-sm-2 col-form-label">
+                        <i class="fas fa-fax"></i>
+                    </label>
+                    <div class="col-sm-10">
+                        <p class="fax-number">@siteInfo.Phone_2</p>
+                    </div>
+
+                    <label class="col-sm-2 col-form-label">
+                        <i class="fas fa-envelope"></i>
+                    </label>
+                    <div class="col-sm-10">
+                        <p class="email-adress">@siteInfo.Email</p>
+                    </div>
+
+                    <label class="col-sm-2 col-form-label">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </label>
+                    <div class="col-sm-10">
+                        <p class="location">Nərimanov Rayonu Atatürk Pr2</p>
+                    </div>
+
+                    <!-- <div class="col-md-2 col-xl-2 col-lg-2 col-2 col-2 icon-col">
+                        <i class="fas fa-phone-square-alt"></i> <br>
+                        <i class="fas fa-fax"></i><br>
+                        <i class="fas fa-envelope"></i><br>
+                        <i class="fas fa-map-marker-alt"></i><br>
+                    </div>
+                    <div class="col-md-10 col-xl-10 col-lg-10 col-10 col-10 infoPart">
+                        <div class="column mt-2">
+                            <p class="phone-number">+99450-539-55-69</p>
+                            <p class="fax-number">94915481151</p>
+                            <p class="email-adress">sales@yoursite.com</p>
+                            <p class="location">Genclik Metrosu</p>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="carouselForCompany mt-5">
+    <div class="container  mt-5">
+        <div class="row">
+            <div class="owl-carousel">
+                <div><img src="~/Template/img/Companies/1.jpg" alt=""></div>
+                <div><img src="~/Template/img/Companies/2.jpg" alt=""></div>
+                <div><img src="~/Template/img/Companies/3.jpg" alt=""></div>
+                <div><img src="~/Template/img/Companies/4.jpg" alt=""></div>
+                <div><img src="~/Template/img/Companies/5.jpg" alt=""></div>
+                <div><img src="~/Template/img/Companies/1.jpg" alt=""></div>
+                <div><img src="~/Template/img/Companies/3.jpg" alt=""></div>
+                <div><img src="~/Template/img/Companies/5.jpg" alt=""></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@*<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+<script>
+
+        $("#sendMessageAdmin").on("click", function (e) {
+
+            var contactSubject = $("#contactSubject").val();
+            var EmailForContact = $("#EmailForContact").val();
+            var messageForContact = $("#messageForContact").val();
+            var fileForContact = $("#fileForContact").val();
+            $.ajax({
+
+                url: "@Url.Action("ContactUs","Home")",
+                type: "POST",
+                data: {
+                    subject: contactSubject,
+                    email: EmailForContact,
+                    file: fileForContact,
+                    message:messageForContact,
+                },
+                 success: function (response) {
+                     console.log(response)
+                 },
+                 error: function (response) {
+
+                     console.error(response)
+                 }
+
+             })
+        });
+</script>*@
+@section scripts{
+    <script src="~/Template/js/contact-js.js"></script>
+
+}
+
+

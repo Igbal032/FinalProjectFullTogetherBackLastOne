@@ -1,0 +1,146 @@
+﻿@using FinalProjectMain.Models.Entity
+@model Manager
+@{
+    ViewBag.Title = "addAdminPage";
+    Layout = "~/Areas/Admin/Views/Shared/Layout.cshtml";
+}
+
+<div class="container" style="margin-top:100px">
+    <div class="row" id="addAdmin">
+        <div class="col-md-12">
+            <form action="@Url.Action("SubmitAddAdminPage","Admin")" method="post">
+                <h3 class="text-danger">@TempData["existsManager"]</h3>
+                <div class="form-group">
+                    <label for="">Ad</label>
+                    <input type="text" name="Name" required class="form-control-sm border border-muted rounded-0" /><br />
+                    @Html.ValidationMessageFor(m=> m.Name,"", new { @class="text-danger"})
+                </div>
+                <div class="form-group">
+                    <label for="">Soyad</label>
+                    <input type="text" name="Surname" required class="form-control-sm border border-muted rounded-0" /><br />
+                    @Html.ValidationMessageFor(m => m.Surname, "", new { @class = "text-danger" })
+
+                </div>
+                <div class="form-group">
+                    <label for="">Email</label>
+                    <input type="email" name="Email" required class="form-control-sm border border-muted rounded-0" /><br />
+                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <label for="">Şifrə</label>
+                    <input type="password" name="Password" required maxlength="15" class="form-control-sm border border-muted rounded-0" /><br />
+                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+
+                </div>
+                <div class="form-group">
+                    <label for="">Nömrə</label>
+                    <input type="text" name="Phone" class="form-control-sm border border-muted rounded-0" /><br />
+                    @Html.ValidationMessageFor(m => m.Phone, "", new { @class = "text-danger" })
+
+                </div>
+                <div class="form-group">
+                    <label for="">Vəzifə</label>
+                    <select class="form-control-sm border border-muted rounded-0" required name="ManagerStatusId" id="statusVal">
+                        @Html.Action("statusInCreateAdmin", "Admin");
+                    </select>
+                    <a href="#" id="addNewStatusOpenModal">Yeni Status Əlavə Et</a><br />
+                    @Html.ValidationMessageFor(m => m.ManagerStatusId, "", new { @class = "text-danger" })
+
+                </div>
+                <button type="submit" id="ClickAddNewManager" class="btn btn-md btn-success">Yadda Saxla</button>
+                <a class="btn btn-md btn-dark rounded-0" href="@Url.Action("employeeList","Admin")">Işçilər</a>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+       
+    </div>
+</div>
+
+<div class="modal" id="addNewStatus" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Vəzifə Əlavə Et</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body mt-3 mb-3">
+                <input type="text" id="StatusNameInputId" class="form-control" placeholder="Vəzifə adı" />
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Bağla</button>
+                <button type="button" id="addNewStatusButton" class="btn btn-primary">Əlavə Et</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+
+    <script>
+
+        $(document).ready(function (e) {
+
+            // Add Status
+
+            $("#addNewStatusOpenModal").on("click", function (e) {
+
+                $("#addNewStatus").modal('show')
+            })
+
+            $("#addNewStatusButton").on("click", function (e) {
+
+
+                $.ajax({
+
+                    url: "@Url.Action("addNewStatus","Admin")",
+                    type: "POST",
+                    data: {
+                        statusname: $("#StatusNameInputId").val(),
+                    },
+                    success: function (response) {
+                        if (response == "theSameName") {
+                             swal({
+                           title: ":(",
+                           text: "Bu kateqoriya mövcuddur",
+                           icon: "warning",
+                           button: "Bitdi",
+                              });
+                        }
+                        if (response == "") {
+                            swal({
+                                title: ":(",
+                                text: "Zəhmət olmasa xananı doldurun!",
+                                icon: "warning",
+                                button: "Bitdi",
+                            });
+                        }
+                        else if( response != "theSameName" && response != "")
+                        {
+                            $("#addNewStatus").modal('hide')
+                            swal({
+                                title: ":)",
+                                text: "Əlavə olundu",
+                                icon: "success",
+                                button: "Bitdi",
+                            });
+                            $("#StatusNameInputId").val("");
+                            $("#statusVal").html(response);
+                        }
+                    },
+                    error: function (response) {
+                        console.error(response)
+                    }
+                })
+
+            })
+
+            // Add Status
+
+        })
+
+    </script>
+
+}

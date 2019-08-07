@@ -1,0 +1,13 @@
+﻿@model IEnumerable <FinalProjectMain.Models.Entity.imageProduct>
+
+<div class="form-group">
+    <label>Şəkillər</label>
+    <div class="col-md-10 d-flex">
+        @foreach (var item in Model)
+        {
+            <img class="mt-2 ml-2" src="~/Template/img/newImg/@item.imgPath" width="200px" />
+            <a onclick="deleteImage(@item.Id)" href="#" style="color:red!important; font-weight:bold !important;">X</a>
+
+        }
+    </div>
+</div>

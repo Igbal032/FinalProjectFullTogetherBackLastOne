@@ -1,0 +1,11 @@
+﻿
+@using FinalProjectMain.Models.Entity
+@model IEnumerable<ManagerStatus>
+
+
+
+@foreach (var item in Model)
+{
+    <option value="@item.Id">@item.StatusName</option>
+}
+

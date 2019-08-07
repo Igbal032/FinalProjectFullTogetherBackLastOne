@@ -1,0 +1,190 @@
+﻿@model IEnumerable<FinalProjectMain.Models.Entity.ContactUS>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/Layout.cshtml";
+}
+
+<div class="container" style="margin-top:100px;">
+    <div class="row" id="messagelistRow">
+        <table class="table">
+            <tr>
+                <th>
+                    Email
+                </th>
+                <th>
+                    Mövzu
+                </th>
+                <th>
+                    Şəkil
+                </th>
+                <th>
+                    Mesaj
+                </th>
+                <th>
+                    Cavab
+                </th>
+                <th>
+                    Vaxt
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr style="@Html.Raw(item.isRead==false?"font-weight:bold" : "")">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Subject)
+                    </td>
+                    <td>
+                        <input type="image" src="~/ContactFiles/@item.filePath" style="width:90px; height:90px;" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Message)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AnsweredMessage)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreatedDate)
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-warning btn-sm rounded-0" onclick="lookatmessage(@item.Id)"><i class="fas fa-reply"></i></button>
+                        <button type="button" class="btn btn-danger btn-sm rounded-0" onclick="deletemessage(@item.Id)"><i class="fas fa-trash"></i></button>
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>
+
+<section class="modal-section">
+    <div class="modal" id="lookAtMessageModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content rounded-0">
+                <div class="modal-body">
+                    <form id="modalForm">
+                        <input type="hidden" name="Id" id="hiddenInputInModal" />
+                        <div class="form-group">
+                            <label class="col-form-label">Email: </label>
+                            <input type="text" name="Email" readonly class="form-control" id="emailId">
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label">Mövzu: </label>
+                            <input type="text" name="Subject" readonly class="form-control" id="subjectId">
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label">Şəkil: </label>
+                            <img name="imgPath" src="" readonly class="form-control-file" id="imgFileId">
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label">Mesaj: </label>
+                            <textarea class="form-control" readonly name="Message" id="messageId"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label">Cavab: </label>
+                            <textarea class="form-control" name="AnsweredMessage" id="answerId"></textarea>
+                        </div>
+                        <button type="button" class="btn btn-secondary" onclick="closeModalInContact()">Bağla</button>
+                        <button type="button" class="btn btn-primary" onclick="sendAnswerToUser($('#hiddenInputInModal').val())">Göndər</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+@section scripts{
+
+    <script>
+
+    function lookatmessage(Id) {
+        $("#lookAtMessageModal").modal('show')
+        $("#hiddenInputInModal").val(Id)
+
+        $.ajax({
+
+            url: "@Url.Action("lookAtMessage","ContactUS")",
+            type: "GET",
+            data: {
+                id: Id,
+                check:Id,
+            },
+            success: function (response) {
+                $("#emailId").val(response.Email)
+                $("#subjectId").val(response.Subject)
+                $("#messageId").val(response.Message)
+                $("#imgFileId").attr("src","/ContactFiles/"+response.filePath);
+                $("#answerId").val(response.AnsweredMessage)
+            },
+            error: function (response) {
+                console.error(response)
+            }
+        })
+    }
+    function sendAnswerToUser() {
+        var d = $("#modalForm").serialize()
+        $.ajax({
+
+            url: "@Url.Action("sendAnswerToUser","ContactUS")",
+            type: "POST",
+            data: d,
+            success: function (response) {
+                $("#messagelistRow").html(response)
+                $("#lookAtMessageModal").modal('hide')
+                swal({
+                   text: "Cavab göndərildi!",
+                   icon: "success",
+                   button: "Bağla!",
+               });
+            },
+            error: function (response) {
+                console.error(response)
+            }
+        })
+    }
+
+
+        function closeModalInContact() {
+        $.ajax({
+
+            url: "@Url.Action("closeTheModalInContact","ContactUS")",
+            type: "GET",
+            success: function (response) {
+                $("#lookAtMessageModal").modal('hide')
+                $("#messagelistRow").html(response)
+            },
+            error: function (response) {
+                console.error(response)
+            }
+        })
+    }
+
+    function deletemessage(Id) {
+        $.ajax({
+
+            url: "@Url.Action("deleteMessage","ContactUS")",
+            type: "POST",
+            data: {id: Id},
+            success: function (response) {
+                $("#messagelistRow").html(response)
+                swal({
+                   text: "Mesaj Silindi!",
+                   icon: "warning",
+                   button: "Bağla!",
+               });
+            },
+            error: function (response) {
+                console.error(response)
+            }
+        })
+    }
+
+    </script>
+
+}

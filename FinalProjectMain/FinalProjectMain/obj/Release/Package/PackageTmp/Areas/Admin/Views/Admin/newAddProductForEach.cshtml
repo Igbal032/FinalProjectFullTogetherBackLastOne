@@ -1,0 +1,45 @@
+﻿
+
+@using FinalProjectMain.Models.Entity
+@model IEnumerable<Product>
+
+
+
+@foreach (var item in Model)
+{
+    <div class="col-md-6 col-sm-12 col-xl-4 col-lg-4">
+        <div class="card" style="height:600px">
+            <figure class="imghvr-shutter-in-out-diag-2">
+                <img class="card-img-top" width="100%" src="~/Template/img/newImg/@item.imgPath"
+                     alt="Card image cap">
+                <figcaption style="word-break: break-all;">
+                    @item.About
+                </figcaption>
+            </figure>
+            <div class="card-body text-center">
+                <a href="./itemPage.html"><span>Adı: @item.Name</span></a>
+                <h6>Qiymət: @item.Price AZN</h6>
+                <p>Hakqında: @item.About</p>
+                <p>Paylaşılıb: @item.isConfirm</p>
+            </div>
+            <div class="card-footer">
+                <div class="icon-part d-flex justify-content-around text-center col-12">
+                    <p>Paylaşdı :</p>
+                </div>
+                <div class="col-12 mt-1 mb-1 d-flex justify-content-around">
+                    @if (TempData["admin"] != null)
+                    {
+                        <button id="confirmButtonInWaitlist" onclick="confirmButtomInWaitlist(@item.Id)" class="btn btn-sm btn-success">Təstiqlə</button>
+
+                    }
+                    <a href="@Url.Action("Edit","EditProducts", routeValues: new { id = item.Id})" class="btn btn-sm btn-warning">Redakte Et</a>
+                    <button id="deleteButtomInWaitlist" onclick="deleteButtomInWaitlist(@item.Id)" class="btn btn-sm btn-danger">Sil</button>
+                    <form action="@Url.Action("LookAtAllİmages","Admin")" method="get">
+                        <input id="hiddenID" name="id" type="hidden" value="@item.Id" />
+                        <button id="lookAtImages" type="submit" @*onclick="lookAtImages(@item.Id)"*@ class="btn btn-sm btn-warning">Şəkillər</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,12 @@
+﻿@model IEnumerable<FinalProjectMain.Models.Entity.Product>
+@{
+    Layout = null;
+}
+@foreach (var item in Model)
+{
+    <div class="item">
+        <img src="~/Template/img/newImg/@item.imgPath" style="object-fit:cover" width="250px" height="250px" alt="">
+    </div>
+}
+
+

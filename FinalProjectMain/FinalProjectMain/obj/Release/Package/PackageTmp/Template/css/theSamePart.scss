@@ -1,0 +1,2757 @@
+$colorGray: #a1a0a0;
+
+$colorRed: red;
+$colorWhite : white;
+$forFooter :#f8f7f7;
+$colorBlack: black;
+
+div.owl-dots{
+    display: none;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.shopping-icon-col-for-navBar{
+    display: none;
+
+    &:hover{
+        color: $colorWhite;
+        transition: 200ms;
+    }
+}
+.dropdown-for-icon-measure .shopping-icon .dropdown-menu{
+
+    width:500px  !important;
+}
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+.header-part {
+
+    .header-nav{
+        border-bottom: 1px solid $colorGray;
+        nav{
+
+            span{
+                font-size: 13px;
+            }
+
+            .my-account-dropdown{
+                cursor: pointer;
+
+
+                #dropdownForMyAccount{
+
+                    &:hover{
+
+                        color: red
+                    }
+
+
+
+                }
+
+
+               .dropdown-menu{
+
+                a{
+
+                    &:hover{
+
+                        background-color: $colorRed;
+                    }
+                }
+               }
+            }
+
+            .wishlist-part{
+
+                a{
+
+                    &:hover{
+
+                        color: $colorRed !important;
+                    }
+                }
+
+
+            }
+
+            .language-dropdown{
+                cursor: pointer;
+
+                &:hover{
+
+                    color: $colorRed;
+                }
+
+
+                .dropdown-menu{
+
+                 a{
+
+                     &:hover{
+
+                         background-color: $colorRed;
+                     }
+                 }
+                }
+             }
+
+              .currency-dropdown{
+                cursor: pointer;
+
+                &:hover{
+
+                    color: $colorRed;
+                }
+               .dropdown-menu{
+
+                a{
+
+                    &:hover{
+
+                        background-color: $colorRed;
+                    }
+                }
+               }
+            }
+        }
+    }
+}
+
+.search-part {
+
+    .container {
+
+        .row {
+            margin-top: 20px;
+
+            .logo-col {
+
+                .logo-image {
+                    width: 100px;
+                    height: 100px;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+
+            .search-shop {
+
+                .row {
+
+                    .input-group-color {
+                        border: 2px solid $colorRed;
+                        border-radius: 30px;
+
+                        .input-group-prepend {
+                            border-top-left-radius: 20px !important;
+                            border-bottom-left-radius: 20px !important;
+
+                            div {
+
+                                ul {
+                                    height: 350px;
+                                    overflow: scroll;
+                                }
+                            }
+                        }
+
+                        .input-group-append {
+                            border-top-right-radius: 20px !important;
+                            border-bottom-right-radius: 20px !important;
+
+                            button {
+                                border-top-right-radius: 30px;
+                                border-bottom-right-radius: 30px;
+                            }
+                        }
+
+                        .form-control {
+                            border-color: transparent !important;
+                            box-shadow: 0 0 0 0rem rgba(0,123,255,.25) !important;
+                        }
+                    }
+
+                    .shopping-icon-col {
+                        height: 40px !important;
+                        width: 80px !important;
+                        background-color: transparent;
+                        cursor: pointer;
+
+                        &:hover {
+                            transition: 200ms;
+                        }
+
+                        .shopping-icon {
+                            position: absolute;
+                            max-width: max-content;
+                            max-height: max-content;
+
+                            i {
+                                font-size: 40px;
+                                z-index: 11;
+                            }
+
+                            .countForShopping {
+                                font-weight: bold;
+                                border-radius: 100%;
+                                font-size: 25px;
+                                color: red;
+                                z-index: 12;
+                                position: absolute;
+                                top: -10px;
+                                right: -5px;
+                            }
+
+                            &:hover {
+
+                                i {
+                                    color: $colorRed;
+                                    transition: 0.5s;
+                                }
+
+                                .countForShopping {
+                                    color: black;
+                                    transition: 0.5s;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.navbar-main {
+
+    nav{
+
+
+        .container{
+
+            .icon-for-mobile{
+                display: none;
+            }
+
+            #mainNavbar{
+
+                .ulForMainNav{
+
+                    .nav-item{
+
+
+                        border-bottom:  2px solid transparent;
+
+                        a.dropdown-item{
+
+                            margin-top: 0px;
+                            padding-bottom: 10px;
+                            background-color: transparent;
+                            font-weight: 500;
+                            &:hover{
+
+                                color:  $colorRed !important;
+                            }
+                        }
+                        &:hover{
+
+                            border-color: white;
+                            transition: 1s;
+                        }
+
+                        .allCategoriesInNavBar{
+
+                            width: 100%;
+
+                            li{
+
+                                max-height: max-content;
+                                border: 0.1px solid $colorGray;
+                                border-top-color: transparent;
+                                border-left-color: transparent;
+                                border-right-color: transparent;
+                                a.dropdown-item{
+
+                                    font-weight: 500;
+                                    margin-top: 0px;
+                                    padding-bottom: 10px;
+                                    background-color: transparent;
+                                    &:hover{
+
+                                        color:  $colorRed !important;
+                                    }
+                                }
+                            }
+
+                            .dropdown-menu{
+
+
+                                border-left: 3px solid red !important;
+                            }
+
+                        }
+
+                        .nav-link{
+
+                            color: $colorWhite !important;
+                        }
+                    }
+                }
+            }
+        }
+        .shopping-icon-fornav2{
+
+            position: absolute;
+            max-width: max-content;
+            max-height: max-content;
+            right: 3%;
+            display: none !important;
+
+            i{
+
+                font-size: 40px;
+                z-index: 11;
+            }
+
+            .countForShopping{
+
+                font-weight: bold;
+                border-radius: 100%;
+                font-size: 25px;
+                color: white;
+                z-index: 12;
+                position: absolute;
+                top: -10px;
+                right: -5px;
+            }
+
+            &:hover{
+
+                i{
+
+                    color: $colorWhite;
+                    transition: 0.5s;
+
+                }
+
+                .countForShopping{
+
+                    color: black;
+                    transition: 0.5s;
+                }
+            }
+
+        }
+
+        #searchForNav2{
+
+            a{
+
+                i{
+
+                    
+                color: $colorBlack !important;
+                font-size: 25px !important;
+                }
+            }
+
+            &:hover{
+
+                i{
+
+                    color: $colorWhite !important;
+                    transition: 0.5s;
+
+                }
+            }
+
+            display: none;
+        }
+    }
+}
+
+
+
+
+.dropdown > .dropdown-menu {
+    opacity:0;
+    display: block;
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-transform: scale(1, 0);
+    transition: all 0.3s linear;
+    -webkit-transition: all 0.3s linear;
+  }
+
+  .show.dropdown > .dropdown-menu {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+    opacity:1;
+  }
+
+
+
+ .productsPage-center {
+
+    #accordion{
+
+        .card{
+
+            width: 250px !important;
+        }
+    }
+ }
+
+
+.footerPart{
+
+    footer{
+
+        background-color: $forFooter !important;
+        max-height: max-content;
+
+        .container-fluid{
+
+            .row{
+
+                .footer-top-Part{
+
+                    .row{
+                        .input-group{
+
+                            .form-control{
+                                border-color: $colorRed !important;
+                                &:focus{
+                                    border-color: $colorRed !important;
+                                    box-shadow: 0 0 0 0.0rem transparent !important;
+                                }
+                            }
+
+
+                            .forSubScribe{
+
+                                border-top-left-radius: 30px !important;
+                                border-bottom-left-radius: 30px !important;
+                            }
+
+                            .input-group-append{
+
+                                button{
+
+                                    border-top-right-radius: 30px !important;
+                                    border-bottom-right-radius: 30px !important;
+                                }
+                            }
+                        }
+
+                        .socialPartInFooter{
+
+                            li{
+
+                                a{
+
+                                     color: $colorBlack !important;
+
+                                     &:hover{
+
+                                        color: $colorRed !important;
+
+                                     }
+                                   i{
+
+                                          font-size: 30px !important;
+                                 }
+                              }
+                          }
+                      }
+                  }
+                }
+
+                .footer-center-Part{
+
+                    .row{
+
+                        .footer-contactUs{
+                            line-height: 2;
+
+                            p{
+                                font-weight: bolder;
+                                span{
+
+                                    font-weight: normal;
+                                    color: #777777;
+                                }
+                            }
+                        }
+                        .footer-account{
+                            line-height: 2.65;
+                            list-style-type: square;
+                            color: red !important;
+
+                            li{
+
+                                a{
+                                    text-decoration: none !important;
+                                    color: #777777;
+
+                                    &:hover{
+
+                                        font-weight: bold;
+                                        color: $colorRed;
+                                    }
+
+                                }
+                            }
+                        }
+                        .footer-information{
+                            line-height: 2.65;
+                            list-style-type: square;
+                            color: red !important;
+
+
+                            li{
+
+                                a{
+
+                                    text-decoration: none !important;
+                                    color: #777777;
+                                    &:hover{
+
+                                        font-weight: bold;
+                                        color: $colorRed;
+                                    }
+                                }
+                            }
+                        }
+                        .footer-servis{
+                            line-height: 2.65;
+                            list-style-type: square;
+                            color: red !important;
+
+
+                            li{
+
+                                a{
+                                    text-decoration: none !important;
+                                    color: #777777;
+                                    &:hover{
+
+                                        font-weight: bold;
+                                        color: $colorRed;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .footer-bottom-part{
+
+                    background-color: #cecece;
+                    max-height: max-content;
+
+                    .row{
+
+                        .container{
+
+                            .row{
+                                .col-md-5{
+
+                                    p{
+
+                                        a{
+
+                                            color: red !important;
+                                        }
+                                    }
+                                }
+
+                                .imagePayment{
+
+                                    img{
+
+                                        width: 100% !important;
+                                    }
+
+                                }
+
+                            }
+                        }
+                            .fa-chevron-up{
+
+                                font-size: 50px;
+                                color: red;
+                                position: fixed;
+                                bottom: 50px;
+                                right: 20px;
+                                display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 291px) {
+    .prepend-input-for-search{
+
+     display:none !important;
+   }
+
+   .input-group{
+
+    .search-input{
+
+        border-top-left-radius: 30px !important;
+        border-bottom-left-radius: 30px !important;
+    }
+
+   }
+
+   .footerPart{
+
+    .title-subscribe{
+        font-size: 12px !important;
+    }
+
+   }
+
+}
+
+@media only screen and (max-width: 350px) {
+
+    .prepend-input-for-search{
+
+            #selectCategoryInSearch{
+                 font-size: 12px !important;
+          }
+    }
+
+  }
+
+  @media only screen and (max-width: 164px) {
+
+    .container-fluid{
+
+        .row{
+
+            .footer-top-Part{
+
+                .row{
+
+                    .span-subscribe-title{
+
+                        font-size: 12px;
+                    }
+
+                }
+            }
+        }
+    }
+
+  }
+
+  @media only screen and (max-width: 992px) {
+
+    .search-part {
+
+        .container{
+
+            .row{
+
+                .search-shop{
+                        display: none;
+
+                        .shopping-icon-col{
+
+                            display: none;
+
+                        }
+
+                    }
+                }
+            }
+
+        }
+
+       .navbar-main .shopping-icon-col-for-navBar{
+           display: block;
+           cursor: pointer;
+       }
+
+       .navbar-main{
+
+            .navbar-expand-lg{
+
+                .container{
+
+                    .icon-for-mobile{
+                        display: block !important;
+                    }
+
+                    .sideBarForMobile{
+                        z-index: 30;
+                        left: -500%;
+                        top: 55px;
+                        position: absolute;
+                        display: block !important;
+                        overflow: scroll !important;
+                        height: 568px !important;
+                        ul{
+
+                            .collapse{
+
+                                a{
+                                    text-align: center;
+
+                                }
+                            }
+
+                            opacity: 1;
+                            li{
+
+                                width: 250px;
+                                height: 50px;
+                                list-style: none;
+                                border: 0.2px solid $colorGray;
+
+                                &:hover{
+
+                                    background-color: white !important;
+                                }
+                                a{
+                                    height: 100%;
+                                    font-weight: bold !important;
+                                    color: $colorWhite !important;
+                                    background-color: rgb(90, 90, 90);
+
+                                    &:active{
+
+                                        // background-color: transparent !important;
+                                    }
+
+                                    &:focus{
+
+                                        color: $colorRed !important;
+                                        background-color: transparent !important;
+                                    }
+
+                                }
+                            }
+
+                            .collapse{
+
+                                a{
+
+                                    font-size: 14px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+       }
+
+       .shopping-icon-fornav2{
+
+        display: none;
+       }
+
+    }
+
+    .main-carousel {
+
+        .container-fluid{
+            
+            .row{
+    
+                .owl-carousel{
+    
+                    .owl-prev, .owl-next{
+                        top: 250px;
+    
+                        &:focus{
+    
+                            box-shadow: 0 0 0 0.0rem transparent !important;
+                        }
+    
+                        &:hover{
+    
+                            background-color: transparent !important;
+                        }
+                    }
+    
+                    .item{
+    
+                        img{
+                            object-fit: cover !important;
+                            height: 600px !important;
+                        }
+                    }
+                 }        
+            }
+        }
+    }
+    
+    .new-product{
+    
+        .container{
+    
+            .row{
+    
+                .col-md-6{
+    
+                    div{
+                        height: 250px;
+    
+                        span{
+                            position: absolute;
+                            top:150px;
+                            left: 100px;
+                        }
+                    }
+                }
+    
+                img{
+                    object-fit: cover !important;
+                }
+            }
+        }
+    }
+    
+    .mix-new {
+    
+        .container{
+    
+            .tab-content{
+    
+                .tabCarousels{
+    
+    
+                        .card{
+                            
+                            border-radius: 0%;
+                            .card-body{
+                                
+                                a{
+    
+                                    span{
+        
+                                        color: red;
+                                        font-weight: bold;
+                                    }
+                                    text-decoration: none;
+        
+        
+                                    .fa-star{
+                                        color: yellow !important;
+                                        font-size: 15px;
+                                    }
+                                }
+                            }
+     
+                            .card-footer{
+                                
+                                .icon-part{
+    
+                                    div{
+                                        width: 30px;
+                                        height: 30px;
+                                        border-radius: 100%;
+                                        background-color: white;
+    
+                                        &:hover{
+    
+                                                background-color: red !important;
+                                                transition: 1s;
+    
+                                                .icon-link{
+    
+                                                    color: white !important;
+                                                }
+                                            }
+    
+                                        a{
+                                            
+                                            text-decoration: none !important;
+                                            i{
+                                                
+                                                margin-top: 7px !important;
+                                            }
+                                        }
+    
+                                        
+                                    }
+                                    
+                                }
+                            }
+    
+                            img{
+    
+                                height: 180px;
+                                object-fit: cover;
+                            }
+                        }
+                }
+            }
+        }
+    }
+    
+    .new-product{
+    
+        .container{
+    
+            .row{
+    
+                .col-md-6{
+    
+                     .product-images{
+                          img{
+                           object-fit: cover !important;
+                        }
+                     }
+                }
+            }
+        }
+    }
+    
+    .products-Tabs{
+    
+        .container{
+    
+            .row{
+    
+                .col-md-8{
+    
+                    .nav-tabs{
+    
+                        .nav-item{
+    
+                            .nav-link{
+                                
+                                font-size: 13px; 
+                            }
+                        }
+                    }
+    
+                    .tab-content{
+    
+                        .tab-pane{
+    
+                            .row{
+    
+                                .card{
+    
+                                    border-radius: 0%;
+                                    .card-body{
+    
+                                        a{
+    
+                                            color: red;
+                                            font-weight: bold;
+                                            text-decoration: none !important;
+                                            .fa-star{
+                                                color: yellow !important;
+                                                font-size: 15px;
+                                            }
+                                        }
+                                    }
+    
+                                    .card-footer{
+                                
+                                        .icon-part{
+            
+                                            div{
+                                                width: 30px;
+                                                height: 30px;
+                                                border-radius: 100%;
+                                                background-color: white;
+            
+                                                &:hover{
+            
+                                                        background-color: red !important;
+                                                        transition: 1s;
+    
+                                                        .icon-link{
+            
+                                                            color: white !important;
+                                                        }
+                                                    }
+            
+                                                a{
+                                                    
+                                                    text-decoration: none !important;
+                                                    i{
+                                                        
+                                                        margin-top: 7px !important;
+                                                    }
+                                                }
+            
+                                                
+                                            }
+                                            
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+    
+                .rightPartOneCard{
+    
+                    .card{
+    
+                        border: 2px solid red;
+                        border-radius: 0%;
+                        .card-body{
+    
+                            a{
+    
+                                font-size: 30px;
+                                text-decoration: none !important;
+                                .fa-star{
+                                    color: yellow !important;
+                                    font-size: 15px;
+                                }
+    
+                                span{
+    
+                                    color: red !important;
+                                    font-weight: bold;
+                                }
+                            }
+                        }
+                        
+                        .card-footer{
+                                
+                            .icon-part{
+    
+                                div{
+                                    width: 30px;
+                                    height: 30px;
+                                    border-radius: 100%;
+                                    background-color: white;
+    
+                                    &:hover{
+    
+                                            background-color: red !important;
+                                            transition: 1s;
+    
+                                            .icon-link{
+    
+                                                color: white !important;
+                                                
+                                            }
+                                        }
+    
+                                    a{
+                                        
+                                        text-decoration: none !important;
+                                        i{
+                                            
+                                            margin-top: 7px !important;
+                                        }
+                                    }
+    
+                                    
+                                }
+                                
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    .carousel-sale{
+    
+        .container{
+    
+            .tabsCarousels{
+    
+    
+                    .card{
+                            
+                        border-radius: 0%;
+                        .card-body{
+                            a{
+    
+                                span{
+    
+                                    color: red;
+                                    font-weight: bold;
+                                }
+                                text-decoration: none;
+    
+    
+                                .fa-star{
+                                    color: yellow !important;
+                                    font-size: 15px;
+                                }
+                            }
+                        }
+    
+                        .card-footer{
+                            
+                            .icon-part{
+    
+                                div{
+                                    width: 30px;
+                                    height: 30px;
+                                    border-radius: 100%;
+                                    background-color: white;
+    
+                                    &:hover{
+    
+                                            background-color: red !important;
+                                            transition: 1s;
+    
+                                            .icon-link{
+    
+                                                color: white !important;
+                                            }
+                                        }
+    
+                                    a{
+                                        
+                                        text-decoration: none !important;
+                                        i{
+                                            
+                                            margin-top: 7px !important;
+                                        }
+                                    }
+    
+                                    
+                                }
+                                
+                            }
+                        }
+    
+                        img{
+    
+                            height: 180px;
+                            object-fit: cover;
+                        }
+                    }
+            }
+        }
+    }
+    
+    .carousel-Product{
+    
+        .container{
+    
+            .tab-content{
+    
+    
+                    .card{
+                            
+                        border-radius: 0%;
+                        .card-body{
+                            a{
+    
+                                span{
+    
+                                    color: red;
+                                    font-weight: bold;
+                                }
+                                text-decoration: none;
+    
+    
+                                .fa-star{
+                                    color: yellow !important;
+                                    font-size: 15px;
+                                }
+                            }
+                        }
+    
+                        .card-footer{
+                            
+                            .icon-part{
+    
+                                div{
+                                    width: 30px;
+                                    height: 30px;
+                                    border-radius: 100%;
+                                    background-color: white;
+    
+                                    &:hover{
+    
+                                            background-color: red !important;
+                                            transition: 1s;
+    
+                                            .icon-link{
+    
+                                                color: white !important;
+                                            }
+                                        }
+    
+                                    a{
+                                        
+                                        text-decoration: none !important;
+                                        i{
+                                            
+                                            margin-top: 7px !important;
+                                        }
+                                    }
+    
+                                    
+                                }
+                                
+                            }
+                        }
+    
+                        img{
+    
+                            height: 180px;
+                            object-fit: cover;
+                        }
+                    }
+            }
+        }
+    }
+
+
+    .viewCard{
+
+        .container{
+            
+            .row{
+    
+    
+                .leftPart{
+                    max-height: max-content;
+    
+                    .shoppingScheduleTitle{
+    
+                        border-bottom: 1px solid black;
+    
+                        p{
+                            font-size: 25px;
+                            padding: 5px;
+                        }
+                    }
+    
+                .row{
+    
+                    .forCount{
+                        
+                        form{
+                            align-self: center;
+                            .input-group{
+    
+                               .inputForCount{
+                                
+                                width: 15% !important;
+                                align-self: center;
+    
+                                &:focus{
+                                    border-color: rgb(214, 214, 214) !important;
+                                    box-shadow: 0 0 0 0.0rem transparent !important;
+                                }
+                               }
+                            }
+                            .price{
+    
+                                font-size: 13px; 
+                            }
+    
+                            .input-group-prepend{
+    
+                                button{
+    
+                                    &:focus{
+                                        border-color: rgb(214, 214, 214) !important;
+                                        box-shadow: 0 0 0 0.0rem transparent !important;
+                                    }
+                                }
+                            }
+    
+                            .input-group-append{
+    
+                                button{
+    
+                                    &:focus{
+                                        border-color: rgb(214, 214, 214) !important;
+                                        box-shadow: 0 0 0 0.0rem transparent !important;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+    
+                .calculatorPart{
+                    max-height: max-content;
+                    .column{
+    
+                        .col-md-12{
+    
+                            border-bottom: 1px solid rgb(218, 218, 218);  
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    .carouselForCompany{
+    
+        border-top: 1px solid rgb(224, 223, 223) !important; 
+        .container{
+    
+            .row{
+    
+                .owl-carousel{
+    
+                    div{
+    
+                        img{
+    
+                            width: 60% !important;
+                            height: 60% !important; 
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    
+
+@media only screen and (max-width: 992px) {
+
+    .shpping-adress-part{
+
+        .container{
+    
+    
+            .row{
+    
+                .img-part{
+    
+                    display: none !important; 
+                }
+            }
+        }
+    }
+
+  }
+
+  .registerPart{
+
+    .container{
+
+        .row{
+
+            form{
+                button{
+                    border-radius: 0% !important;
+                    box-shadow: 0 0 0 0.0rem transparent !important;
+                }
+                .form-group{
+
+                    .col-sm-8{
+                           
+                        input{
+
+                            border: 1px solid rgb(182, 182, 182);  
+                            border-radius: 0% !important;
+
+                            &:focus{
+                                border-color: red !important;
+                                box-shadow: 0 0 0 0.0rem transparent !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.carouselForCompany{
+
+    border-top: 1px solid rgb(224, 223, 223) !important; 
+    .container{
+
+        .row{
+
+            .owl-carousel{
+
+                div{
+
+                    img{
+
+                        width: 60% !important;
+                        height: 60% !important; 
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+#mainNavbar {
+
+    .allCategoriesInNavBar{
+        display: none;
+      }
+}
+
+.productsPage-center {
+
+    .container {
+
+        .row {
+
+            .col-about-allCategories {
+
+                .additionalDropdown {
+
+                    padding-left: 0%;
+                    width: 100%;
+
+                    li{
+                        list-style: none;
+                        max-height: max-content;
+                        border: 0.1px solid rgb(223, 223, 223);
+                        height: 50px !important;
+                        a.dropdown-item{
+
+                            margin-top: 5px;
+                            padding-bottom: 10px;
+                            background-color: transparent;
+                            &:hover{
+
+                                color:  red !important;
+                            }
+                        }
+                    }
+
+                    .dropdown-menu{
+
+
+                        border-left: 3px solid red !important;
+                    }
+                }
+                .row{
+
+                    #accordion{
+                        
+                        width: 88% !important
+                    }
+                }
+            }
+
+            .sorting-col {
+
+                .row {
+
+                    .pagination-part {
+                        border: 1px solid $colorGray !important;
+
+                        nav {
+                            padding-top: 15px;
+
+                            ul {
+
+                                li {
+
+                                    a {
+                                        color: black;
+                                        box-shadow: 0 0 0 0.0rem transparent !important;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .items-card {
+
+                        .col-12 {
+
+                            .card {
+
+                                .card-body {
+
+                                    a {
+                                        color: red;
+                                        text-decoration: none;
+
+                                        .fa-star {
+                                            color: yellow;
+                                        }
+                                    }
+                                }
+
+                                .card-footer {
+
+                                    .icon-part {
+
+                                        div {
+                                            width: 30px;
+                                            height: 30px;
+                                            border-radius: 100%;
+                                            background-color: white;
+
+                                            &:hover {
+                                                background-color: red !important;
+                                                transition: 1s;
+
+                                                .icon-link {
+                                                    color: white !important;
+                                                }
+                                            }
+
+                                            a {
+                                                text-decoration: none !important;
+
+                                                i {
+                                                    margin-top: 7px !important;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .sorting-filter {
+                        border: 1px solid $colorGray;
+
+                        .product-grid-list {
+
+                            .row {
+
+                                .grid {
+
+                                    a {
+
+                                        i {
+                                            font-size: 20px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .product-sort-part {
+
+                            .row {
+
+                                .product-count {
+                                    text-align: end !important;
+                                }
+
+                                .select-label {
+                                    text-align: end !important;
+                                }
+
+                                .sorting-product {
+
+                                    select {
+
+                                        &:focus {
+                                            border-color: $colorGray !important;
+                                            box-shadow: 0 0 0 0.0rem transparent !important;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width:992px) {
+    
+    .sorting-product{
+
+        .form-control{
+
+            width: 50% !important;
+        }
+    }
+
+  }
+
+  .my-account-part{
+
+    .container{
+
+
+        .tittle-part{
+
+            border-bottom: 1px solid $colorGray !important;
+            padding-bottom: 10px !important;
+        }
+
+        .row{
+
+            .into-col{
+
+                height: 130px !important;
+                margin-top: 30px !important;
+
+                &:hover {
+
+                    a{
+                        color: red;
+                        text-decoration: none;
+                    }
+                }
+
+                a{
+
+                    font-size: 20px;
+                    text-decoration: none;
+                    color: black;
+                    width: 100%;
+                    height: 100%;
+
+                    p{
+
+                        i{
+
+                            font-size: 30px;
+                            margin-top: 20px !important;
+                        }
+                    }
+                }
+
+                
+            }
+        }
+        
+    }
+    
+}
+
+.carouselForCompany{
+
+    border-top: 1px solid rgb(224, 223, 223) !important; 
+    .container{
+
+        .row{
+
+            .owl-carousel{
+
+                div{
+
+                    img{
+
+                        width: 60% !important;
+                        height: 60% !important; 
+                    }
+                }
+            }
+        }
+    }
+}
+
+.my-wishlist-part{
+
+    .container{
+
+        .title-wishlist{
+
+            font-size: 20px;
+            font-weight: 500;
+        }
+        .form-group{
+
+            .col-sm-4{
+
+                input{
+
+                    &:focus{
+
+                        border-color: rgb(207, 207, 207);
+                        box-shadow: 0 0 0 0.0rem transparent;
+                    }
+                }
+                
+            }
+        }
+
+        button, a.btn{
+
+            &:focus{
+                border-color: black;
+                box-shadow: 0 0 0 0.0rem transparent !important;
+            }
+
+            &:hover{
+                border-color: red;
+                background-color: red;
+            }
+        }
+    }
+}
+
+.loginPart{
+
+    .container{
+        max-height: max-content;
+        .row{
+
+            .forTitle{
+                border-bottom: 1px solid $colorGray !important;      
+            }
+        }
+
+        .loginInputs{
+
+            .col-lg-5{
+
+                .row{
+
+                    text-align: center;
+
+                    .questionFor{
+                    
+                        margin-top: 70px;
+                        font-size: 25px;
+                    }
+                }
+
+                .registerButtonforRegisterPage{
+
+
+                    a{
+                        box-shadow: 0 0 0 0.0rem transparent;
+                        color: white;
+                        &:hover{
+                            border-color: red;
+                            background-color: red;
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+            .col-lg-6{
+
+                .row{
+
+                    form{
+
+                        .form-control{
+                            border-radius: 0% !important;
+                            &:focus{
+
+                                border-color: red !important;
+                                box-shadow: 0 0 0 0.0rem transparent !important;
+                                transition: 1000ms !important;
+                            }
+                        }
+                        button{
+                            border-radius: 0% !important;
+
+                            &:focus{
+                                border-color: transparent !important;
+                                box-shadow: 0 0 0 0.0rem transparent !important;
+
+                            }
+
+                            &:hover{
+                                border-color: red;
+                                background-color: red;
+                            }
+                         
+                        }
+
+                        .loginButton{
+
+                            margin-left: 50%;
+
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.carouselForCompany{
+
+    border-top: 1px solid rgb(224, 223, 223) !important; 
+    .container{
+
+        .row{
+
+            .owl-carousel{
+
+                div{
+
+                    img{
+
+                        width: 60% !important;
+                        height: 60% !important; 
+                    }
+                }
+            }
+        }
+    }
+}
+
+#mainNavbar {
+
+    .allCategoriesInNavBar{
+        display: none;
+      }
+}
+
+.singlePage-center{
+    
+    .container{
+
+        .row{
+
+            .col-about-allCategories {
+
+                .additionalDropdown {
+
+                    padding-left: 0%;
+                    width: 100%;
+
+                    li{
+                        list-style: none;
+                        max-height: max-content;
+                        border: 0.1px solid rgb(223, 223, 223);
+                        height: 50px !important;
+                        a.dropdown-item{
+
+                            margin-top: 5px;
+                            padding-bottom: 10px;
+                            background-color: transparent;
+                            &:hover{
+
+                                color:  red !important;
+                            }
+                        }
+                    }
+
+                    .dropdown-menu{
+
+
+                        border-left: 3px solid red !important;
+                    }
+                }
+            }
+
+
+            .col-md-9{
+
+                .row{
+
+                    .col-for-Images{
+
+                        .column{
+
+                            .item-img{
+
+                                height: 100% !important;
+                                img.mainPicture{
+
+                                    height: 331.66px !important;
+                                    object-fit: cover !important;
+                                }
+
+                                .iconForOpenModal{
+
+                                    position: absolute;
+                                    bottom: 0;
+                                    right: 0;
+                                    cursor: pointer;
+                                }
+
+                            }
+
+                            .item-pictures{
+
+                                .owl-carousel{
+
+                                    li{
+
+                                        list-style: none;
+                                        width: 100px;   
+
+                                        img{
+
+                                            height: 90.25px !important;
+                                        }
+                                    }
+                                }
+
+                               
+                            }
+                        }
+                    }
+
+                    .col-for-itemInfo{
+
+                        p{
+
+                            font-size: 20px;
+                        }
+
+                        .rate {
+                            float: left;
+                            height: 46px;
+                            padding: 0 10px;
+                        }
+                        .rate:not(:checked) > input {
+                            position:absolute;
+                            top:-9999px;
+                        }
+                        .rate:not(:checked) > label {
+                            float:right;
+                            width:1em;
+                            overflow:hidden;
+                            white-space:nowrap;
+                            cursor:pointer;
+                            font-size:20px;
+                            color:#ccc;
+                        }
+                        .rate:not(:checked) > label:before {
+                            content: '★ ';
+                        }
+                        .rate > input:checked ~ label {
+                            color: #ffc700;    
+                        }
+                        .rate:not(:checked) > label:hover,
+                        .rate:not(:checked) > label:hover ~ label {
+                            color: #deb217;  
+                        }
+                        .rate > input:checked + label:hover,
+                        .rate > input:checked + label:hover ~ label,
+                        .rate > input:checked ~ label:hover,
+                        .rate > input:checked ~ label:hover ~ label,
+                        .rate > label:hover ~ input:checked ~ label {
+                            color: #c59b08;
+                        }
+
+                        
+                        .stars-content{
+
+                            &::after{
+                                
+                                content: '\f005 \f005\f005\f005\f005';
+                                font-family: FontAwesome;
+                                font-weight: normal;
+                                color: yellow;
+                                font-size: 16px;  
+                            }
+                        }
+
+                        .write-review{
+
+                            &::before{
+
+                                content: '\f044';
+                                font-family: FontAwesome;
+                                font-weight: normal;
+                                color: gray;   
+                            }
+                        }
+
+                        .aboutItem{
+
+                            p{
+
+                                font-size: 16px !important;   
+                            }
+                        }
+
+                        .itemPricePart{
+
+                            border-top: 2px solid black;
+                            border-bottom: 2px solid black;
+                            max-width: max-content;
+                            font-size: 25px;  
+                        }
+
+                        .color-selector-part{
+
+                            select{
+
+                                border: 1px solid $colorGray !important;
+
+                                &:focus{
+
+                                    border-color: $colorGray;
+                                    box-shadow: 0 0 0 0.0rem transparent !important;
+                                }
+                            }
+                        }
+
+                        
+                        .size-selector-part{
+
+                            select{
+
+                                border: 1px solid $colorGray !important;
+
+                                &:focus{
+
+                                    border-color: $colorGray;
+                                    box-shadow: 0 0 0 0.0rem transparent !important;
+                                }
+                            }
+                        }
+
+
+                        .quantity{
+
+                            .input-group-xs{
+
+                              .inputForCountInSingle{
+
+                                width: 15% !important;
+                              }
+                            }
+
+                            button{
+
+                                &:focus{
+
+                                    box-shadow: 0 0 0 0.0rem transparent !important;
+                                }
+                            }
+
+                            input{
+
+                                &:focus{
+                                    box-shadow: 0 0 0 0.0rem transparent !important;
+                                }
+                            }
+                        }
+
+                        .icons{
+
+                            a{
+
+                                &:hover{
+
+                                    i{
+
+                                        color: red;
+                                        transition: 200ms;
+                                    }
+                                }
+                                i{
+
+                                    font-size: 32px;
+                                    width: 50px;
+                                    color: black;  
+                                }
+
+                                
+                            }
+                        }
+
+                        .social-sharing{
+
+                            ul{
+
+                                li{
+
+                                    a{
+
+                                        &.f:hover{
+
+                                            background-color:#435f9f !important;
+                                        }
+        
+                                        &.t:hover{
+        
+                                            background-color:#00aaf0 !important;
+                                        }
+        
+                                        &.g:hover{
+        
+                                            background-color:#e04b34;
+                                        }
+        
+                                        &.p:hover{
+        
+                                            background-color:#ce1f21;
+                                        }
+
+                                        border: 1px solid $colorGray;
+                                        margin: 2px;  
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .tab-single-page{
+
+                    .nav-tabs{
+
+                        border-bottom: transparent !important;
+
+                        .nav-item{
+
+                            .nav-link{
+
+                                border-right: 2px solid red !important;
+                                border-radius: 0px !important;
+                                border-top: transparent !important;
+                                border-bottom: transparent !important;
+                                border-left:  transparent !important;
+                                color:  black;  
+                            }
+                        }
+                    }
+
+                    .tab-content{
+
+                        font-size: 14px;
+                        border: 1px solid $colorGray;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.carousel-related-product {
+
+    .container{
+
+        .nav{
+
+            .nav-item{
+
+                a{
+
+                    text-decoration: none;
+                    font-size: 25px;
+                }
+            }
+        }
+
+        .tab-content{
+
+                .owl-carousel{
+
+                    .card{
+                        
+
+                        .card-body{
+                            a{
+
+                                span{
+    
+                                    color: red;
+                                    font-weight: bold;
+                                }
+                                text-decoration: none;
+    
+    
+                                .fa-star{
+                                    color: yellow !important;
+                                    font-size: 15px;
+                                }
+                            }
+                        }
+ 
+                        .card-footer{
+                            
+                            .icon-part{
+
+                                div{
+                                    width: 30px;
+                                    height: 30px;
+                                    border-radius: 100%;
+                                    background-color: white;
+
+                                    &:hover{
+
+                                            background-color: red !important;
+                                            transition: 1s;
+
+                                            .icon-link{
+
+                                                color: white !important;
+                                            }
+                                        }
+
+                                    a{
+                                        
+                                        text-decoration: none !important;
+                                        i{
+                                            
+                                            margin-top: 7px !important;
+                                        }
+                                    }
+
+                                    
+                                }
+                                
+                            }
+                        }
+
+                        img{
+
+                            height: 180px;
+                            object-fit: cover;
+                        }
+                    }
+                }
+        }
+    }
+}
+
+
+.carouselForCompany{
+
+    border-top: 1px solid $colorGray !important; 
+    .container{
+
+        .row{
+
+            .owl-carousel{
+
+                div{
+
+                    img{
+
+                        width: 60% !important;
+                        height: 60% !important; 
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.modal-section{
+    
+    .img-modal{
+
+        .modal-content{
+
+            width: 550px;
+            height:470px;
+
+            img{
+
+                height: 100% !important;
+                width: 100% !important;
+                object-fit: cover !important;
+            }
+        }
+
+        .modal-footer{
+
+            .owl-carousel{
+
+                li{
+
+                    list-style: none;
+                    width: 100px;   
+
+                    img{
+
+                        height: 90.25px !important;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+
+@media only screen and (max-width: 772px) {
+    #mainNavbar {
+
+        .allCategoriesInNavBar{
+            display: none;
+          }
+    }
+    .col-about-allCategories{
+
+        .additionalDropdown{
+            display: none;
+          }
+    }
+
+}
+
+@media only screen and (max-width: 150px) {
+
+    .carousel-related-product {
+
+        .container{
+    
+            .nav{
+    
+                .nav-item{
+    
+                    a{
+    
+                        text-decoration: none;
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@media only screen and (max-width: 1164px) {
+
+    .color-selector-part{
+
+        select{
+
+            width: 50%;
+        }
+    }
+
+    
+    .size-selector-part{
+
+        select{
+
+            width: 50%;
+            }
+        }
+
+}
+
+.changeInfoPart{
+
+    span{
+            font-size: 24px !important;
+    }
+
+    .container{
+
+        .row{
+
+            .forTitle{
+                border-bottom: 1px solid $colorGray !important;
+                height: 55px;
+            }
+
+            .title{
+
+                p{
+
+                    font-size: 14px;
+                }
+
+                form{
+
+                    button{
+
+                        &:focus{
+
+                            border-color: transparent !important;
+                            box-shadow: 0 0 0 0.0rem transparent !important;
+                        }
+                    }
+
+                    input{
+
+                        border: 1px solid $colorGray !important;
+                        border-radius: 0% !important;
+
+                        &:focus{
+
+                            border-color: red !important;
+                            box-shadow: 0 0 0 0.0rem transparent !important;
+                            transition: 1000ms !important;
+                        }
+                    }
+
+                    .notification{
+                        font-size: 18px !important;
+                    }
+
+                    .form-group{
+
+                        .col-sm-8{
+
+                            .custom-radio{
+
+                                input{
+                                    border: 1px solid $colorGray; 
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .buttons-part{
+
+            .col-12{
+
+                a{
+
+                    border-radius: 30px;  
+                }
+            }
+        }
+    }
+}
+
+.carouselForCompany{
+
+    border-top: 1px solid $colorGray !important; 
+    .container{
+
+        .row{
+
+            .owl-carousel{
+
+                div{
+
+                    img{
+
+                        width: 60% !important;
+                        height: 60% !important; 
+                    }
+                }
+            }
+        }
+    }
+}
+
+.contact-part{
+
+    .container{
+
+        .row{
+
+            .contact-part-col{
+                
+                .row{
+
+                   .col-sm-9{
+
+                    input{
+
+                        border: 1px solid $colorGray;   
+                        border-radius: 0%;
+
+                        &:focus{
+
+                            box-shadow: 0 0 0rem transparent;
+                        }
+                    }
+
+                    textarea{
+                        border: 1px solid rgb(207, 207, 207);
+                        height: 150px;
+                        border-radius: 0%;
+                        &:focus{
+
+                            box-shadow: 0 0 0rem transparent;
+                        }
+                    }
+
+                    .custom-file-label{
+                        border-radius: 0%;
+                        &:focus{
+
+                            box-shadow: 0 0 0rem transparent;
+                        }
+
+                        &::after{
+                            content: "Fayl Seç" !important; 
+                        }
+                    }
+                   } 
+                }
+            }
+            
+            .contactInfo-part-col{
+                       
+                .about-tittle{
+                    font-size: 22px;
+                }
+                p.about-product{
+
+                    font-size: 14px;
+                }
+
+                .row.about-info{
+
+                    line-height: 3;
+                    font-size: 16px;
+
+                    i{
+
+                        cursor: pointer;
+                            &:hover{
+
+                              color: red;
+                              transition: 200ms; 
+                             }
+                    }
+
+                    .col-form-label{
+
+                        margin-top: 5px;
+                    }
+
+                }
+               }
+        }
+    }
+}
+
+.carouselForCompany{
+
+    border-top: 1px solid rgb(224, 223, 223) !important; 
+    .container{
+
+        .row{
+
+            .owl-carousel{
+
+                div{
+
+                    img{
+
+                        width: 60% !important;
+                        height: 60% !important; 
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 575px) {
+
+    .contactInfo-part-col{
+
+
+        .row.about-info{
+
+            line-height: 1 !important;
+            font-size: 16px;
+
+        }
+
+    }
+}
+
+
+.compare-part{
+
+    .mainContainer{
+        max-height: max-content;
+
+        .PRODUCT-COMPARISON{
+           
+            font-size: 27px !important;
+            font-weight: bold !important;
+        }
+
+        .beforeForComparedCard{
+            // Todo
+            height: 530px;
+            .forComparedCard{
+
+                height: 500px;
+                width: 95%; 
+                overflow-x: scroll;
+
+                .card-group{
+
+                    .card{
+
+                        &::after{
+
+                            content:"\f1b8";
+                            position: absolute;
+                            bottom: 0;
+                            right: 0;
+                            width: 20px;
+                            height: 20px;
+                            background: gray;
+                            border-top-left-radius: 100%;  
+                        }
+
+                        img{
+
+                            object-fit: cover !important; 
+                            height: 250px !important; 
+                        }
+                    }
+                }
+            }
+        } 
+    }
+ }
+
+ .carouselForCompany{
+
+    border-top: 1px solid rgb(224, 223, 223) !important; 
+    .container{
+
+        .row{
+
+            .owl-carousel{
+
+                div{
+
+                    img{
+
+                        width: 60% !important;
+                        height: 60% !important; 
+                    }
+                }
+            }
+        }
+    }
+}
+
+.adress-part{
+
+    .container{
+
+        .row{
+
+            .header-title-col{
+
+                border-bottom: 1px solid $colorGray;
+                height: 50px;
+
+                span{
+
+                    font-size: 25px !important;
+                }
+            } 
+
+            .inputs-for-adress-col{
+
+                .form-control{
+                    
+                    border: 1px solid  $colorGray !important;
+                    border-radius: 0% !important;
+
+                    &:focus{
+
+                         border: 1px solid  red !important;
+                         border-radius: 0% !important;  
+                         box-shadow: 0 0 0 0.2rem transparent;
+                         transition: 1000ms !important;
+
+                    }
+                }
+
+                select{
+
+                    border: 1px solid  $colorGray !important;
+                    border-radius: 0% !important;
+                    width: 45% !important;
+
+                    
+                    &:focus{
+
+                        border: 1px solid  red !important;
+                        border-radius: 0% !important;  
+                        box-shadow: 0 0 0 0.2rem transparent;
+                        transition: 1000ms !important;
+
+                    }
+                }
+            }
+        }
+
+        .buttons-part-inadress{
+
+            a{
+
+                border-radius: 30px !important;  
+
+            }
+
+            .back-MainPage{
+
+                i{
+
+                    font-size: 12px !important; 
+                }
+            }
+        }
+    }
+}
+
+.carouselForCompany{
+    border-top: 1px solid $colorGray !important; 
+    .container{
+
+        .row{
+
+            .owl-carousel{
+
+                div{
+
+                    img{
+
+                        width: 60% !important;
+                        height: 60% !important; 
+                    }
+                }
+            }
+        }
+    }
+}

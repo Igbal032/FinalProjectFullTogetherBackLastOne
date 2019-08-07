@@ -1,0 +1,38 @@
+﻿@model IEnumerable<FinalProjectMain.Models.Entity.Category>
+@{
+    Layout = null;
+    var count = 0;
+}
+
+<div class="container">
+    <ul class="nav nav-tabs justify-content-between font-weight-bold">
+        <li class="nav-item">
+            <a class="navbar-brand active  text-muted" data-toggle="tab" href="#tabCarouselSale1">@*Endirim*@</a>
+        </li>
+        <ul class="nav">
+            @foreach (var item in Model)
+            {
+                count++;
+                <li class="nav-item">
+                    <a class="nav-link @(count==1? "active" : "") text-muted" data-toggle="tab" onclick="saleTabs(@item.Id)" href="#tabCarouselSale1">@item.CategoryName</a>
+                </li>
+            }
+        </ul>
+    </ul>
+    <div class="tab-content">
+        <div id="tabCarouselSale1" class="container tab-pane active tabsCarousels">
+            <br>
+            <div class="row" id="discountProductId">
+                @Html.Action("discountProductTab","Home")
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    
+    <script>
+
+    </script>
+    
+    }

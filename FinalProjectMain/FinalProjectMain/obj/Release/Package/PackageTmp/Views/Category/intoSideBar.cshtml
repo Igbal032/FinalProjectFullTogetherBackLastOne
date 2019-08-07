@@ -1,0 +1,32 @@
+﻿@{
+    Layout = null;
+    var db = new FinalProjectMain.Models.ShoppingDbContext();
+}
+@model IEnumerable<FinalProjectMain.Models.Entity.Category>
+
+@foreach (var item in Model)
+{
+    if (item.withSubCtegory == true)
+    {
+        <li>
+            <a class="dropdown-item dropdown-toggle" data-toggle="collapse" data-target="#collapse_@item.Id"
+               aria-expanded="true" aria-controls="@item.Id+collapse" href="#"  style="background-color: #707070 !important; border:none !important;">@item.CategoryName</a>
+        </li>
+        <div id="collapse_@item.Id" class="collapse " aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="text-end">
+                @foreach (var subCategory in db.SubCategories.Where(w => w.DeletedDate == null && w.CategoryId == item.Id).ToList())
+                {
+
+                    <li><a href="@Url.Action("findProduct","category", routeValues: new { idSub =subCategory.Id})" class="dropdown-item btn" style="border-radius:0">@subCategory.SubCategoryName</a></li>
+                }
+            </div>
+        </div>
+    }
+    else
+    {
+
+        <a href="@Url.Action("findProduct","category", routeValues: new { categoryId =item.Id})" class="dropdown-item btn" style="color: white;height: 44px;font-weight: bold;border-radius: 0;">@item.CategoryName</a>
+
+    }
+
+}

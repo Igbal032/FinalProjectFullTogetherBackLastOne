@@ -1,0 +1,234 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section css{
+    <link rel="stylesheet" href=" https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css">
+}
+
+
+<section class="productsPage-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-12 col-lg-3 col-sm-12 col-12 mt-1 col-about-allCategories">
+                <ul class="additionalDropdown justify-content-center">
+                    @Html.Action("intoAllCategories", "Category")
+                </ul>
+                <div class="row justify-content-center">
+                    @Html.Action("sortingAccordion", "Search")
+                </div>
+
+            </div>
+            <div class="col-md-8 col-12 col-lg-9 mt-4 sorting-col">
+                <div class="row">
+                    <div class="col-md-12 col-12 mt-5">
+                        <!--  -->
+                        <!-- <img src="~/Template/img/h.jpg" style="background-position: center center; background-size: cover" alt=""> -->
+                        <!--  -->
+                    </div>
+                    <div class="col-md-12 col-12 col-sm-12 col-12 mt-5 sorting-filter">
+                        <div class="row mt-3">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-12 product-sort-part">
+                                <div class="row">
+                                    <div class="col-xl-3 col-lg-3 col-md-3 col-3 select-label">
+                                        <label class="text-danger font-weight-bold" for="№">Filtir :</label>
+                                    </div>
+                                    <div class="col-xl-9 col-lg-9 col-md-9 col-9 form-group d-flex sorting-product">
+                                        <select id="selectABC" name="sortingABC" class="form-control rounded-0 border-muted selectABC">
+                                            <option selected disabled>Seçin</option>
+                                            <option value="AtoZ">A-Z</option>
+                                            <option value="ZtoA">Z-A</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container items-card" style="margin-bottom:24% !important">
+                        <div class="row"  id="intoProductsPageId">   
+                        @Html.Action("IntoproductsPage", "Home")
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-12 pagination-part mt-3 d-flex justify-content-center" style="position:absolute !important; bottom:0 !important">
+
+                        <nav aria-label="Page navigation example mt-2">
+                            <ul class="pagination text-dark font-weight-bold">
+                                @Html.Action("pagePagination", "Home")
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="carouselForCompany mt-5">
+    <div class="container  mt-5">
+        <div class="row">
+            <div class="owl-carousel">
+                <div><img src="~/Template/img/Companies/1.jpg" alt=""></div>
+                <div><img src="~/Template/img/Companies/2.jpg" alt=""></div>
+                <div><img src="~/Template/img/Companies/3.jpg" alt=""></div>
+                <div><img src="~/Template/img/Companies/4.jpg" alt=""></div>
+                <div><img src="~/Template/img/Companies/5.jpg" alt=""></div>
+                <div><img src="~/Template/img/Companies/1.jpg" alt=""></div>
+                <div><img src="~/Template/img/Companies/3.jpg" alt=""></div>
+                <div><img src="~/Template/img/Companies/5.jpg" alt=""></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section scripts{
+
+    <script src="~/Template/js/products-js.js"></script>
+
+    <script>
+        //a-z sorting
+        $('#selectABC').change(function(){
+            var getValue = $(this).val();
+            $.ajax({
+
+                url: "@Url.Action("sortingABC","Search")",
+                type: "GET",
+                data: { value: getValue },
+                success: function (response) {
+                    $("#intoProductsPageId").html(response)
+                },
+                error: function (response) {
+                    console.error(response)
+                }
+            })
+       });
+
+        // color - sorting
+        $("input[name=color]").on("click", function () {
+            var getColorVal;
+            if ($(this).is(':checked')) {
+                console.log($(this).val());
+                getColorVal = $(this).val()
+                $.ajax({
+
+                    url: "@Url.Action("sortingAccordionClick","Search")",
+                    type: "GET",
+                    data: { getColorValue : getColorVal },
+                    success: function (response) {
+                        $("#intoProductsPageId").html(response)
+                    },
+                    error: function (response) {
+                        console.error(response)
+                    }
+
+                })
+         }
+        });
+        // color - sorting
+        $("input[name=price]").on("click", function () {
+            var getColorVal;
+            if ($(this).is(':checked')) {
+                console.log($(this).val());
+                getColorVal = $(this).val()
+                $.ajax({
+
+                    url: "@Url.Action("sortingAccordionClick","Search")",
+                    type: "GET",
+                    data: { getPriceVal : getColorVal },
+                    success: function (response) {
+                        $("#intoProductsPageId").html(response)
+                    },
+                    error: function (response) {
+                        console.error(response)
+                    }
+
+                })
+         }
+        });
+        // Like
+        function clickLike(Id) {
+                var itemId = Id;
+                $.ajax({
+
+                    url: "@Url.Action("clickLike","LikeAndComment")",
+                    type: "POST",
+                    data: { productId: itemId },
+                    success: function (response) {
+                        if (response=="notSession") {
+                    swal({
+                         title: "Daxil Olun!",
+                         icon: "warning",
+                         button: "Daxil Ol!",
+                    }).then(function() {
+                          window.location.href = "/Home/logIn";
+                                 });
+                        }
+                        else
+                        {
+                            $(".like_" + Id).html(response)
+                        }
+                    },
+                    error: function (response) {
+                        console.error(response)
+                    },
+                })
+            }
+         // clickCategory
+        function clickCategoryToProdcutPage(Id) {
+            $.ajax({
+                url: "@Url.Action("clickCategoryToProductPage","Category")",
+                type: "POST",
+                data: { categoryId: Id },
+                success: function (response) {
+                    if (response=="emptyProducts") {
+                        $("#intoProductsPageId").html('<h4 class="text-danger text-center" style="margin-left: 50px;">Məhsul Tapılmadı !!<h4>')
+                    }
+                    else {
+                        $("#intoProductsPageId").html(response)
+                    }
+                },
+                error: function (response) {
+                    console.error(response)
+                }
+
+            })
+        }
+        function clickSubCategoryToProdcutPage(Id) {
+            $.ajax({
+                url: "@Url.Action("clickCategoryToProductPage","Category")",
+                type: "POST",
+                data: { subCategoryId: Id },
+                success: function (response) {
+                    if (response=="emptyProducts") {
+                        $("#intoProductsPageId").html('<h4 class="text-danger text-center" style="margin-left: 50px;">Məhsul Tapılmadı !!<h4>')
+                    }
+                    else {
+                        $("#intoProductsPageId").html(response)
+
+                    }
+                },
+                error: function (response) {
+                    console.error(response)
+                }
+
+            })
+        }
+
+        function changePage(pageID) {
+            console.log(pageID)
+            $.ajax({
+
+                url: "@Url.Action("pagePagination","Home")",
+                type: "GET",
+                data: { pageId: pageID },
+                success: function (response) {
+                    $("#intoProductsPageId").html(response)
+                    console.log(response)
+                },
+                error: function (response) {
+                    console.error(response)
+                }
+            })
+        }
+    </script>
+
+}

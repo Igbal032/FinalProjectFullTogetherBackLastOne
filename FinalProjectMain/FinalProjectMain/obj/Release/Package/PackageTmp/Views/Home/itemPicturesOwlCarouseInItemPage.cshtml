@@ -1,0 +1,11 @@
+﻿
+@using FinalProjectMain.Models.Entity
+@model IEnumerable<imageProduct>
+@{ 
+    Layout = null;
+}
+@foreach (var item in Model)
+{
+    <li><img src="~/Template/img/newImg/@item.imgPath" class="w-100 sm-img" alt=""></li>
+
+}

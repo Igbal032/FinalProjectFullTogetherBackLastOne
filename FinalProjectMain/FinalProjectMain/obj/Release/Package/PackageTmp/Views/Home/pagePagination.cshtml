@@ -1,0 +1,15 @@
+﻿@{
+    Layout = null;
+    int increaseCount = 0;
+
+}
+
+
+@for (int i = 0; i < ViewBag.count; i++)
+{
+    increaseCount++;
+    <li class="page-item">
+        <a class="@(increaseCount==1? "bg-danger page-link" : "page-link" )" onclick="changePage(@increaseCount)">@increaseCount</a>
+    </li>
+}
+

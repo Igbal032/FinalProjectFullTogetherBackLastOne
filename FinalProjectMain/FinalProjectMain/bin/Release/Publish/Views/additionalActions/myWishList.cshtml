@@ -1,0 +1,122 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model IEnumerable<FinalProjectMain.Models.Entity.wishListProductAndUser>
+
+<section class="my-wishlist-part mt-5">
+
+    <div class="container rounded-0 border border-muted">
+        <div class="row">
+            <span class="title-wishlist text-uppercase p-3">İstək Siyahım</span>
+            <div class="col-md-12 col-xl-12 col-lg-12 col-12">
+                <div class="form-group row">
+                    <div class="col-sm-4">
+                        <input type="text" placeholder="Məhsulun Adı" id="searchWishlistInput" class="form-control wishlist-input rounded-0">
+                    </div>
+                    <button type="button" onclick="searchWishlist()" class="col-sm-1 btn btn-dark rounded-0 btn-sm rippler">
+                        Axtar
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="wishlistRowId">
+            @foreach (var item in Model)
+            {
+                <div class="row mt-3 ml-3">
+                    <div class="col-md-12 col-xl-3 col-lg-3 col-12">
+                        <img class="w-100" src="~/Template/img/newImg/@item.Products.imgPath" alt="" />
+                    </div>
+                    <div class="col-md-12 col-xl-7 col-lg-7 col-12">
+                        <form action="@Url.Action("itemPage","Home")" method="get">
+                            <input type="hidden" name="Id" value="@item.Products.Id" />
+                            <button type="submit" class=" btn"><span class="text-danger font-weight-bold">@item.Products.Name</span></button>
+                        </form>                    <p>@item.Products.About</p>
+                        <h3>@item.Products.Price AZN</h3>
+                    </div>
+                    <div class="col-md-12 col-12 col-xl-2 col-lg-2">
+                        <a href="#" onclick="deleteWishList(@item.Id)" class="btn btn-sm btn-danger w-50">Sil</a>
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="row mt-2 mb-3 p-3">
+            <div class="col-12 w-100 d-flex justify-content-between">
+                <a href="@Url.Action("myAccount","Home")" class="btn btn-md btn-dark rounded-0 back-account rippler">
+                    <i class="fas fa-angle-left"></i>
+                    Hesabına
+                    Geri Dön
+                </a>
+                <a href="@Url.Action("Index","Home")" class="btn btn-md btn-dark rounded-0 back-MainPage rippler">
+                    <i class="fas fa-home"></i> Əsas
+                    Səhifə
+                </a>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section class="carouselForCompany mt-5">
+    <div class="container  mt-5">
+        <div class="row">
+            <div class="owl-carousel">
+                <div><img src="~/Template/img/Companies/1.jpg" alt=""></div>
+                <div><img src="~/Template/img/Companies/2.jpg" alt=""></div>
+                <div><img src="~/Template/img/Companies/3.jpg" alt=""></div>
+                <div><img src="~/Template/img/Companies/4.jpg" alt=""></div>
+                <div><img src="~/Template/img/Companies/5.jpg" alt=""></div>
+                <div><img src="~/Template/img/Companies/1.jpg" alt=""></div>
+                <div><img src="~/Template/img/Companies/3.jpg" alt=""></div>
+                <div><img src="~/Template/img/Companies/5.jpg" alt=""></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+@section scripts{
+
+    <script src="~/Template/js/my-wishlist-js.js"></script>
+
+    <script>
+        function deleteWishList(Id) {
+
+            $.ajax({
+                url: "@Url.Action("deleteWishList","additionalActions")",
+                type: "POST",
+                data: { id: Id },
+                success: function (response) {
+                    $("#wishlistRowId").html(response)
+                  swal({
+                    text: "Istək Siyahısından Silindi!",
+                    icon: "success",
+                    button: "Bağla!",
+                    });
+                },
+                error: function (response) {
+                    console.error(response)
+                }
+
+            })
+        }
+        function searchWishlist() {
+
+            $.ajax({
+                url: "@Url.Action("searchWishlist","Search")",
+                type: "POST",
+                data: { content: $("#searchWishlistInput").val() },
+                success: function (response) {
+                    $("#wishlistRowId").html(response)
+
+                },
+                error: function (response) {
+                    console.error(response)
+                }
+
+            })
+        }
+    </script>
+
+}
+

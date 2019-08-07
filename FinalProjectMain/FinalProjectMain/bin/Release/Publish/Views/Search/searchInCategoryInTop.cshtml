@@ -1,0 +1,22 @@
+﻿@{ 
+    Layout = null;
+}
+@model IEnumerable<FinalProjectMain.Models.Entity.Category>
+@{
+    var db = new FinalProjectMain.Models.ShoppingDbContext();
+    var multiCategories = db.SubCategories.Where(w => w.DeletedDate == null).ToList();
+}
+
+@foreach (var category in Model)
+{
+    <a class="dropdown-item" id="@category.Id" href="#"><span>@category.CategoryName</span></a>
+
+}
+@if (multiCategories != null)
+{
+    foreach (var multicategory in multiCategories)
+    {
+        <a class="dropdown-item" id="@multicategory.Id" href="#"><span>@multicategory.SubCategoryName</span></a>
+
+    }
+}

@@ -1,0 +1,10 @@
+﻿
+@using FinalProjectMain.Models.Entity
+@model IEnumerable<Color>
+
+
+
+    @foreach (var item in Model)
+    {
+        <option value="@item.Id" >@item.ColorName</option>
+    }

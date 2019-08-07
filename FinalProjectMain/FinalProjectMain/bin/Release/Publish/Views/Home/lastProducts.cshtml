@@ -1,0 +1,67 @@
+﻿
+@using FinalProjectMain.Models.Entity
+@model IEnumerable<Product>
+
+@{
+    Layout = null;
+}
+
+@foreach (var item in Model)
+{
+    <div class="col-xl-3 col-lg-3 col-md-4 col-12 mt-2">
+        <div class="card" style="height:347px !important">
+            <figure class="imghvr-shutter-in-out-diag-2">
+
+                @if (item.isSold == true)
+                {
+                    <span class="badge badge-danger">
+                        Satılıb!
+                    </span>
+                }
+                @if (item.isSold == false)
+                {
+                    <span class="badge badge-success">
+                        Satılmayıb!
+                    </span>
+                }
+                <img class="card-img-top " src="~/Template/img/newImg/@item.imgPath"
+                     alt="Card image cap">
+                <figcaption style="word-break: break-all;">
+                    @item.About
+                </figcaption>
+            </figure>
+            <div class="card-body text-center">
+                <form action="@Url.Action("itemPage","Home")" method="get">
+                    <input type="hidden" name="Id" value="@item.Id" />
+                    <button type="submit" class="text-decoration-none btn btn-transparent"><span class="text-danger font-weight-bold">@item.Name</span></button>
+                    <h5>@item.Price AZN</h5>
+
+                </form>
+            </div>
+            <div class="card-footer">
+                <div class="icon-part d-flex justify-content-around text-center">
+                    <div class="shop bg ">
+                        <a class="text-muted icon-link" onclick="clickShopIcon(@item.Id)">
+                            <i class="fas fa-shopping-bag"></i>
+                        </a>
+                    </div>
+                    <div class="star bg" style="position:relative !important">
+                        <a class="text-muted icon-link">
+                            @*<i class="fas fa-compress-arrows-alt"></i>*@
+                            <i class="far fa-star"></i>
+                        </a>
+                        <span style="position: absolute;left: 22px;top: 11px;color: black; font-weight: 900;">@item.starLevel</span>
+                    </div>
+                    <div class="wishlist bg">
+                        <a class="text-muted icon-link" onclick="clickWishlistt(@item.Id)"><i class="fas fa-heart"></i></a>
+                    </div>
+                    <div class="likeButton bg" style="position:relative !important">
+                        <a class="text-muted icon-link" onclick="clickLike(@item.Id)" style="cursor:pointer"><i class="fas fa-thumbs-up"></i></a>
+                        <span class="like_@item.Id" style="position: absolute;left: 22px;top: 11px;color: black; font-weight: 900;">@item.LikeCount</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
