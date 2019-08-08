@@ -40,7 +40,6 @@ namespace FinalProjectMain.Models
         public DbSet<SubCategory> SubCategories { get; set; }
         public DbSet<Comment> comments { get; set; }
         public DbSet<answerComment> AnswerComments { get; set; }
-        public DbSet<Compare> Compares { get; set; }
         public DbSet<ErrorHistory> ErrorHistory { get; set; }
         public DbSet<shopList> shopList { get; set; }
         public DbSet<Rating> rating { get; set; }

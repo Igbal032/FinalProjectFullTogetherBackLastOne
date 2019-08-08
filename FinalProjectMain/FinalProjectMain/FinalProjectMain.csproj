@@ -714,7 +714,6 @@
     <Compile Include="Models\Entity\Rating.cs" />
     <Compile Include="Models\Entity\Color.cs" />
     <Compile Include="Models\Entity\Comment.cs" />
-    <Compile Include="Models\Entity\Compare.cs" />
     <Compile Include="Models\Entity\ContactUS.cs" />
     <Compile Include="Models\Entity\Countries.cs" />
     <Compile Include="Models\Entity\ErrorHistory.cs" />
